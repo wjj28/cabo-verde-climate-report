@@ -25,8 +25,9 @@ i18n:
   default_locale: en
 
 collections:
+  # ---------- Climate of Cabo Verde (main site) ----------
   - name: chapters
-    label: Chapters
+    label: 'Climate of Cabo Verde: chapters'
     label_singular: Chapter
     description: The report chapters. Each language is a separate version of the same chapter.
     folder: src/content/chapters
@@ -39,12 +40,13 @@ collections:
     sortable_fields: [number, title]
     i18n: true
     fields:
-      - { name: number, label: Chapter number, widget: number, value_type: int, i18n: duplicate }
-      - { name: slug, label: Address (URL slug), widget: string, hint: 'Lowercase words joined by hyphens, e.g. future-climate. Same in every language.', pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'], i18n: duplicate }
-      - { name: title, label: Title, widget: string, i18n: true }
-      - { name: kicker, label: Topic line, widget: string, hint: Short line shown above the title, i18n: true }
-      - { name: summary, label: Summary, widget: text, hint: 'One or two sentences. Also used as the page description for search engines and social media.', i18n: true }
-      - name: keyMessages
+      - &numberField { name: number, label: Chapter number, widget: number, value_type: int, i18n: duplicate }
+      - &slugField { name: slug, label: Address (URL slug), widget: string, hint: 'Lowercase words joined by hyphens, e.g. future-climate. Same in every language.', pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'], i18n: duplicate }
+      - &titleField { name: title, label: Title, widget: string, i18n: true }
+      - &kickerField { name: kicker, label: Topic line, widget: string, hint: Short line shown above the title, i18n: true }
+      - &summaryField { name: summary, label: Summary, widget: text, hint: 'One or two sentences. Also used as the page description for search engines and social media.', i18n: true }
+      - &keyMessagesField
+        name: keyMessages
         label: Key messages
         widget: list
         i18n: true
@@ -71,7 +73,8 @@ collections:
               - { label: 'Projected warming', value: projTas }
               - { label: 'Hot nights above 26 °C', value: tropicalNights }
               - { label: 'Projected rainfall change', value: projRain }
-      - name: sources
+      - &sourcesField
+        name: sources
         label: Sources
         widget: list
         i18n: true
@@ -81,7 +84,7 @@ collections:
           - { name: url, label: Link, widget: string, required: false }
 
   - name: report
-    label: Report & summary
+    label: 'Climate of Cabo Verde: report & summary'
     description: Home page, headline statements, video and the About page.
     files:
       - &reportFile
@@ -130,3 +133,98 @@ collections:
         name: report_zh
         label: 中文
         file: src/content/report/zh.json
+
+  # ---------- Climate and Cities (cities site, same template) ----------
+  - name: cities_chapters
+    label: 'Climate and Cities: chapters'
+    label_singular: Chapter
+    description: Chapters of the Climate and Cities site (Praia and the ECOWAS capitals).
+    folder: src/reports/cities/chapters
+    extension: yaml
+    format: yaml
+    create: true
+    slug: '{{fields.number}}-{{fields.slug}}'
+    identifier_field: title
+    summary: '{{number}}. {{title}}'
+    sortable_fields: [number, title]
+    i18n: true
+    fields:
+      - *numberField
+      - *slugField
+      - *titleField
+      - *kickerField
+      - *summaryField
+      - *keyMessagesField
+      - name: sections
+        label: Sections
+        widget: list
+        i18n: true
+        summary: '{{fields.heading}}'
+        fields:
+          - { name: heading, label: Heading, widget: string }
+          - { name: body, label: Text, widget: markdown, buttons: [bold, italic, link, bulleted-list, numbered-list], editor_components: [image] }
+          - name: figure
+            label: Figure (optional)
+            widget: select
+            required: false
+            hint: The chart shown after this section's text
+            options: &citiesFigures
+              - { label: 'Urban population share', value: urban }
+              - { label: 'Praia night-time temperature stripes', value: praiaStripes }
+              - { label: 'Hot nights in Praia', value: praiaNights }
+              - { label: 'Hot nights above 26 °C (projections)', value: tropicalNights }
+              - { label: 'Wettest day of each year in Praia', value: praiaRainMax }
+              - { label: 'ECOWAS capitals: warmer nights', value: capitalsWarming }
+              - { label: 'ECOWAS capitals: more hot nights', value: capitalsNights }
+      - *sourcesField
+
+  - name: cities_report
+    label: 'Climate and Cities: report & summary'
+    description: Home page, headline statements and the About page of the Climate and Cities site.
+    files:
+      - &citiesFile
+        name: cities_en
+        label: English
+        file: src/reports/cities/report/en.json
+        fields:
+          - { name: title, label: Report title, widget: string }
+          - { name: shortTitle, label: Short title (header), widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: edition, label: Edition line, widget: string }
+          - { name: intro, label: Introduction (home page), widget: text }
+          - name: stats
+            label: Key figures (home page)
+            widget: list
+            summary: '{{fields.value}} {{fields.label}}'
+            fields:
+              - { name: value, label: Number, widget: string }
+              - { name: label, label: Explanation, widget: string }
+          - { name: summaryIntro, label: Summary introduction, widget: text }
+          - name: groups
+            label: Headline group titles
+            widget: object
+            required: false
+            fields:
+              - { name: A, label: Group A, widget: string }
+              - { name: B, label: Group B, widget: string }
+              - { name: C, label: Group C, widget: string }
+          - name: headlines
+            label: Headline statements
+            widget: list
+            summary: '{{fields.id}} {{fields.statement}}'
+            fields:
+              - { name: id, label: 'ID (A1, B2…)', widget: string, hint: 'Letter = group (see Headline group titles)' }
+              - { name: statement, label: Statement, widget: text }
+              - { name: detail, label: Detail, widget: text }
+              - { name: evidence, label: Evidence type, widget: select, options: [{ label: Observed, value: observed }, { label: Projected, value: projected }, { label: Reported, value: reported }] }
+              - { name: figure, label: Supporting figure, widget: select, required: false, options: [urban, praiaStripes, praiaNights, tropicalNights, praiaRainMax, capitalsWarming, capitalsNights] }
+              - { name: chapter, label: Chapter (URL slug), widget: string, required: false }
+          - { name: about, label: About page, widget: markdown }
+      - <<: *citiesFile
+        name: cities_fr
+        label: Français
+        file: src/reports/cities/report/fr.json
+      - <<: *citiesFile
+        name: cities_zh
+        label: 中文
+        file: src/reports/cities/report/zh.json
