@@ -1,0 +1,63 @@
+---
+// Print-optimised pages used to generate the PDFs (npm run pdf): /<lang>/print/report/ and /<lang>/print/chapter-N/.
+// Same content as the web pages, so PDFs can never drift from the site.
+import Base from '../../../layouts/Base.astro';
+import Figure from '../../../components/Figure.astro';
+import Evidence from '../../../components/Evidence.astro';
+import { langs, t, chapterLabel, type Lang } from '../../../i18n/ui';
+import { getChapters, getReport, md, mdInline } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const out = [];
+  for (const lang of langs) {
+    out.push({ params: { lang, part: 'report' } });
+    for (const c of await getChapters(lang)) out.push({ params: { lang, part: `chapter-${c.number}` } });
+  }
+  return out;
+}
+const lang = Astro.params.lang as Lang;
+const part = Astro.params.part!;
+const s = t(lang);
+const r = await getReport(lang);
+const all = await getChapters(lang);
+const full = part === 'report';
+const chapters = full ? all : all.filter((c) => `chapter-${c.number}` === part);
+---
+<Base lang={lang} title={full ? r.title : chapters[0].title} description={r.subtitle} path={`print/${part}/`} index={false}>
+  <div class="wrap narrow print-doc" data-pagefind-ignore="all">
+    {full && (
+      <section class="print-cover">
+        <p class="eyebrow">{r.edition}</p>
+        <h1>{r.title}</h1>
+        <p class="hero-sub">{r.subtitle}</p>
+        <p class="lede">{r.intro}</p>
+        <h2>{s.contents}</h2>
+        <ol>{all.map((c) => <li>{c.title}</li>)}</ol>
+      </section>
+      <section class="print-break">
+        <h1>{s.nav.summary}</h1>
+        <p>{r.summaryIntro}</p>
+        {r.headlines.map((h) => (
+          <div class="headline"><div class="headline-meta"><span class="hl-id">{h.id}</span><Evidence kind={h.evidence} lang={lang} /></div><h3>{h.statement}</h3><p>{h.detail}</p></div>
+        ))}
+      </section>
+    )}
+    {chapters.map((c) => (
+      <article class={full ? 'print-break' : ''}>
+        <p class="eyebrow">{chapterLabel(lang, c.number)} · {c.kicker}</p>
+        <h1>{c.title}</h1>
+        <p class="lede">{c.summary}</p>
+        <section class="key-messages"><h2>{s.keyMessages}</h2><ul>{c.keyMessages.map((k) => <li set:html={mdInline(k)} />)}</ul></section>
+        {c.sections.map((sec) => (
+          <section class="chapter-section">
+            <h2>{sec.heading}</h2>
+            <div class="prose" set:html={md(sec.body)} />
+            {sec.figure && <Figure fig={sec.figure} lang={lang} />}
+          </section>
+        ))}
+        <section class="sources"><h2>{s.sources}</h2><ol>{c.sources.map((x) => <li>{x.url ? <a href={x.url}>{x.label}</a> : x.label}</li>)}</ol></section>
+      </article>
+    ))}
+    <p class="footer-note print-note">{s.conceptLong}</p>
+  </div>
+</Base>
