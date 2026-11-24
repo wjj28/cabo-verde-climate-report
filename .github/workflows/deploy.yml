@@ -1,0 +1,67 @@
+# Build, test and deploy on every push to main (including content saved from the CMS).
+# 1. GitHub Pages: live demo.
+# 2. Optional: the same static files to an Apache/LAMP host over SFTP (set the LAMP_* secrets).
+name: Build and deploy
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      SITE: https://${{ github.repository_owner }}.github.io
+      BASE: /${{ github.event.repository.name }}/
+      CHROME_PATH: /usr/bin/google-chrome
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - name: Build site and search index
+        run: npm run build
+      - name: Generate PDFs from the print pages
+        run: npm run pdf && npm run build
+      - name: Accessibility check (axe-core, WCAG 2.2 AA)
+        run: npm run test:a11y
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: dist }
+
+  pages:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: { name: github-pages, url: '${{ steps.deploy.outputs.page_url }}' }
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4
+
+  lamp:
+    # Runs only when an SFTP host is configured in the repository secrets.
+    needs: build
+    if: ${{ vars.LAMP_ENABLED == 'true' }}
+    runs-on: ubuntu-latest
+    env:
+      SITE: ${{ vars.LAMP_SITE_URL }}
+      BASE: ${{ vars.LAMP_BASE || '/' }}
+      CHROME_PATH: /usr/bin/google-chrome
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci && npm run build && npm run pdf && npm run build
+      - name: Upload to Apache host
+        run: |
+          sudo apt-get install -y lftp
+          lftp -u "${{ secrets.LAMP_USER }},${{ secrets.LAMP_PASSWORD }}" "sftp://${{ secrets.LAMP_HOST }}" \
+            -e "set sftp:auto-confirm yes; mirror --reverse --delete --verbose dist ${{ secrets.LAMP_PATH }}; quit"

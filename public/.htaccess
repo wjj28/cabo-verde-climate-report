@@ -1,0 +1,66 @@
+# Apache (LAMP) configuration for the static build.
+# Copy the contents of dist/ to the document root (or a sub-folder) and this file comes with it.
+
+Options -Indexes
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+
+# --- Language negotiation at the root: send visitors to /fr/ or /zh/ if their browser prefers it ---
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+  RewriteRule ^$ /fr/ [R=302,L]
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteCond %{HTTP:Accept-Language} ^zh [NC]
+  RewriteRule ^$ /zh/ [R=302,L]
+  RewriteCond %{REQUEST_URI} ^/$
+  RewriteRule ^$ /en/ [R=302,L]
+</IfModule>
+
+# --- Security headers ---
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+  # HTTPS only: uncomment once the site is served over TLS
+  # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+  # The site itself needs only: its own files, YouTube (after a click) and its thumbnails.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://i.ytimg.com; font-src 'self'; frame-src https://www.youtube-nocookie.com; connect-src 'self'; base-uri 'self'; form-action 'self'"
+</IfModule>
+# The editor (/admin/) loads its app from a CDN and talks to the Git host, so it gets its own policy.
+<If "%{REQUEST_URI} =~ m#^/admin/#">
+  Header always unset Content-Security-Policy
+  Header always set X-Robots-Tag "noindex"
+</If>
+
+# --- Compression ---
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/csv application/javascript application/json image/svg+xml text/xml application/xml
+</IfModule>
+
+# --- Caching: fingerprinted assets for a year, HTML always revalidated ---
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 1 hour"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/pdf "access plus 1 week"
+  ExpiresByType text/csv "access plus 1 day"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(woff2|css|js)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  # js/site.js is not fingerprinted: keep it short-lived
+  <FilesMatch "^site\.js$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+</IfModule>
+
+AddType text/csv .csv
+AddType application/pdf .pdf
+AddCharset utf-8 .html .css .js .csv .json .yml .svg
