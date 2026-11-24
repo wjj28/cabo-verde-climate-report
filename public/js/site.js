@@ -72,7 +72,7 @@
     const n = d.x.length;
     const NS = 'http://www.w3.org/2000/svg';
     const guide = document.createElementNS(NS, 'line');
-    guide.setAttribute('class', 'guide');
+    guide.setAttribute('class', 'chart-guide');
     guide.setAttribute('y1', g.t); guide.setAttribute('y2', g.b);
     guide.style.display = 'none';
     svg.appendChild(guide);
@@ -146,7 +146,7 @@
       }
     });
     fig.classList.remove('export-light');
-    $$('.guide', clone).forEach((el) => el.remove());
+    $$('.chart-guide', clone).forEach((el) => el.remove());
     const title = fig.dataset.title;
     const vb = src.viewBox.baseVal;
     const pad = 44;
@@ -208,11 +208,31 @@
     $('#lightbox-title', dlg).textContent = fig.dataset.title;
     const body = $('.lightbox-body', dlg);
     body.innerHTML = '';
-    const svg = $('.plot svg', fig).cloneNode(true);
-    $$('[id]', svg).forEach((el) => (el.id += '-lb'));
+    // Clone the whole chart (legend + plot) so it keeps the chart styles; turn scenario
+    // toggles into a static legend that reflects what is currently shown.
+    const chart = $('.chart', fig).cloneNode(true);
+    $$('script, .readout, .chart-guide', chart).forEach((el) => el.remove());
+    const toggles = $('.toggles', chart);
+    if (toggles) {
+      const ul = document.createElement('ul');
+      ul.className = 'legend';
+      $$('.toggle', toggles).forEach((t) => {
+        if (!$('input', t).checked) return;
+        const li = document.createElement('li');
+        li.className = [...t.classList].filter((c) => c.startsWith('s-')).join(' ');
+        li.innerHTML = '<span class="swatch" aria-hidden="true"></span>';
+        li.append(t.textContent.trim());
+        ul.appendChild(li);
+      });
+      toggles.replaceWith(ul);
+    }
+    const plot = $('.plot', chart);
+    plot.removeAttribute('tabindex');
+    plot.removeAttribute('aria-describedby');
+    $$('[id]', chart).forEach((el) => (el.id += '-lb'));
+    const svg = $('svg', chart);
     svg.setAttribute('aria-labelledby', svg.getAttribute('aria-labelledby').split(' ').map((x) => x + '-lb').join(' '));
-    $$('.guide', svg).forEach((el) => el.remove());
-    body.appendChild(svg);
+    body.appendChild(chart);
     const cap = $('figcaption', fig).cloneNode(true);
     body.appendChild(cap);
     dlg.showModal();

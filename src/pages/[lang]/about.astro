@@ -4,6 +4,7 @@ import { t, type Lang } from '../../i18n/ui';
 import { getReport, md } from '../../lib/content';
 import { langPaths } from '../../lib/paths';
 import data from '../../data/climate.json';
+import { url } from '../../lib/url';
 
 export const getStaticPaths = langPaths;
 const lang = Astro.params.lang as Lang;
@@ -14,6 +15,7 @@ const r = await getReport(lang);
   <div class="page-head"><div class="wrap narrow"><p class="eyebrow">{r.title}</p><h1>{s.nav.about}</h1></div></div>
   <div class="wrap narrow section">
     <div class="prose" set:html={md(r.about)} />
+    <p class="meta"><a href={url('en/editing-guide/')} hreflang="en">Editing guide for staff (English)</a></p>
     <p class="meta">{s.lastUpdated}: <time datetime={data.generated}>{data.generated}</time></p>
   </div>
 </Base>

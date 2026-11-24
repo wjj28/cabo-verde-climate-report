@@ -1,0 +1,129 @@
+---
+// Editing guide for non-technical staff (training material). English only.
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+
+const steps = [
+  { n: 1, t: 'Edit', d: 'Change text, figures or files in the dashboard' },
+  { n: 2, t: 'Save', d: 'The change is stored as a new version' },
+  { n: 3, t: 'Check', d: 'The site is rebuilt, PDFs regenerated, accessibility tested' },
+  { n: 4, t: 'Live', d: 'About four minutes later the public site is updated' },
+];
+---
+<Base lang="en" title="Editing guide" description="How Secretariat and TSU staff update the report microsite without touching code: sign in, edit chapters and headline statements, replace videos and files, publish and undo." path="editing-guide/" type="article" single>
+  <div class="page-head">
+    <div class="wrap narrow">
+      <p class="eyebrow">For editors</p>
+      <h1>Editing guide</h1>
+      <p class="lede">How to update this microsite without touching code. Every change is saved as a version, checked automatically and published in about four minutes.</p>
+    </div>
+  </div>
+
+  <div class="wrap narrow section guide">
+    <ol class="flow" aria-label="What happens when you save">
+      {steps.map((s) => <li><span class="flow-n" aria-hidden="true">{s.n}</span><strong>{s.t}</strong><span>{s.d}</span></li>)}
+    </ol>
+
+    <nav class="guide-toc" aria-label="Contents">
+      <ol>
+        <li><a href="#sign-in">Sign in</a></li>
+        <li><a href="#where">Where to find each part of the site</a></li>
+        <li><a href="#chapter">Edit a chapter</a></li>
+        <li><a href="#headlines">Edit the summary and home page</a></li>
+        <li><a href="#files">Add a downloadable file or image</a></li>
+        <li><a href="#video">Replace the video</a></li>
+        <li><a href="#publish">Publishing, checks and undoing a change</a></li>
+        <li><a href="#tips">Writing for the web: checklist</a></li>
+      </ol>
+    </nav>
+
+    <div class="prose">
+      <h2 id="sign-in">1. Sign in</h2>
+      <ol>
+        <li>Open <a href={url('admin/')}>the editing dashboard</a> (the address of the site followed by <code>/admin/</code>).</li>
+        <li>Click <strong>Sign In with GitHub</strong> and approve the request. Your account must first be given access by the site administrator.</li>
+        <li>The dashboard opens with two sections in the left-hand menu: <strong>Chapters</strong> and <strong>Report &amp; summary</strong>.</li>
+      </ol>
+
+      <h2 id="where">2. Where to find each part of the site</h2>
+      <table class="guide-table">
+        <thead><tr><th scope="col">On the website</th><th scope="col">In the dashboard</th></tr></thead>
+        <tbody>
+          <tr><td>Chapter titles, key messages, text, sources</td><td>Chapters → choose the chapter</td></tr>
+          <tr><td>Which chart appears in a chapter section</td><td>Chapters → section → <em>Figure</em></td></tr>
+          <tr><td>Home page title, introduction and the four key figures</td><td>Report &amp; summary → language</td></tr>
+          <tr><td>Headline statements (A1, B2…) on the Summary page</td><td>Report &amp; summary → <em>Headline statements</em></td></tr>
+          <tr><td>Video on the home page</td><td>Report &amp; summary → <em>Video</em></td></tr>
+          <tr><td>About page</td><td>Report &amp; summary → <em>About page</em></td></tr>
+        </tbody>
+      </table>
+      <p>Menu labels, chart data and figure captions are part of the template; ask the web team to change them.</p>
+
+      <h2 id="chapter">3. Edit a chapter</h2>
+      <ol>
+        <li>Open <strong>Chapters</strong> and click the chapter.</li>
+        <li>Use the language switch at the top of the editor to move between English, French and Chinese, or to show two languages side by side. When you change a fact or a number, update the other languages too, or tell the translators.</li>
+        <li>Each chapter has a <strong>Summary</strong> (also used by search engines), <strong>Key messages</strong> and a list of <strong>Sections</strong>. Each section has a heading, the text and an optional figure.</li>
+        <li>Use the toolbar for <strong>bold</strong>, links and lists. Headings inside the text are not needed: each section already has one.</li>
+        <li>To show a chart after a section, choose it in the <em>Figure</em> list. To remove it, clear the field.</li>
+        <li>To add a section, use the <strong>Add</strong> button at the end of the list; sections can be moved up or down to change their order.</li>
+        <li>Click <strong>Save</strong>.</li>
+      </ol>
+
+      <h2 id="headlines">4. Edit the summary and home page</h2>
+      <ul>
+        <li><strong>Headline statements</strong> keep their identifier (A1, A2, B1…). The letter sets the group: A for the changing climate, B for the future climate, C for responses.</li>
+        <li>Choose the <strong>evidence type</strong> for each statement: <em>Observed</em>, <em>Projected</em> or <em>Reported</em>. The site shows the matching label.</li>
+        <li>Link a statement to its chapter and figure so readers can check the evidence.</li>
+        <li>The four <strong>key figures</strong> on the home page work best as one short number and a one-line explanation.</li>
+      </ul>
+
+      <h2 id="files">5. Add a downloadable file or image</h2>
+      <ol>
+        <li><strong>Images in the text:</strong> in a section’s text, use the <strong>Image</strong> button in the toolbar and upload the picture from your computer.</li>
+        <li><strong>Other files</strong> (PDF, spreadsheet, archive): open <strong>Assets</strong> in the dashboard, upload the file, copy its address, then add it as a link in the text with the link button.</li>
+        <li>Use clear file names, for example <code>chapter-2-figures.zip</code>.</li>
+        <li>For images, always fill in the description (alt text): one or two sentences saying what the image shows, for people who cannot see it.</li>
+      </ol>
+      <p>The full-report and chapter PDFs on the Downloads page are generated automatically from the chapters, so they update themselves when the text changes.</p>
+
+      <h2 id="video">6. Replace the video</h2>
+      <ol>
+        <li>Open the video on YouTube and copy the 11 characters after <code>watch?v=</code> in its address.</li>
+        <li>In <strong>Report &amp; summary → Video</strong>, paste them into <em>YouTube video ID</em> and update the title and description.</li>
+        <li>Check that the video has captions on YouTube.</li>
+      </ol>
+
+      <h2 id="publish">7. Publishing, checks and undoing a change</h2>
+      <ul>
+        <li>After <strong>Save</strong>, the site is rebuilt and checked automatically: pages, PDFs, search index and an accessibility test of every page. The public site updates about four minutes later.</li>
+        <li>If a check fails, the public site <strong>stays as it was</strong> and nothing broken is published. The web team receives the error.</li>
+        <li>Every save is kept as a version with your name and the date. To undo a change, edit the field back and save, or ask the web team to restore an earlier version.</li>
+        <li>For embargoed material, the production set-up adds a private staging site: changes there are visible only to the team until release.</li>
+      </ul>
+
+      <h2 id="tips">8. Writing for the web: checklist</h2>
+      <ul>
+        <li>One idea per paragraph; short sentences; plain words before technical terms.</li>
+        <li>Every number has a source in the chapter’s <em>Sources</em> list.</li>
+        <li>Link text says where it goes (“Download chapter 2, PDF”), never “click here”.</li>
+        <li>Every image and figure has a description.</li>
+        <li>When you change a number, change it everywhere it appears: summary, chapter and key figures.</li>
+      </ul>
+    </div>
+  </div>
+</Base>
+
+<style>
+  .guide .flow { list-style: none; margin: 0 0 2rem; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 0.75rem; counter-reset: none; }
+  .guide .flow li { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 0.9rem 1rem; display: flex; flex-direction: column; gap: 0.2rem; font-size: 0.9rem; color: var(--ink); }
+  .guide .flow strong { color: var(--ink); font-size: 1.05rem; }
+  .guide .flow-n { display: inline-grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: var(--ocean); color: #fff; font-weight: 700; font-size: 0.85rem; margin-bottom: 0.3rem; }
+  .guide-toc { background: var(--tint); border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+  .guide-toc ol { margin: 0; padding-inline-start: 1.2rem; columns: 2 16rem; }
+  .guide-table { border-collapse: collapse; width: 100%; font-size: 0.95rem; margin-bottom: 0.75rem; }
+  .guide-table th, .guide-table td { text-align: start; padding: 0.5rem 0.75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+  .guide-table th { background: var(--tint); }
+  .guide code { background: var(--tint); padding: 0.1em 0.35em; border-radius: 4px; font-size: 0.9em; }
+  .guide h2 { scroll-margin-top: 84px; }
+</style>

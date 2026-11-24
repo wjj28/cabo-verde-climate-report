@@ -56,7 +56,7 @@ collections:
         summary: '{{fields.heading}}'
         fields:
           - { name: heading, label: Heading, widget: string }
-          - { name: body, label: Text, widget: markdown, buttons: [bold, italic, link, bulleted-list, numbered-list], editor_components: [] }
+          - { name: body, label: Text, widget: markdown, buttons: [bold, italic, link, bulleted-list, numbered-list], editor_components: [image] }
           - name: figure
             label: Figure (optional)
             widget: select

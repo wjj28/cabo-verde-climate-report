@@ -458,7 +458,7 @@ main:focus { outline: none; }
 .readout { position: absolute; top: 0; pointer-events: none; background: var(--paper); color: var(--ink); border: 1px solid var(--line); box-shadow: var(--shadow); border-radius: 8px; padding: 0.45rem 0.65rem; font-size: 0.82rem; line-height: 1.45; white-space: nowrap; z-index: 5; }
 .readout b { display: block; font-size: 0.9rem; }
 .readout i { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-inline-end: 6px; background: var(--c); font-style: normal; }
-.guide { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.6; }
+.chart-guide { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 3; opacity: 0.6; }
 .plot[tabindex]:focus-visible { outline-offset: 4px; }
 
 /* lightbox */
@@ -467,7 +467,11 @@ main:focus { outline: none; }
 .lightbox-inner { padding: 1rem 1.25rem 1.5rem; }
 .lightbox-bar { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
 .lightbox-bar h2 { font-size: 1.1rem; margin: 0; }
-.lightbox-body svg { width: 100%; height: auto; max-height: 76vh; }
+.lightbox-body .chart { margin-bottom: 0.75rem; }
+/* the whole chart, legend and caption fit inside the dialog without scrolling */
+.lightbox-body .plot svg { width: 100%; height: auto; max-height: calc(94vh - 16rem); margin-inline: auto; }
+.lightbox-body figcaption { font-size: 0.93rem; color: var(--muted); }
+.lightbox-body figcaption p { margin-bottom: 0.4rem; }
 
 /* figures gallery & downloads */
 .figure-gallery { padding-block: 1rem 4rem; }

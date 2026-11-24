@@ -16,8 +16,10 @@ interface Props {
   type?: 'website' | 'article';
   /** false for utility pages (print, search) that should not appear in search engines or site search */
   index?: boolean;
+  /** page exists in one language only: no hreflang alternates, language menu goes to each home page */
+  single?: boolean;
 }
-const { lang, title, description, path, image = 'og/cover.png', type = 'website', index = true } = Astro.props;
+const { lang, title, description, path, image = 'og/cover.png', type = 'website', index = true, single = false } = Astro.props;
 const s = t(lang);
 const report = await getReport(lang);
 const dir = languages[lang].dir;
@@ -53,8 +55,8 @@ const jsonLd = {
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
-    {langs.map((l) => <link rel="alternate" hreflang={l} href={new URL(url(`${l}/${path}`), Astro.site).href} />)}
-    <link rel="alternate" hreflang="x-default" href={new URL(url(`en/${path}`), Astro.site).href} />
+    {!single && langs.map((l) => <link rel="alternate" hreflang={l} href={new URL(url(`${l}/${path}`), Astro.site).href} />)}
+    {!single && <link rel="alternate" hreflang="x-default" href={new URL(url(`en/${path}`), Astro.site).href} />}
     <meta property="og:type" content={type} />
     <meta property="og:site_name" content={report.title} />
     <meta property="og:title" content={title ?? report.title} />
@@ -103,7 +105,7 @@ const jsonLd = {
             </summary>
             <ul>
               {langs.map((l) => (
-                <li><a href={url(`${l}/${path}`)} hreflang={l} lang={l} aria-current={l === lang ? 'true' : undefined}>{languages[l].name}</a></li>
+                <li><a href={url(single && l !== lang ? `${l}/` : `${l}/${path}`)} hreflang={l} lang={l} aria-current={l === lang ? 'true' : undefined}>{languages[l].name}</a></li>
               ))}
             </ul>
           </details>
