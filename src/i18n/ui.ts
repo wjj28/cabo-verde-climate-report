@@ -52,7 +52,7 @@ const en = {
   contents: 'Contents',
   map: {
     title: 'Map of the Cabo Verde archipelago',
-    desc: 'The ten islands of Cabo Verde in the Atlantic Ocean, about 570 km west of Dakar, Senegal. Barlavento (windward) islands in the north: Santo Antão, São Vicente, Santa Luzia, São Nicolau, Sal and Boa Vista. Sotavento (leeward) islands in the south: Maio, Santiago, Fogo and Brava. The capital, Praia, is on Santiago; Mindelo is on São Vicente.',
+    desc: 'The ten islands of Cabo Verde in the Atlantic Ocean, about 570 km west of Dakar, Senegal. Barlavento (windward) islands in the north: Santo Antão, São Vicente, Santa Luzia, São Nicolau, Sal and Boa Vista. Sotavento (leeward) islands in the south: Maio, Santiago, Fogo and Brava. The capital, Praia, is on Santiago.',
     caption: 'Island outlines: geoBoundaries / OpenStreetMap contributors (ODbL).',
     hint: 'Hover over or tap an island to see its climate',
     area: 'Area',
@@ -185,7 +185,7 @@ const fr: UI = {
   contents: 'Sommaire',
   map: {
     title: 'Carte de l’archipel de Cabo Verde',
-    desc: 'Les dix îles de Cabo Verde dans l’océan Atlantique, à environ 570 km à l’ouest de Dakar (Sénégal). Îles de Barlavento (au vent) au nord : Santo Antão, São Vicente, Santa Luzia, São Nicolau, Sal et Boa Vista. Îles de Sotavento (sous le vent) au sud : Maio, Santiago, Fogo et Brava. La capitale, Praia, se trouve à Santiago ; Mindelo à São Vicente.',
+    desc: 'Les dix îles de Cabo Verde dans l’océan Atlantique, à environ 570 km à l’ouest de Dakar (Sénégal). Îles de Barlavento (au vent) au nord : Santo Antão, São Vicente, Santa Luzia, São Nicolau, Sal et Boa Vista. Îles de Sotavento (sous le vent) au sud : Maio, Santiago, Fogo et Brava. La capitale, Praia, se trouve à Santiago.',
     caption: 'Contours des îles : geoBoundaries / contributeurs OpenStreetMap (ODbL).',
     hint: 'Survolez ou touchez une île pour voir son climat',
     area: 'Superficie',
@@ -316,7 +316,7 @@ const zh: UI = {
   contents: '目录',
   map: {
     title: '佛得角群岛地图',
-    desc: '佛得角的十座岛屿位于大西洋中，在塞内加尔达喀尔以西约570公里。北部向风群岛：圣安唐岛、圣维森特岛、圣卢西亚岛、圣尼古拉岛、萨尔岛和博阿维斯塔岛。南部背风群岛：马尤岛、圣地亚哥岛、福古岛和布拉瓦岛。首都普拉亚位于圣地亚哥岛，明德卢位于圣维森特岛。',
+    desc: '佛得角的十座岛屿位于大西洋中，在塞内加尔达喀尔以西约570公里。北部向风群岛：圣安唐岛、圣维森特岛、圣卢西亚岛、圣尼古拉岛、萨尔岛和博阿维斯塔岛。南部背风群岛：马尤岛、圣地亚哥岛、福古岛和布拉瓦岛。首都普拉亚位于圣地亚哥岛。',
     caption: '岛屿轮廓：geoBoundaries / OpenStreetMap 贡献者（ODbL）。',
     hint: '将鼠标悬停或点击岛屿，查看其气候',
     area: '面积',
