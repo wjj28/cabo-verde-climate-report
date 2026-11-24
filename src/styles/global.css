@@ -178,7 +178,7 @@ main:focus { outline: none; }
 @media (min-width: 1000px) { .hero-inner { grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr); gap: 3rem; } }
 
 /* island map */
-.island-map { margin: 0; background: rgba(6, 28, 41, 0.62); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; padding: 0.6rem 0.6rem 0.4rem; backdrop-filter: blur(3px); width: 100%; max-width: 520px; justify-self: center; }
+.island-map { margin: 0; background: rgba(6, 28, 41, 0.62); border: 1px solid rgba(255, 255, 255, 0.14); border-radius: 14px; padding: 0.6rem 0.6rem 0.4rem; width: 100%; max-width: 520px; justify-self: center; }
 /* keep the whole map inside the first screen on short laptop displays */
 .island-map .map-stage > svg { display: block; width: 100%; height: auto; max-height: calc(100svh - 230px); min-height: 240px; margin-inline: auto; }
 .island-map .land { fill: #f3e2c0; stroke: #fff8ea; stroke-width: 0.8; stroke-linejoin: round; }
@@ -204,10 +204,13 @@ main:focus { outline: none; }
 .island-map .labels text.on { fill: var(--sun); }
 .isl .rain { opacity: 0; transition: opacity 0.25s; pointer-events: none; }
 .isl.on .rain { opacity: 1; }
-.isl .rain line { stroke: #8fdcf0; stroke-width: 1.7; stroke-linecap: round; animation: isl-rain 1s linear infinite paused; }
-.isl.on .rain line { animation-play-state: running; }
+.isl .rain { display: none; }
+.isl.on .rain { display: inline; }
+.isl .rain line { stroke: #8fdcf0; stroke-width: 1.7; stroke-linecap: round; }
+/* animations only exist while an island is active, so the idle map costs nothing */
+.isl.on .rain line { animation: isl-rain 1s linear infinite; }
 @keyframes isl-rain { 0% { transform: translateY(0); opacity: 0; } 15% { opacity: 1; } 85% { opacity: 0.9; } 100% { transform: translateY(var(--fall)); opacity: 0; } }
-@media (prefers-reduced-motion: reduce) { .isl .rain line { animation: none; } .isl.on .rain { opacity: 0.7; } }
+@media (prefers-reduced-motion: reduce) { .isl.on .rain line { animation: none; } .isl.on .rain { opacity: 0.7; } }
 
 .isl-panel { position: absolute; left: 1.5%; top: 40%; width: 45%; font-size: 0.74rem; line-height: 1.35; color: #d7eef5; pointer-events: none; }
 .isl-hint { display: none; margin: 0; gap: 0.4rem; align-items: center; color: #b9d6df; font-weight: 500; }
