@@ -21,8 +21,12 @@ if (!chrome) throw new Error('Chrome/Chromium not found. Set CHROME_PATH.');
 // A separate profile, so headless Chrome does not attach to a Chrome window that is already open
 const profile = join(tmpdir(), 'cv-climate-pdf-profile');
 const PORT = 4399;
-const server = spawn(`npx astro preview --port ${PORT}`, { shell: true, stdio: 'ignore' });
-const base = `http://localhost:${PORT}`;
+const win = process.platform === 'win32';
+// own process group on Linux/macOS so the whole server tree can be stopped afterwards
+const server = spawn(`npx astro preview --port ${PORT}`, { shell: true, stdio: 'ignore', detached: !win });
+// Respect the BASE sub-path (e.g. /repo-name/ on GitHub Pages)
+const BASE = ('/' + (process.env.BASE || '/').replace(/^\/+|\/+$/g, '') + '/').replace('//', '/');
+const base = `http://localhost:${PORT}${BASE.slice(0, -1)}`;
 const wait = async () => {
   for (let i = 0; i < 60; i++) {
     try { if ((await fetch(base + '/en/')).ok) return; } catch {}
@@ -49,6 +53,7 @@ try {
     }
   }
 } finally {
-  server.kill();
-  if (process.platform === 'win32') try { execFileSync('taskkill', ['/pid', String(server.pid), '/T', '/F'], { stdio: 'ignore' }); } catch {}
+  // stop the preview server and its child processes
+  if (win) { try { execFileSync('taskkill', ['/pid', String(server.pid), '/T', '/F'], { stdio: 'ignore' }); } catch {} }
+  else { try { process.kill(-server.pid, 'SIGTERM'); } catch {} }
 }

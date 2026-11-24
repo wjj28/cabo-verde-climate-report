@@ -11,9 +11,13 @@ const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const chrome = [process.env.CHROME_PATH, 'C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', '/usr/bin/google-chrome', '/usr/bin/chromium'].find((p) => p && existsSync(p));
 
 // tiny static server for dist/
+const BASE = ('/' + (process.env.BASE || '/').replace(/^\/+|\/+$/g, '') + '/').replace('//', '/');
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.json': 'application/json', '.csv': 'text/csv', '.pdf': 'application/pdf', '.wasm': 'application/wasm' };
 const server = createServer((req, res) => {
-  let p = join('dist', decodeURIComponent(req.url.split('?')[0]));
+  // pages link to assets under the BASE sub-path (e.g. /repo-name/ on GitHub Pages)
+  let u = decodeURIComponent(req.url.split('?')[0]);
+  if (BASE !== '/' && u.startsWith(BASE)) u = '/' + u.slice(BASE.length);
+  let p = join('dist', u);
   if (existsSync(p) && statSync(p).isDirectory()) p = join(p, 'index.html');
   if (!existsSync(p)) { res.writeHead(404); return res.end(); }
   res.writeHead(200, { 'Content-Type': types[p.slice(p.lastIndexOf('.'))] || 'application/octet-stream' });
@@ -38,7 +42,7 @@ for (const [label, viewport, scheme] of runs) {
     const page = await browser.newPage();
     await page.setViewport(viewport);
     await page.emulateMediaFeatures([{ name: 'prefers-color-scheme', value: scheme }]);
-    await page.goto(`http://localhost:4398${path}`, { waitUntil: 'networkidle0' });
+    await page.goto(`http://localhost:4398${BASE.slice(0, -1)}${path}`, { waitUntil: 'networkidle0' });
     await page.evaluate(axeSource);
     const r = await page.evaluate(() => window.axe.run(document, { runOnly: { type: 'tag', values: ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'wcag22aa', 'best-practice'] } }));
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
