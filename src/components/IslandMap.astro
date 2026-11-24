@@ -1,0 +1,80 @@
+---
+// Map of the Cabo Verde archipelago, drawn as SVG at build time from real boundary data
+// (geoBoundaries, OpenStreetMap contributors, ODbL). No map tiles or scripts are loaded.
+import outline from '../data/cabo-verde-outline.json';
+import { t, type Lang } from '../i18n/ui';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const s = t(lang);
+
+// Equirectangular projection, corrected for latitude so the islands keep their shape.
+const LON0 = -25.5, LON1 = -22.25, LAT0 = 14.62, LAT1 = 17.4;
+const K = 150; // pixels per degree of latitude
+const COS = Math.cos((16 * Math.PI) / 180);
+const W = Math.round((LON1 - LON0) * COS * K);
+const H = Math.round((LAT1 - LAT0) * K);
+const x = (lon: number) => +((lon - LON0) * COS * K).toFixed(1);
+const y = (lat: number) => +((LAT1 - lat) * K).toFixed(1);
+
+const d = outline.polygons
+  .flatMap((poly) => poly.map((ring) => ring.map(([lo, la], i) => `${i ? 'L' : 'M'}${x(lo)},${y(la)}`).join('') + 'Z'))
+  .join('');
+
+const zh = lang === 'zh';
+type L = { name: string; zh: string; lon: number; lat: number; anchor: 'start' | 'middle' | 'end' };
+const islands: L[] = [
+  { name: 'Santo Antão', zh: '圣安唐岛', lon: -25.17, lat: 17.3, anchor: 'middle' },
+  { name: 'São Vicente', zh: '圣维森特岛', lon: -24.83, lat: 16.99, anchor: 'start' },
+  { name: 'Santa Luzia', zh: '圣卢西亚岛', lon: -24.7, lat: 16.62, anchor: 'end' },
+  { name: 'São Nicolau', zh: '圣尼古拉岛', lon: -24.25, lat: 16.42, anchor: 'middle' },
+  { name: 'Sal', zh: '萨尔岛', lon: -23.06, lat: 16.73, anchor: 'end' },
+  { name: 'Boa Vista', zh: '博阿维斯塔岛', lon: -23.02, lat: 16.08, anchor: 'end' },
+  { name: 'Maio', zh: '马尤岛', lon: -22.99, lat: 15.2, anchor: 'start' },
+  { name: 'Santiago', zh: '圣地亚哥岛', lon: -23.84, lat: 15.22, anchor: 'end' },
+  { name: 'Fogo', zh: '福古岛', lon: -24.38, lat: 15.1, anchor: 'middle' },
+  { name: 'Brava', zh: '布拉瓦岛', lon: -24.8, lat: 14.82, anchor: 'end' },
+];
+const cities: L[] = [
+  { name: 'Praia', zh: '普拉亚', lon: -23.51, lat: 14.92, anchor: 'middle' },
+  { name: 'Mindelo', zh: '明德卢', lon: -24.99, lat: 16.89, anchor: 'end' },
+];
+const label = (l: L) => (zh ? l.zh : l.name);
+const graticule = { lats: [15, 16, 17], lons: [-25, -24, -23] };
+const deg = (v: number, pos: string, neg: string) => `${Math.abs(v)}°${v >= 0 ? pos : neg}`;
+const scaleKm = 50;
+const scalePx = (scaleKm / (111.32 * COS)) * COS * K; // 50 km along the parallel
+const dakar = zh ? '达喀尔' : 'Dakar';
+---
+<figure class="island-map">
+  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-labelledby="map-t map-d" xmlns="http://www.w3.org/2000/svg">
+    <title id="map-t">{s.map.title}</title>
+    <desc id="map-d">{s.map.desc}</desc>
+    <g class="grat" aria-hidden="true">
+      {graticule.lats.map((la) => <><line x1="0" x2={W} y1={y(la)} y2={y(la)} /><text x={W - 6} y={y(la) - 5} text-anchor="end">{zh ? `北纬${la}°` : deg(la, 'N', 'S')}</text></>)}
+      {graticule.lons.map((lo) => <><line y1="0" y2={H} x1={x(lo)} x2={x(lo)} /><text x={x(lo) + 5} y={H - 8}>{zh ? `西经${Math.abs(lo)}°` : deg(lo, 'E', 'W')}</text></>)}
+    </g>
+    <path class="land" d={d} />
+    <g class="labels" aria-hidden="true">
+      {islands.map((l) => <text x={x(l.lon)} y={y(l.lat)} text-anchor={l.anchor}>{label(l)}</text>)}
+      {cities.map((c) => (
+        <>
+          <circle cx={x(c.lon)} cy={y(c.lat)} r="4.5" class="city" />
+          {c.anchor === 'end'
+            ? <text class="city-label" x={x(c.lon) - 10} y={y(c.lat) + 17} text-anchor="end">{label(c)}</text>
+            : <text class="city-label" x={x(c.lon)} y={y(c.lat) + 22} text-anchor="middle">{label(c)}</text>}
+        </>
+      ))}
+    </g>
+    <g class="dakar" aria-hidden="true">
+      <path d={`M${x(-22.75)},${y(15.55)} H${W - 10}`} />
+      <path d={`M${W - 18},${y(15.55) - 6} L${W - 9},${y(15.55)} L${W - 18},${y(15.55) + 6}`} />
+      <text x={W - 10} y={y(15.55) - 10} text-anchor="end">{dakar} · 570 km</text>
+    </g>
+    <g class="scale" aria-hidden="true" transform={`translate(${x(-25.4)} ${y(15.55)})`}>
+      <path d={`M0,0 v-5 M0,0 H${scalePx.toFixed(1)} v-5`} />
+      <text x={(scalePx / 2).toFixed(1)} y="16" text-anchor="middle">{scaleKm} km</text>
+    </g>
+  </svg>
+  <figcaption>{s.map.caption}</figcaption>
+</figure>
