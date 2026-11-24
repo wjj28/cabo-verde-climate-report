@@ -5,6 +5,44 @@
   const lang = document.documentElement.lang;
   const nf = new Intl.NumberFormat(lang === 'ar' ? 'ar-u-nu-latn' : lang, { maximumFractionDigits: 2 });
 
+  /* ---- hero height: fill the screen below the notice bar and header ---- */
+  const setChrome = () => {
+    const h = ($('.concept-bar')?.offsetHeight || 0) + ($('.site-header')?.offsetHeight || 0);
+    document.documentElement.style.setProperty('--chrome-h', `${h}px`);
+  };
+  setChrome();
+  window.addEventListener('resize', setChrome, { passive: true });
+
+  /* ---- interactive island map ---- */
+  const map = $('[data-island-map]');
+  if (map) {
+    let pinned = null;
+    const hint = $('.isl-hint', map);
+    const show = (k) => {
+      $$('.isl', map).forEach((g) => g.classList.toggle('on', g.dataset.island === k));
+      $$('.labels text[data-label]', map).forEach((t) => t.classList.toggle('on', t.dataset.label === k));
+      $$('[data-card]', map).forEach((c) => (c.hidden = c.dataset.card !== k));
+      if (hint) hint.hidden = !!k;
+      map.classList.toggle('has-on', !!k);
+    };
+    const reset = () => show(pinned);
+    $$('.isl', map).forEach((g) => {
+      const k = g.dataset.island;
+      g.addEventListener('pointerenter', (e) => { if (e.pointerType === 'mouse') show(k); });
+      g.addEventListener('focus', () => show(k));
+      g.addEventListener('blur', () => setTimeout(() => { if (!map.contains(document.activeElement)) reset(); }, 0));
+      const toggle = () => {
+        pinned = pinned === k ? null : k;
+        $$('.isl', map).forEach((x) => x.setAttribute('aria-pressed', String(x.dataset.island === pinned)));
+        show(pinned ?? k);
+      };
+      g.addEventListener('click', toggle);
+      g.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    });
+    $('svg', map).addEventListener('pointerleave', (e) => { if (e.pointerType === 'mouse') reset(); });
+    map.addEventListener('keydown', (e) => { if (e.key === 'Escape') { pinned = null; show(null); } });
+  }
+
   /* ---- mobile navigation ---- */
   const nav = $('.main-nav');
   const toggle = $('.nav-toggle');

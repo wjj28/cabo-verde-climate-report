@@ -99,3 +99,13 @@ console.log({
   ssp: Object.fromEntries(scen.map((s) => [s, [p[s].tas2041_2060, p[s].tas2081_2100, p[s].tas2081_2100_lo, p[s].tas2081_2100_hi, p[s].pr2081_2100, p[s].tr26_2050, p[s].tr26_2090]])),
   crop: [out.agriculture.cropPeak, out.agriculture.cropLatest], tr26now: p.ssp245.tr26.slice(0, 6).map((x) => x.v),
 });
+
+// Per-island climate (1991–2020 point averages, Open-Meteo / ERA5-Land) + island facts → src/data/islands.json
+const islandRaw = new URL('../data/raw/islands_openmeteo.json', import.meta.url);
+const facts = JSON.parse(readFileSync(new URL('../src/data/island-facts.json', import.meta.url), 'utf8')).islands;
+try {
+  const clim = JSON.parse(readFileSync(islandRaw, 'utf8')).islands;
+  const islands = Object.fromEntries(Object.entries(facts).map(([k, f]) => [k, { ...f, ...(clim[k] ? { prMonthly: clim[k].prMonthly, prAnnual: clim[k].prAnnual, tasAnnual: clim[k].tasAnnual, pointElevation: Math.round(clim[k].gridElevation) } : {}) }]));
+  writeFileSync(new URL('../src/data/islands.json', import.meta.url), JSON.stringify(islands, null, 1));
+  console.log('islands:', Object.entries(islands).map(([k, v]) => `${k} ${v.prAnnual ?? '?'} mm`).join(', '));
+} catch (e) { console.warn('island climate not available yet:', e.message); }

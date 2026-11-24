@@ -1,0 +1,15 @@
+{
+  "source": "Island areas (total 4,033 km²) and summit elevations: standard geographic references for Cabo Verde.",
+  "islands": {
+    "santo-antao": { "name": "Santo Antão", "zh": "圣安唐岛", "area": 779, "peak": "Tope de Coroa", "elevation": 1979, "group": "barlavento" },
+    "sao-vicente": { "name": "São Vicente", "zh": "圣维森特岛", "area": 227, "peak": "Monte Verde", "elevation": 744, "group": "barlavento" },
+    "santa-luzia": { "name": "Santa Luzia", "zh": "圣卢西亚岛", "area": 35, "peak": "Monte Grande", "elevation": 395, "group": "barlavento" },
+    "sao-nicolau": { "name": "São Nicolau", "zh": "圣尼古拉岛", "area": 343, "peak": "Monte Gordo", "elevation": 1312, "group": "barlavento" },
+    "sal": { "name": "Sal", "zh": "萨尔岛", "area": 216, "peak": "Monte Grande", "elevation": 406, "group": "barlavento" },
+    "boa-vista": { "name": "Boa Vista", "zh": "博阿维斯塔岛", "area": 620, "peak": "Monte Estância", "elevation": 387, "group": "barlavento" },
+    "maio": { "name": "Maio", "zh": "马尤岛", "area": 269, "peak": "Monte Penoso", "elevation": 436, "group": "sotavento" },
+    "santiago": { "name": "Santiago", "zh": "圣地亚哥岛", "area": 991, "peak": "Pico da Antónia", "elevation": 1394, "group": "sotavento" },
+    "fogo": { "name": "Fogo", "zh": "福古岛", "area": 476, "peak": "Pico do Fogo", "elevation": 2829, "group": "sotavento" },
+    "brava": { "name": "Brava", "zh": "布拉瓦岛", "area": 67, "peak": "Monte Fontainhas", "elevation": 976, "group": "sotavento" }
+  }
+}
