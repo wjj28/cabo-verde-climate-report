@@ -28,7 +28,8 @@ const walk = (d) => readdirSync(d).forEach((f) => {
 });
 walk('dist');
 
-const browser = await puppeteer.launch({ executablePath: chrome, headless: true });
+// CI runners (Linux containers) need Chrome's sandbox disabled
+const browser = await puppeteer.launch({ executablePath: chrome, headless: true, args: process.env.CI ? ['--no-sandbox'] : [] });
 let total = 0;
 const desktop = { width: 1366, height: 900 }, mobile = { width: 390, height: 844, isMobile: true, deviceScaleFactor: 2 };
 const runs = [['desktop/light', desktop, 'light'], ['desktop/dark', desktop, 'dark'], ['mobile/light', mobile, 'light'], ['mobile/dark', mobile, 'dark']];

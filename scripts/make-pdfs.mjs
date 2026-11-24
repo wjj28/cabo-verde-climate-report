@@ -41,7 +41,7 @@ try {
     for (const part of parts) {
       const out = resolve('public', 'pdf', lang, `${part}.pdf`);
       execFileSync(chrome, [
-        '--headless=new', '--disable-gpu', `--user-data-dir=${profile}`, '--no-pdf-header-footer', '--run-all-compositor-stages-before-draw',
+        '--headless=new', '--disable-gpu', `--user-data-dir=${profile}`, ...(process.env.CI ? ['--no-sandbox'] : []), '--no-pdf-header-footer', '--run-all-compositor-stages-before-draw',
         '--virtual-time-budget=6000', `--print-to-pdf=${out}`, `${base}/${lang}/print/${part}/`,
       ], { stdio: 'ignore' });
       copyFileSync(out, join('dist', 'pdf', lang, `${part}.pdf`));
