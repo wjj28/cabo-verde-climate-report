@@ -1,0 +1,32 @@
+number: 2
+slug: rainfall-drought
+title: 来去无常的雨
+kicker: 降水与干旱
+summary: 佛得角几乎所有的降水都集中在四个月内，而且年际变化很大。多年干旱是这些岛屿历史的一部分。
+keyMessages:
+  - 约84%的年降水量出现在7月至10月，即西非季风到达其最北界的时候。
+  - 年降水量的标准差超过平均值的40%，意味着年与年之间波动极大。
+  - 2017–2019年降水量平均比常年偏少44%，连续三年干旱。
+sections:
+  - heading: 为期四个月的雨季
+    body: |
+      佛得角位于西非季风的北缘。一年中的大部分时间，干燥的东北信风吹过群岛。7月至10月，热带雨带北移到足以抵达群岛的位置，**全年约84%的降水**集中在这四个月。9月通常是降水最多的月份。
+
+      大量降水来自少数几次强降雨过程。一场暴雨就可能带来整个雨季降水量的很大一部分，在陡坡上引发山洪，而在此前后土壤依然干燥。
+    figure: monthlyRain
+  - heading: 湿年与干年
+    body: |
+      没有两个雨季是相同的。1950年以来，群岛年降水量最少时只有1991–2020年平均值的约四分之一（1977年），最多时超过平均值的两倍（1956年）。标准差超过平均值的40%。
+
+      **2017、2018和2019年连续三年干旱**，降水量平均比常年偏少44%。2017年是1950年以来最干旱的三个年份之一。如此长时间的干旱危害尤其严重，因为水库、含水层和牧场在两个雨季之间来不及恢复。
+    figure: rainAnomaly
+  - heading: 季节预测
+    body: |
+      每个雨季来临前，国家气象部门（INMG）都会参与萨赫勒地区PRESASS区域预测进程，发布季节展望。在最近的一个雨季，INMG预测7月至9月“降水正常并有偏多趋势”，约为244毫米。这类展望帮助农民和水资源管理者决定何时种植、种什么，以及需要储存多少水。
+sources:
+  - label: 世界银行气候变化知识门户，佛得角ERA5降水数据，1950–2024年。
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
+  - label: Lusa / Agroportal。INMG对佛得角的季节降水展望（葡萄牙语）。
+    url: https://www.agroportal.pt/cabo-verde-com-chuva-acima-da-media-este-ano/
+  - label: 联合国粮农组织全球信息和预警系统（GIEWS），佛得角国别简报。
+    url: https://www.fao.org/giews/countrybrief/country.jsp?code=CPV

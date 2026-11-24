@@ -1,0 +1,32 @@
+number: 2
+slug: rainfall-drought
+title: Une pluie qui va et vient
+kicker: Pluviométrie et sécheresse
+summary: Presque toute la pluie de Cabo Verde tombe en quatre mois, et sa quantité varie fortement d’une année à l’autre. Les sécheresses pluriannuelles font partie de l’histoire des îles.
+keyMessages:
+  - Environ 84 % de la pluie annuelle tombe de juillet à octobre, lorsque la mousson ouest-africaine atteint sa limite nord.
+  - L’écart type de la pluie annuelle dépasse 40 % de la moyenne, ce qui signifie de très fortes variations d’une année à l’autre.
+  - En 2017–2019, la pluie a été en moyenne inférieure de 44 % à la normale, trois années sèches consécutives.
+sections:
+  - heading: Une saison des pluies de quatre mois
+    body: |
+      Cabo Verde se situe à la limite nord de la mousson ouest-africaine. Pendant la plus grande partie de l’année, des alizés secs de nord-est soufflent sur les îles. De juillet à octobre, la bande de pluies tropicales remonte assez au nord pour atteindre l’archipel, et **environ 84 % de la pluie de l’année** tombe pendant ces quatre mois. Septembre est généralement le mois le plus pluvieux.
+
+      Une grande partie de la pluie tombe lors de quelques épisodes intenses. Un seul orage peut apporter une part importante du total de la saison, provoquant des crues soudaines sur les pentes raides, tandis que le sol reste sec avant et après.
+    figure: monthlyRain
+  - heading: Années humides, années sèches
+    body: |
+      Aucune saison des pluies ne ressemble à une autre. Depuis 1950, la pluie annuelle sur les îles a varié d’environ un quart de la moyenne 1991–2020 (1977) à plus du double (1956). L’écart type dépasse 40 % de la moyenne.
+
+      **2017, 2018 et 2019 ont été trois années sèches consécutives**, avec une pluie inférieure de 44 % à la normale en moyenne. 2017 figure parmi les trois années les plus sèches depuis 1950. Des périodes sèches aussi longues sont particulièrement dommageables, car réservoirs, nappes et pâturages n’ont pas le temps de se reconstituer entre deux saisons.
+    figure: rainAnomaly
+  - heading: Prévisions saisonnières
+    body: |
+      Avant chaque saison des pluies, le service météorologique national (INMG) publie une prévision saisonnière dans le cadre du processus régional PRESASS pour le Sahel. Pour une saison récente, l’INMG a prévu « des pluies normales avec une tendance au-dessus de la normale » de juillet à septembre, soit environ 244 mm. Ces prévisions aident les agriculteurs et les gestionnaires de l’eau à décider quand et quoi semer, et quelle quantité d’eau stocker.
+sources:
+  - label: Banque mondiale, Climate Change Knowledge Portal, Cabo Verde – précipitations ERA5, 1950–2024.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
+  - label: Lusa / Agroportal. Prévision saisonnière des pluies de l’INMG pour Cabo Verde (en portugais).
+    url: https://www.agroportal.pt/cabo-verde-com-chuva-acima-da-media-este-ano/
+  - label: FAO SMIAR (GIEWS), fiche pays Cabo Verde.
+    url: https://www.fao.org/giews/countrybrief/country.jsp?code=CPV

@@ -1,0 +1,31 @@
+number: 3
+slug: agriculture-food
+title: Cultiver aux confins du Sahel
+kicker: Agriculture et sécurité alimentaire
+summary: L’agriculture de Cabo Verde repose surtout sur le maïs et les haricots pluviaux, cultivés en une seule saison courte. Quand la pluie manque, les récoltes manquent aussi.
+keyMessages:
+  - Le maïs et les haricots pluviaux, semés aux premières pluies, sont les principales cultures des petites exploitations de Santiago, Fogo, Santo Antão et São Nicolau.
+  - L’indice FAO de production agricole est passé de 110 en 2013 à 60 en 2024 et ne s’est pas redressé depuis la sécheresse de 2017–2019.
+  - Cabo Verde importe la majeure partie de sa nourriture ; les mauvaises récoltes touchent donc davantage les revenus ruraux et la sécurité alimentaire des ménages que l’approvisionnement national.
+sections:
+  - heading: Une saison, une seule chance
+    body: |
+      Seule une petite partie des terres de Cabo Verde se prête à l’agriculture, surtout sur les îles hautes et escarpées. L’essentiel est cultivé en pluvial : les agriculteurs sèment ensemble maïs et haricots après la première bonne pluie, généralement en juillet ou en août, et récoltent en octobre ou en novembre. Si les pluies commencent tard, s’arrêtent tôt ou tombent en un seul orage, la récolte peut être entièrement perdue.
+
+      L’agriculture irriguée des vallées produit légumes, fruits, canne à sucre et tubercules, mais elle dépend des nappes et des sources, elles-mêmes rechargées par la saison des pluies.
+  - heading: L’empreinte durable de la sécheresse
+    body: |
+      La sécheresse de 2017–2019 a fortement réduit les récoltes. L’indice FAO de production agricole, qui mesure le volume produit par rapport à 2014–2016, est passé de **110 en 2013 à 60 en 2024**. Les statistiques nationales ont fait état d’une production agricole passant d’environ **71 000 tonnes en 2016 à 42 000 tonnes en 2020**.
+
+      La production de maïs s’est redressée en 2022 avec le retour des pluies, mais l’indice montre que la production agricole globale reste bien en dessous de son niveau antérieur. L’élevage a aussi souffert du manque de pâturages et de fourrage, et le gouvernement a mis en place des programmes d’urgence pour protéger le bétail et les revenus ruraux.
+    figure: crop
+  - heading: La recherche face à un climat plus sec
+    body: |
+      L’institut national de recherche agronomique (INIDA) travaille sur les variétés cultivées, la conservation des sols et de l’eau, et des méthodes de culture plus économes en eau. Sa direction estime qu’avec peu de terres irrigables, Cabo Verde doit développer **l’hydroponie, la culture hors sol et l’irrigation goutte à goutte**. Associées aux prévisions saisonnières, ces approches sont au cœur des options d’adaptation du chapitre 5.
+sources:
+  - label: Banque mondiale, données ouvertes. Indice de production agricole (2014–2016 = 100), Cabo Verde.
+    url: https://data.worldbank.org/indicator/AG.PRD.CROP.XD?locations=CV
+  - label: Lusa / Agroportal. Seca reduziu em 40% produção agrícola em Cabo Verde em quatro anos (données de l’INE, en portugais).
+    url: https://bo.agroportal.pt/seca-reduziu-em-40-producao-agricola-em-cabo-verde-em-quatro-anos
+  - label: FAO SMIAR (GIEWS), fiche pays Cabo Verde.
+    url: https://www.fao.org/giews/countrybrief/country.jsp?code=CPV

@@ -1,0 +1,32 @@
+number: 1
+slug: observed-climate
+title: Un archipel qui se réchauffe
+kicker: Température observée, 1950–2024
+summary: La température de Cabo Verde augmente régulièrement depuis les années 1970. Les dernières années sont les plus chaudes de la série de 75 ans.
+keyMessages:
+  - La température moyenne à Cabo Verde a augmenté d’environ 0,1 °C par décennie depuis 1950, et d’environ 0,14 °C par décennie depuis 1980.
+  - La période 2015–2024 a été environ 0,6 °C plus chaude que 1950–1979.
+  - 2023 a été l’année la plus chaude de la série, 1,0 °C au-dessus de la moyenne 1991–2020 ; 2024 a été la troisième.
+sections:
+  - heading: Un climat doux qui se réchauffe
+    body: |
+      Cabo Verde a un climat tropical doux et sec. L’Atlantique qui l’entoure maintient des températures stables toute l’année : la moyenne nationale est d’environ 20 °C en février et 25 °C en septembre, et la moyenne annuelle sur les îles et la mer voisine est d’environ 23 °C.
+
+      Cette stabilité rend le changement à long terme facile à voir. Avant 1980, 25 années sur 30 ont été plus fraîches que la moyenne 1991–2020. Depuis 2020, toutes les années ont été plus chaudes. Les bandes de température montrent ce basculement en un coup d’œil : du bleu à gauche, du rouge à droite.
+    figure: stripes
+  - heading: Année après année
+    body: |
+      La moyenne nationale a augmenté d’environ **0,1 °C par décennie** entre 1950 et 2024. Depuis 1980, le rythme est plus rapide, environ **0,14 °C par décennie**, en phase avec le réchauffement de l’Atlantique tropical.
+
+      **2023 a été l’année la plus chaude de la série**, 1,0 °C au-dessus de la moyenne 1991–2020, devant 2010 et 2024. Les années chaudes à Cabo Verde coïncident souvent avec des températures de surface de la mer exceptionnellement élevées dans l’Atlantique Nord, qui ont atteint des records sur une grande partie du bassin en 2023.
+    figure: tasAnomaly
+  - heading: Pourquoi les moyennes nationales ne sont qu’un début
+    body: |
+      Les valeurs de ce chapitre proviennent d’ERA5, une réanalyse mondiale qui combine observations et modèle météorologique. À cette échelle, les petites îles partagent leurs mailles avec l’océan : la série décrit donc le climat de l’archipel dans son ensemble. Les zones de montagne de Santiago, Fogo et Santo Antão sont plus fraîches et plus humides que cette moyenne ; les îles orientales basses et plates (Sal, Boa Vista, Maio) sont plus chaudes et plus sèches. Les relevés des stations du service météorologique national montreraient ces différences île par île.
+sources:
+  - label: Hersbach, H. et al. (2020). The ERA5 global reanalysis. Quarterly Journal of the Royal Meteorological Society, 146, 1999–2049.
+    url: https://doi.org/10.1002/qj.3803
+  - label: Banque mondiale, Climate Change Knowledge Portal, Cabo Verde – données climatiques historiques.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
+  - label: OMM (2024). État du climat mondial 2023.
+    url: https://wmo.int/publication-series/state-of-global-climate-2023

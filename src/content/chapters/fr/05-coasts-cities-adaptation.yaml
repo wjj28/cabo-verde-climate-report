@@ -1,0 +1,36 @@
+number: 5
+slug: coasts-cities-adaptation
+title: Côtes, villes et adaptation
+kicker: Vivre avec un climat qui change
+summary: La plupart des Cap-Verdiens vivent dans des villes côtières, et l’économie dépend de la mer et du tourisme. L’adaptation porte sur l’eau, les sols, les côtes et l’alerte précoce.
+keyMessages:
+  - Le niveau moyen de la mer a monté d’environ 0,20 m entre 1901 et 2018 et devrait encore monter de 0,32–0,62 m (faibles émissions) à 0,63–1,01 m (très fortes émissions) d’ici 2100.
+  - Praia, Mindelo et les îles touristiques font face à plus de chaleur, à des crues soudaines lors de pluies intenses et à l’érosion côtière.
+  - Le dessalement, l’irrigation goutte à goutte, l’hydroponie, la collecte de l’eau et les prévisions saisonnières forment déjà le cœur de la réponse de Cabo Verde.
+sections:
+  - heading: La montée des mers
+    body: |
+      Selon le GIEC, le niveau moyen mondial de la mer a monté d’**environ 0,20 m entre 1901 et 2018**, et le rythme s’accélère. D’ici 2100, il devrait encore monter de **0,32–0,62 m avec de faibles émissions et de 0,63–1,01 m avec de très fortes émissions**, par rapport à 1995–2014.
+
+      Pour Cabo Verde, cela compte surtout là où habitants, ports, routes et hôtels se trouvent juste au-dessus du rivage : la capitale Praia, la ville portuaire de Mindelo et les stations balnéaires de Sal et de Boa Vista. Une mer plus haute permet aux ondes de tempête de pénétrer plus loin, accélère l’érosion des plages et fait entrer l’eau salée dans les nappes côtières.
+  - heading: Des villes face à la chaleur et aux crues soudaines
+    body: |
+      Praia et Mindelo ont grandi rapidement, souvent avec un habitat informel sur les pentes et dans les lits de rivières asséchés (ribeiras). Ces quartiers sont les plus exposés à deux aléas climatiques : des nuits plus chaudes (chapitre 4) et des crues soudaines lorsqu’un orage intense déverse en quelques heures des semaines de pluie. De récents épisodes de fortes pluies ont endommagé maisons, routes et terres agricoles, et menacé les progrès en matière de sécurité alimentaire.
+  - heading: Ce que Cabo Verde fait déjà
+    body: |
+      L’adaptation à Cabo Verde s’appuie sur des décennies d’expérience de la sécheresse :
+
+      - **L’eau de la mer.** Le dessalement fournit déjà une grande partie de l’eau potable de plusieurs îles, et le gouvernement prévoit d’utiliser l’eau dessalée pour l’agriculture afin qu’elle dépende moins de la pluie.
+      - **Chaque goutte compte.** L’irrigation goutte à goutte, l’hydroponie et la culture hors sol, promues par l’INIDA, produisent plus avec moins d’eau.
+      - **Retenir le sol et l’eau.** Terrasses, barrages de correction et reboisement ralentissent le ruissellement, réduisent l’érosion et rechargent les nappes.
+      - **Savoir ce qui arrive.** Les prévisions saisonnières et les alertes météorologiques de l’INMG donnent aux agriculteurs et à la protection civile le temps de se préparer.
+
+      Le changement climatique rendra chacune de ces mesures plus importante. De meilleurs réseaux d’observation, des données à l’échelle de chaque île et une information climatique ouverte en sont le fondement.
+sources:
+  - label: GIEC (2021). Résumé à l’intention des décideurs, sections A.1.7 et B.5.3. In Changement climatique 2021 – Les éléments scientifiques.
+    url: https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/
+  - label: Lusa / Diário de Notícias. Cabo Verde quer usar água dessalinizada para não depender sempre das chuvas para agricultura (en portugais).
+    url: https://www.dn.pt/lusa/interior/cabo-verde-quer-usar-agua-dessalinizada-para-nao-depender-sempre-das-chuvas-para-agricultura-9068254.html
+  - label: RTP Notícias. Enxurradas ameaçam redução prevista da insegurança alimentar em Cabo Verde (en portugais).
+    url: https://www.rtp.pt/noticias/mundo/enxurradas-ameacam-reducao-prevista-da-inseguranca-alimentar-em-cabo-verde_n1685293
+  - label: Banque mondiale (2025). Rapport national sur le climat et le développement (CCDR), Cabo Verde.

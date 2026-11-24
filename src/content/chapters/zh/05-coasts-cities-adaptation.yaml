@@ -1,0 +1,36 @@
+number: 5
+slug: coasts-cities-adaptation
+title: 海岸、城市与适应
+kicker: 与变化的气候共处
+summary: 大多数佛得角人居住在沿海城镇，经济依赖海洋和旅游业。适应工作集中在水资源、土壤、海岸和早期预警。
+keyMessages:
+  - 1901至2018年间，全球平均海平面上升了约0.20米；到2100年，预计还将上升0.32–0.62米（低排放）至0.63–1.01米（极高排放）。
+  - 普拉亚、明德卢和旅游岛屿将面临更多高温、强降雨引发的山洪以及海岸侵蚀。
+  - 海水淡化、滴灌、水培、集水和季节预测，已经构成佛得角应对措施的核心。
+sections:
+  - heading: 海平面上升
+    body: |
+      根据IPCC的评估，1901至2018年间全球平均海平面**上升了约0.20米**，而且上升速度正在加快。与1995–2014年相比，到2100年海平面预计还将上升：**低排放情景下0.32–0.62米，极高排放情景下0.63–1.01米**。
+
+      对佛得角而言，影响最大的是人口、港口、道路和酒店紧邻海岸线的地方：首都普拉亚、港口城市明德卢，以及萨尔岛和博阿维斯塔岛的海滨度假区。海平面升高会让风暴潮深入更远的内陆，加速海滩侵蚀，并使海水侵入沿海含水层。
+  - heading: 高温与山洪威胁下的城镇
+    body: |
+      普拉亚和明德卢发展迅速，山坡上和干涸河床（当地称为ribeiras）中往往建有非正规住房。这些街区最容易受到两种气候灾害的影响：更热的夜晚（见第4章），以及强暴雨在几小时内倾泻数周雨量所引发的山洪。近年的强降雨事件损毁了房屋、道路和农田，也威胁到粮食安全方面取得的进展。
+  - heading: 佛得角已经在做什么
+    body: |
+      佛得角的适应工作建立在数十年应对干旱的经验之上：
+
+      - **向大海取水。** 海水淡化已为多个岛屿提供了大部分饮用水，政府还计划将淡化水用于农业，减少农业对降雨的依赖。
+      - **珍惜每一滴水。** INIDA推广的滴灌、水培和无土栽培，用更少的水生产更多的粮食。
+      - **留住水土。** 梯田、拦沙坝和植树造林可以减缓径流、减少侵蚀并补给地下水。
+      - **提前知晓。** INMG发布的季节降水展望和天气预警，让农民和民防部门有时间做好准备。
+
+      气候变化将使上述每一项措施都更加重要。更完善的观测网络、逐岛数据和开放的气候信息，是这一切的基础。
+sources:
+  - label: IPCC（2021）。决策者摘要，A.1.7节和B.5.3节。载于《气候变化2021：自然科学基础》。
+    url: https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/
+  - label: Lusa / Diário de Notícias。Cabo Verde quer usar água dessalinizada para não depender sempre das chuvas para agricultura（葡萄牙语）。
+    url: https://www.dn.pt/lusa/interior/cabo-verde-quer-usar-agua-dessalinizada-para-nao-depender-sempre-das-chuvas-para-agricultura-9068254.html
+  - label: RTP Notícias。Enxurradas ameaçam redução prevista da insegurança alimentar em Cabo Verde（葡萄牙语）。
+    url: https://www.rtp.pt/noticias/mundo/enxurradas-ameacam-reducao-prevista-da-inseguranca-alimentar-em-cabo-verde_n1685293
+  - label: 世界银行（2025）。《佛得角国家气候与发展报告》。

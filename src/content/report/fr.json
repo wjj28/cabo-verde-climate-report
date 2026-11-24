@@ -1,0 +1,77 @@
+{
+  "title": "Climat de Cabo Verde 2026",
+  "shortTitle": "Climat de Cabo Verde",
+  "subtitle": "Changements observés, risques futurs et adaptation dans un État insulaire sahélien",
+  "edition": "Édition concept · novembre 2026",
+  "intro": "Les dix îles de Cabo Verde se trouvent à 570 km des côtes de l’Afrique de l’Ouest, à l’extrémité occidentale du Sahel. La pluie tombe en quelques semaines par an, l’agriculture en dépend et la plupart des habitants vivent près de la mer. Ce rapport rassemble des données climatiques publiques pour montrer comment le climat des îles a changé depuis 1950 et comment il pourrait évoluer d’ici 2100.",
+  "stats": [
+    { "value": "+1,0 °C", "label": "2023, l’année la plus chaude depuis 1950, par rapport à 1991–2020" },
+    { "value": "84 %", "label": "de la pluie de l’année tombe de juillet à octobre" },
+    { "value": "−44 %", "label": "de pluie pendant la sécheresse de 2017–2019, par rapport à la normale" },
+    { "value": "−46 %", "label": "baisse de l’indice de production agricole entre 2013 et 2024" }
+  ],
+  "summaryIntro": "Les messages clés ci-dessous résument les principales conclusions du rapport. Chacun renvoie au chapitre et à la figure qui l’étayent. Les étiquettes indiquent si une conclusion repose sur des observations, des projections de modèles ou des chiffres rapportés par des institutions nationales.",
+  "headlines": [
+    {
+      "id": "A1",
+      "statement": "Cabo Verde est plus chaud qu’à aucun autre moment depuis le début de ces relevés, en 1950.",
+      "detail": "La température moyenne des îles a augmenté d’environ 0,1 °C par décennie depuis 1950, et plus vite depuis 1980. Les années 2015–2024 ont été environ 0,6 °C plus chaudes que 1950–1979. 2023 a été l’année la plus chaude de la série, 1,0 °C au-dessus de la moyenne 1991–2020, et 2024 la troisième.",
+      "evidence": "observed",
+      "figure": "stripes",
+      "chapter": "observed-climate"
+    },
+    {
+      "id": "A2",
+      "statement": "La pluie est brève, concentrée et très variable d’une année à l’autre.",
+      "detail": "Environ 84 % de la pluie annuelle tombe de juillet à octobre. La variation entre années est forte : l’écart type de la pluie annuelle dépasse 40 % de la moyenne, et les années les plus sèches depuis 1950 ont reçu moins de la moitié de la normale.",
+      "evidence": "observed",
+      "figure": "monthlyRain",
+      "chapter": "rainfall-drought"
+    },
+    {
+      "id": "A3",
+      "statement": "La sécheresse de 2017–2019 a été l’une des plus graves périodes sèches pluriannuelles de la série, et l’agriculture ne s’en est pas remise.",
+      "detail": "Sur ces trois années, la pluie a été en moyenne inférieure de 44 % à la normale. L’indice FAO de production agricole est passé de 110 en 2013 à 60 en 2024. Les statistiques nationales ont fait état d’une production agricole passant d’environ 71 000 tonnes en 2016 à 42 000 tonnes en 2020.",
+      "evidence": "reported",
+      "figure": "crop",
+      "chapter": "agriculture-food"
+    },
+    {
+      "id": "B1",
+      "statement": "Le réchauffement va se poursuivre ; son ampleur dépend des émissions mondiales.",
+      "detail": "Pour 2081–2100, les modèles projettent des températures annuelles supérieures d’environ 0,9 °C à celles de 1995–2014 avec de faibles émissions (SSP1-2.6), de 1,5 °C avec des émissions intermédiaires (SSP2-4.5) et de 2,9 °C avec de très fortes émissions (SSP5-8.5).",
+      "evidence": "projected",
+      "figure": "projTas",
+      "chapter": "future-climate"
+    },
+    {
+      "id": "B2",
+      "statement": "Les nuits chaudes deviendront courantes, surtout en ville.",
+      "detail": "Les modèles simulent aujourd’hui une douzaine de nuits par an au-dessus de 26 °C. Avec des émissions intermédiaires, ce nombre passe à environ 46 au milieu du siècle et 73 à la fin du siècle ; avec de très fortes émissions, à plus de 130.",
+      "evidence": "projected",
+      "figure": "tropicalNights",
+      "chapter": "future-climate"
+    },
+    {
+      "id": "B3",
+      "statement": "La pluie future est incertaine : la planification doit fonctionner pour des avenirs plus humides comme plus secs.",
+      "detail": "Les médianes des modèles vont d’environ 4 % de pluie annuelle en plus à 12 % en moins à la fin du siècle, selon le scénario. Les fluctuations naturelles d’une année à l’autre resteront plus grandes que toute tendance, et des sécheresses comme celle de 2017–2019 se reproduiront.",
+      "evidence": "projected",
+      "figure": "projRain",
+      "chapter": "future-climate"
+    },
+    {
+      "id": "C1",
+      "statement": "La sécurité de l’eau, la conservation des sols et l’alerte précoce sont au cœur de l’adaptation.",
+      "detail": "Cabo Verde dépend déjà du dessalement pour une grande partie de son eau potable et l’étend à l’agriculture. L’irrigation goutte à goutte, l’hydroponie, la collecte de l’eau et les prévisions saisonnières du service météorologique national aident les agriculteurs à s’organiser autour d’une saison des pluies incertaine.",
+      "evidence": "reported",
+      "chapter": "coasts-cities-adaptation"
+    }
+  ],
+  "video": {
+    "youtubeId": "hrIe1XjZwhI",
+    "title": "État du climat en Afrique 2023 (OMM)",
+    "description": "Contexte régional : un résumé animé de l’Organisation météorologique mondiale sur les effets du changement climatique en Afrique (en anglais)."
+  },
+  "about": "Ce site est un concept indépendant, conçu pour montrer comment un rapport climatique national peut être publié sous forme de microsite statique, accessible et multilingue. Ce n’est pas une publication officielle de l’Instituto Nacional de Meteorologia e Geofísica (INMG), de l’Instituto Nacional de Investigação e Desenvolvimento Agrário (INIDA), de l’Organisation météorologique mondiale, du GIEC ni du Gouvernement de Cabo Verde.\n\n## Données et méthodes\n\n- **Température et pluie observées :** réanalyse ERA5, moyenne sur Cabo Verde, 1950–2024, issue du Climate Change Knowledge Portal de la Banque mondiale. Les anomalies sont calculées par rapport à 1991–2020, la période de référence standard actuelle de l’OMM.\n- **Température mensuelle :** CRU TS 4.08, 1991–2020.\n- **Projections :** ensemble de modèles CMIP6 (médiane, 10e et 90e centiles), lissé, par rapport à la période de référence 1995–2014 utilisée dans le sixième rapport d’évaluation du GIEC.\n- **Agriculture :** indices de production agricole et alimentaire de la FAO, via World Bank Open Data, et chiffres de l’Institut national de la statistique (INE) relayés par l’agence Lusa.\n\n## Limites\n\nLes îles de Cabo Verde sont petites par rapport aux grilles mondiales : les moyennes nationales incluent donc l’océan environnant et lissent les différences entre îles, côtes et montagnes. Les observations des stations de l’INMG donneraient une image plus fine, île par île ; une véritable édition de ce rapport s’appuierait sur elles.\n\n## Comment ce site est construit\n\nDu HTML, du CSS et un peu de JavaScript, générés avec Astro et déployables sur tout hébergement statique ou LAMP. Les graphiques sont produits en SVG lors de la compilation, chacun avec une description textuelle et un tableau de données. Le contenu est modifié par du personnel non technique via un CMS web qui enregistre dans le dépôt ; chaque modification régénère automatiquement le site."
+}

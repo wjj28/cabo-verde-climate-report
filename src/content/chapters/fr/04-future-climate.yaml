@@ -1,0 +1,31 @@
+number: 4
+slug: future-climate
+title: Le climat à venir
+kicker: Projections jusqu’en 2100
+summary: "Les modèles climatiques s’accordent : Cabo Verde va continuer à se réchauffer et les nuits chaudes deviendront bien plus fréquentes. Ils divergent sur la pluie."
+keyMessages:
+  - D’ici 2081–2100, la température annuelle devrait augmenter d’environ 0,9 °C (faibles émissions), 1,5 °C (intermédiaire) ou 2,9 °C (très fortes émissions) par rapport à 1995–2014.
+  - Les nuits au-dessus de 26 °C passent d’une douzaine par an aujourd’hui à environ 73 avec des émissions intermédiaires et plus de 130 avec de très fortes émissions à la fin du siècle.
+  - Les modèles ne s’accordent pas sur une hausse ou une baisse de la pluie annuelle ; les années de sécheresse continueront de se produire.
+sections:
+  - heading: De combien plus chaud ?
+    body: |
+      Les projections de ce chapitre proviennent de l’ensemble CMIP6, les modèles climatiques mondiaux évalués dans le sixième rapport d’évaluation du GIEC. Trois scénarios décrivent différents avenirs pour les émissions mondiales de gaz à effet de serre, de fortes réductions (SSP1-2.6) à une croissance continue (SSP5-8.5).
+
+      Les scénarios diffèrent peu jusqu’en 2040 environ : le réchauffement des deux prochaines décennies est déjà largement déterminé. Ensuite, les trajectoires divergent. En 2081–2100, le réchauffement médian à Cabo Verde est **d’environ 0,9 °C avec de faibles émissions, 1,5 °C avec des émissions intermédiaires et 2,9 °C avec de très fortes émissions**, avec une fourchette de 2,0 à 3,9 °C selon les modèles dans le scénario le plus élevé. Utilisez les cases au-dessus du graphique pour comparer les scénarios.
+    figure: projTas
+  - heading: Des nuits plus chaudes
+    body: |
+      Dans un climat maritime comme celui de Cabo Verde, les nuits chaudes comptent davantage pour la santé que les journées chaudes. Quand la température reste élevée la nuit, le corps ne récupère pas de la chaleur de la journée, et les effets sont les plus forts dans les quartiers urbains denses et mal ventilés.
+
+      Les modèles simulent actuellement une douzaine de nuits par an avec une température minimale supérieure à 26 °C. Avec des émissions intermédiaires, ce nombre passe à **environ 46 au milieu du siècle et 73 à la fin du siècle**. Avec de très fortes émissions, plus d’un tiers des nuits dépasseraient ce seuil.
+    figure: tropicalNights
+  - heading: Une pluie incertaine
+    body: |
+      Les projections de pluie pour l’extrémité ouest du Sahel sont bien moins certaines que celles de température. Les médianes des modèles vont **d’environ 4 % de plus à 12 % de moins** de pluie annuelle à la fin du siècle, et les modèles ne s’accordent pas sur le sens du changement. Ce qui est certain, c’est que la variabilité naturelle restera forte : des années sèches comme 2017–2019 et des années très humides continueront de se produire, et la hausse des températures rendra les années sèches plus dommageables en augmentant l’évaporation.
+    figure: projRain
+sources:
+  - label: GIEC (2021). Résumé à l’intention des décideurs. In Changement climatique 2021 – Les éléments scientifiques. Contribution du Groupe de travail I au sixième rapport d’évaluation.
+    url: https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/
+  - label: Banque mondiale, Climate Change Knowledge Portal, Cabo Verde – projections CMIP6.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
