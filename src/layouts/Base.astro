@@ -75,7 +75,7 @@ const jsonLd = {
   <body>
     <a class="skip-link" href="#main">{s.skip}</a>
     <aside class="concept-bar" aria-label={s.concept}>
-      <div class="wrap"><strong>{s.concept}.</strong> <span>{s.conceptLong}</span></div>
+      <div class="wrap"><strong>{s.concept}</strong><span class="concept-text">{s.conceptShort}</span><a href={url(`${lang}/about/`)}>{s.learnMore}</a></div>
     </aside>
     <header class="site-header">
       <div class="wrap header-inner">

@@ -83,8 +83,16 @@ const icons = ['thermo', 'rain', 'crop', 'future', 'coast'];
 
   {r.video && (
     <section class="wrap section video-section" aria-labelledby="vid-h">
-      <div><h2 id="vid-h">{s.watch}</h2></div>
-      <Video id={r.video.youtubeId} title={r.video.title} description={r.video.description} lang={lang} />
+      <div class="video-text">
+        <p class="eyebrow">{s.watch}</p>
+        <h2 id="vid-h">{r.video.title}</h2>
+        <p>{r.video.description}</p>
+        <p class="video-note">
+          <svg aria-hidden="true" viewBox="0 0 24 24" width="16" height="16"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+          {s.videoNote}
+        </p>
+      </div>
+      <Video id={r.video.youtubeId} title={r.video.title} lang={lang} meta={false} />
     </section>
   )}
 

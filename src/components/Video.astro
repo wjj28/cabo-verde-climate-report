@@ -2,8 +2,8 @@
 // Privacy-friendly, fast YouTube embed: shows a local poster and only loads the
 // youtube-nocookie.com player after the visitor presses play. Works as a plain link without JS.
 import { t, type Lang } from '../i18n/ui';
-interface Props { id: string; title: string; description?: string; lang: Lang }
-const { id, title, description, lang } = Astro.props;
+interface Props { id: string; title: string; description?: string; lang: Lang; /** show title/description under the player (off when the page lays them out itself) */ meta?: boolean }
+const { id, title, description, lang, meta = true } = Astro.props;
 const s = t(lang);
 ---
 <div class="video" data-video={id} data-title={title}>
@@ -13,4 +13,4 @@ const s = t(lang);
       <span class="visually-hidden">{s.playVideo}: {title}</span></span>
   </a>
 </div>
-<p class="video-meta"><strong>{title}</strong>{description && <> — {description}</>}<br /><small>{s.videoNote}</small></p>
+{meta && <p class="video-meta"><strong>{title}</strong>{description && <> — {description}</>}<br /><small>{s.videoNote}</small></p>}
