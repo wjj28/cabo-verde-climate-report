@@ -1,6 +1,7 @@
 // Generates the full-report and chapter PDFs for every language from the print pages,
 // using headless Chrome. Run after `npm run build`:  npm run pdf
-// Output: public/pdf/<lang>/report.pdf and chapter-N.pdf (copied into dist/ too).
+// Output: <PDF_STORE>/<lang>/report.pdf and chapter-N.pdf (copied into <OUT_DIR>/pdf too).
+// OUT_DIR and PDF_STORE select the microsite (defaults: dist and public/pdf for the main report).
 import { spawn, execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readdirSync, copyFileSync, statSync } from 'node:fs';
 import { join, resolve } from 'node:path';
@@ -20,6 +21,8 @@ if (!chrome) throw new Error('Chrome/Chromium not found. Set CHROME_PATH.');
 
 // A separate profile, so headless Chrome does not attach to a Chrome window that is already open
 const profile = join(tmpdir(), 'cv-climate-pdf-profile');
+const DIST = (process.env.OUT_DIR || 'dist').replace(/^\.\//, '');
+const STORE = process.env.PDF_STORE || (process.env.REPORT && process.env.REPORT !== 'main' ? `data/pdf-${process.env.REPORT}` : 'public/pdf');
 const PORT = 4399;
 const win = process.platform === 'win32';
 // own process group on Linux/macOS so the whole server tree can be stopped afterwards
@@ -37,18 +40,18 @@ const wait = async () => {
 
 try {
   await wait();
-  const langs = readdirSync('dist').filter((d) => existsSync(join('dist', d, 'print')));
+  const langs = readdirSync(DIST).filter((d) => existsSync(join(DIST, d, 'print')));
   for (const lang of langs) {
-    const parts = readdirSync(join('dist', lang, 'print'));
-    mkdirSync(join('public', 'pdf', lang), { recursive: true });
-    mkdirSync(join('dist', 'pdf', lang), { recursive: true });
+    const parts = readdirSync(join(DIST, lang, 'print'));
+    mkdirSync(join(STORE, lang), { recursive: true });
+    mkdirSync(join(DIST, 'pdf', lang), { recursive: true });
     for (const part of parts) {
-      const out = resolve('public', 'pdf', lang, `${part}.pdf`);
+      const out = resolve(STORE, lang, `${part}.pdf`);
       execFileSync(chrome, [
         '--headless=new', '--disable-gpu', `--user-data-dir=${profile}`, ...(process.env.CI ? ['--no-sandbox'] : []), '--no-pdf-header-footer', '--run-all-compositor-stages-before-draw',
         '--virtual-time-budget=6000', `--print-to-pdf=${out}`, `${base}/${lang}/print/${part}/`,
       ], { stdio: 'ignore' });
-      copyFileSync(out, join('dist', 'pdf', lang, `${part}.pdf`));
+      copyFileSync(out, join(DIST, 'pdf', lang, `${part}.pdf`));
       console.log(`${out}  ${Math.round(statSync(out).size / 1024)} KB`);
     }
   }

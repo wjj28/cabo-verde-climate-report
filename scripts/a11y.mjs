@@ -10,14 +10,15 @@ const require = createRequire(import.meta.url);
 const axeSource = readFileSync(require.resolve('axe-core/axe.min.js'), 'utf8');
 const chrome = [process.env.CHROME_PATH, 'C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe', '/usr/bin/google-chrome', '/usr/bin/chromium'].find((p) => p && existsSync(p));
 
-// tiny static server for dist/
+// tiny static server for the built site (OUT_DIR, default dist/)
+const DIST = (process.env.OUT_DIR || 'dist').replace(/^\.\//, '');
 const BASE = ('/' + (process.env.BASE || '/').replace(/^\/+|\/+$/g, '') + '/').replace('//', '/');
 const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css', '.js': 'text/javascript', '.svg': 'image/svg+xml', '.png': 'image/png', '.woff2': 'font/woff2', '.json': 'application/json', '.csv': 'text/csv', '.pdf': 'application/pdf', '.wasm': 'application/wasm' };
 const server = createServer((req, res) => {
   // pages link to assets under the BASE sub-path (e.g. /repo-name/ on GitHub Pages)
   let u = decodeURIComponent(req.url.split('?')[0]);
   if (BASE !== '/' && u.startsWith(BASE)) u = '/' + u.slice(BASE.length);
-  let p = join('dist', u);
+  let p = join(DIST, u);
   if (existsSync(p) && statSync(p).isDirectory()) p = join(p, 'index.html');
   if (!existsSync(p)) { res.writeHead(404); return res.end(); }
   res.writeHead(200, { 'Content-Type': types[p.slice(p.lastIndexOf('.'))] || 'application/octet-stream' });
@@ -28,9 +29,9 @@ const pages = [];
 const walk = (d) => readdirSync(d).forEach((f) => {
   const p = join(d, f);
   if (statSync(p).isDirectory()) { if (!/(_astro|pagefind|admin|print|pdf|data)$/.test(p)) walk(p); }
-  else if (f === 'index.html' && p !== join('dist', 'index.html')) pages.push('/' + d.slice(5).replace(/\\/g, '/') + '/');
+  else if (f === 'index.html' && p !== join(DIST, 'index.html')) pages.push('/' + d.slice(DIST.length + 1).replace(/\\/g, '/') + '/');
 });
-walk('dist');
+walk(DIST);
 
 // CI runners (Linux containers) need Chrome's sandbox disabled
 const browser = await puppeteer.launch({ executablePath: chrome, headless: true, args: process.env.CI ? ['--no-sandbox'] : [] });

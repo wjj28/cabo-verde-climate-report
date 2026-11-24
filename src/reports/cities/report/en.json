@@ -1,0 +1,57 @@
+{
+  "title": "Climate and Cities: Praia",
+  "shortTitle": "Climate and Cities",
+  "subtitle": "How a growing capital lives with hotter nights and heavier rain",
+  "edition": "Concept edition · November 2026",
+  "intro": "More than three in four Cabo Verdeans now live in towns and cities, and Praia, the capital on the island of Santiago, is by far the largest. This short report looks at what a changing climate means for the city: more frequent hot nights, rare but intense rainstorms, and fast growth on hillsides and in dry riverbeds. It is built from the same template as the national report.",
+  "stats": [
+    { "value": "78%", "label": "of Cabo Verde’s population lived in urban areas in 2025, up from 44% in 1990" },
+    { "value": "4×", "label": "more hot nights (above 25 °C) in Praia in 2000–2019 than in 1950–1979" },
+    { "value": "139 mm", "label": "of rain fell in Praia on 12 September 2020, close to a normal year in one day" },
+    { "value": "46%", "label": "of urban residents lived in informal settlements in 2022, down from 71% in 2000" }
+  ],
+  "summaryIntro": "These headline statements summarise how climate and city growth meet in Praia. Each links to the chapter and figure behind it. Labels show whether a finding comes from observations, model projections or official statistics.",
+  "groups": { "A": "A growing city in a changing climate", "B": "The climate ahead", "C": "Responding in the city" },
+  "headlines": [
+    {
+      "id": "A1",
+      "statement": "Cabo Verde has become an urban country.",
+      "detail": "The share of the population living in urban areas rose from 44% in 1990 to 78% in 2025. Praia is the largest city, and much of its growth has taken place on steep hillsides and along dry riverbeds (ribeiras).",
+      "evidence": "reported",
+      "figure": "urban",
+      "chapter": "growing-capital"
+    },
+    {
+      "id": "A2",
+      "statement": "Hot nights in Praia have become far more common since the 1990s.",
+      "detail": "Nights when the temperature stays above 25 °C averaged fewer than 9 a year in 1950–1979, but 39 a year in the 2000s and 34 in the 2010s. The number swings strongly from year to year with the temperature of the surrounding ocean: 2020–2024 averaged 12.",
+      "evidence": "observed",
+      "figure": "praiaNights",
+      "chapter": "hotter-nights"
+    },
+    {
+      "id": "A3",
+      "statement": "A single storm can bring a year’s rain in one day.",
+      "detail": "On 12 September 2020, 139 mm of rain fell on Praia, close to the 182 mm of a normal year (1991–2020). In most years the wettest day brings 20 to 40 mm. Short, intense rain on steep, built-up slopes is what turns into flash floods.",
+      "evidence": "observed",
+      "figure": "praiaRainMax",
+      "chapter": "heavy-rain"
+    },
+    {
+      "id": "B1",
+      "statement": "Hot nights will keep increasing.",
+      "detail": "Across Cabo Verde, models project nights above 26 °C to rise from about a dozen a year today to about 46 by mid-century under intermediate emissions, and to more than 130 by the end of the century under very high emissions.",
+      "evidence": "projected",
+      "figure": "tropicalNights",
+      "chapter": "hotter-nights"
+    },
+    {
+      "id": "C1",
+      "statement": "Informal neighbourhoods are the most exposed, and have improved the most.",
+      "detail": "The share of urban residents living in informal settlements fell from 71% in 2000 to 46% in 2022, but it is still close to half. Drainage, keeping ribeiras clear, shade and ventilation, and early warnings protect these neighbourhoods first.",
+      "evidence": "reported",
+      "chapter": "growing-capital"
+    }
+  ],
+  "about": "This site is an independent concept, built from the same template as the [Climate of Cabo Verde](../../en/) report microsite to show how one design system and code base can produce several report microsites with their own content and colours. It is not an official publication of the Municipality of Praia, INMG, UN-Habitat, WMO, the IPCC or the Government of Cabo Verde.\n\n## Data and methods\n\n- **Praia temperature and rainfall:** daily ERA5 / ERA5-Land reanalysis at the grid point nearest Praia, 1950–2024, from the Open-Meteo Historical Weather API (CC BY 4.0). Hot nights are days whose minimum temperature is 25 °C or more.\n- **Projections:** nights above 26 °C for Cabo Verde as a whole, from the CMIP6 ensemble via the World Bank Climate Change Knowledge Portal (shared with the national report).\n- **Urbanisation:** World Bank Open Data, urban population (% of total) and population living in slums (% of urban population).\n\n## Limitations\n\nA reanalysis grid point describes an area of several kilometres that includes the sea, not a single street. Urban heat-island effects are therefore not captured, and real night-time temperatures in dense neighbourhoods are likely higher. Station observations held by INMG would give a sharper picture."
+}

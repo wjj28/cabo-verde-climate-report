@@ -9,6 +9,7 @@ export default defineConfig({
   site,
   base,
   output: 'static',
+  outDir: process.env.OUT_DIR || './dist',
   trailingSlash: 'always',
   build: { format: 'directory', inlineStylesheets: 'auto' },
   i18n: {

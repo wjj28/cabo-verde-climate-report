@@ -1,0 +1,31 @@
+number: 3
+slug: heavy-rain
+title: Heavy rain and flash floods
+kicker: Extreme rainfall
+summary: Praia gets little rain, but it can arrive all at once. On steep, built-up slopes, a few hours of intense rain become flash floods.
+keyMessages:
+  - Praia receives about 182 mm of rain in a normal year (1991–2020), almost all of it between July and October.
+  - In most years the wettest day brings 20 to 40 mm; on 12 September 2020, 139 mm fell in a single day.
+  - Keeping ribeiras clear, building drainage and issuing early warnings reduce the damage that flash floods cause.
+sections:
+  - heading: A year’s rain in a day
+    body: |
+      Rain in Praia is scarce and concentrated in a short season. In a typical year, the wettest single day brings **20 to 40 mm**. Occasionally, a much stronger storm arrives: on **12 September 2020, 139 mm** fell in one day, close to the **182 mm** of a normal year. The next-highest day in the 75-year record, 118 mm, was in 1952.
+
+      Events like these are rare, so a long record is needed to see them. Their impact depends less on the total than on how fast the rain falls and where it runs.
+    figure: praiaRainMax
+  - heading: Living with the ribeiras
+    body: |
+      When intense rain falls on Praia’s steep, hard surfaces, water collects in the ribeiras within minutes. Homes, roads and markets built in or beside these channels are the first to be hit, and debris carried by the water can block culverts and bridges.
+
+      The most effective responses are often simple:
+
+      - **Keep the ribeiras clear** of buildings, waste and debris, so that water can pass.
+      - **Drain and pave** streets in hillside neighbourhoods, so that rain does not carve gullies.
+      - **Warn early.** Weather warnings from the national meteorological service, passed on by civil protection and local radio, give families time to move away from the channels.
+      - **Hold water back** upstream with terraces, check dams and reforestation, which also recharge groundwater.
+sources:
+  - label: Open-Meteo Historical Weather API, ERA5 / ERA5-Land daily reanalysis, grid point nearest Praia (CC BY 4.0).
+    url: https://open-meteo.com/en/docs/historical-weather-api
+  - label: RTP Notícias. Enxurradas ameaçam redução prevista da insegurança alimentar em Cabo Verde.
+    url: https://www.rtp.pt/noticias/mundo/enxurradas-ameacam-reducao-prevista-da-inseguranca-alimentar-em-cabo-verde_n1685293

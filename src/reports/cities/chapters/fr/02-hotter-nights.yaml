@@ -1,0 +1,31 @@
+number: 2
+slug: hotter-nights
+title: Des nuits plus chaudes
+kicker: Température nocturne
+summary: Les nuits de Praia se sont réchauffées depuis les années 1950, et les nuits qui restent au-dessus de 25 °C sont devenues bien plus fréquentes. Les modèles en prévoient beaucoup plus.
+keyMessages:
+  - Les nuits au-dessus de 25 °C étaient en moyenne moins de 9 par an en 1950–1979, mais 39 par an dans les années 2000 et 34 dans les années 2010.
+  - Leur nombre varie fortement d’une année à l’autre avec la température de l’océan environnant ; 12 par an en moyenne en 2020–2024.
+  - Pour l’ensemble de Cabo Verde, les nuits au-dessus de 26 °C devraient atteindre environ 46 par an au milieu du siècle avec des émissions intermédiaires.
+sections:
+  - heading: Des nuits qui ne rafraîchissent pas
+    body: |
+      Pour la santé, les nuits chaudes comptent autant que les journées chaudes. Quand la température reste élevée après le coucher du soleil, le corps ne récupère pas de la chaleur du jour, et les personnes vivant dans des logements petits et mal ventilés sont les plus touchées.
+
+      La température nocturne (minimale) moyenne de Praia sur 1991–2020 était d’environ **22,0 °C**. Les bandes montrent comment chaque année se situait par rapport à cette moyenne : plus fraîche la plupart des années avant les années 1980, plus chaude dans les années 2000, et variable depuis 2010.
+    figure: praiaStripes
+  - heading: Compter les nuits chaudes
+    body: |
+      Une mesure simple est le nombre de nuits par an où la température ne descend pas sous **25 °C**. À Praia, cela arrivait moins de 9 fois par an en moyenne en 1950–1979. Ce nombre est passé à **39 par an dans les années 2000** et **34 dans les années 2010**, avec plus de 50 nuits de ce type en 2005, 2006, 2009, 2010, 2012 et 2015.
+
+      Les années depuis 2020 ont été plus calmes, avec 12 nuits chaudes par an en moyenne. Ces variations suivent la température de l’Atlantique environnant, ce qui explique qu’une décennie puisse être très différente de la suivante. La tendance de fond est le passage des années 1950–1970 aux années 2000.
+    figure: praiaNights
+  - heading: Et ensuite
+    body: |
+      Les modèles climatiques pour l’ensemble de Cabo Verde projettent une hausse continue des nuits chaudes. Avec un seuil un peu plus élevé de 26 °C, le nombre de nuits par an passe d’une douzaine aujourd’hui à **environ 46 au milieu du siècle** avec des émissions intermédiaires, et à plus de 130 à la fin du siècle avec de très fortes émissions. En ville, où les bâtiments et les surfaces revêtues stockent la chaleur, les nuits seront encore plus chaudes.
+    figure: tropicalNights
+sources:
+  - label: Open-Meteo, API Historical Weather, réanalyse quotidienne ERA5 / ERA5-Land, point de grille le plus proche de Praia (CC BY 4.0).
+    url: https://open-meteo.com/en/docs/historical-weather-api
+  - label: Banque mondiale, Climate Change Knowledge Portal, Cabo Verde – projections CMIP6.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde

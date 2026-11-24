@@ -28,7 +28,7 @@ const groups = (['A', 'B', 'C'] as const).map((g) => ({ g, items: r.headlines.fi
   <div class="wrap narrow prose-wrap">
     {groups.map(({ g, items }) => (
       <section class="hl-group" aria-labelledby={`g-${g}`}>
-        <h2 id={`g-${g}`}><span class="group-letter">{g}</span> {s.groups[g]}</h2>
+        <h2 id={`g-${g}`}><span class="group-letter">{g}</span> {r.groups?.[g] ?? s.groups[g]}</h2>
         {items.map((h) => {
           const f = h.figure ? getFigure(h.figure) : undefined;
           const ch = chapters.find((c) => c.slug === h.chapter);

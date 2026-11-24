@@ -1,0 +1,31 @@
+number: 3
+slug: heavy-rain
+title: 强降雨与山洪
+kicker: 极端降水
+summary: 普拉亚雨水稀少，但可能集中在一次降下。在陡峭的建成区，几个小时的强降雨就会变成山洪。
+keyMessages:
+  - 普拉亚正常年份（1991–2020年）降水约182毫米，几乎全部集中在7月至10月。
+  - 大多数年份降水最多的一天为20至40毫米；2020年9月12日一天就降雨139毫米。
+  - 清理河床、修建排水设施和发布早期预警，可以减少山洪造成的损失。
+sections:
+  - heading: 一天下了一年的雨
+    body: |
+      普拉亚的降雨稀少，且集中在短暂的雨季。在普通年份，降水最多的一天为**20至40毫米**。偶尔会出现强得多的暴雨：**2020年9月12日一天降雨139毫米**，接近正常年份全年的**182毫米**。在75年的记录中排第二的是1952年的118毫米。
+
+      这类事件很少见，需要很长的记录才能看到。其影响与其说取决于总雨量，不如说取决于雨下得有多快、水流向哪里。
+    figure: praiaRainMax
+  - heading: 与河床共处
+    body: |
+      强降雨落在普拉亚陡峭而坚硬的地表上时，雨水会在几分钟内汇入河床（ribeiras）。建在河床中或河床旁的房屋、道路和市场首当其冲，水流携带的杂物还可能堵塞涵洞和桥梁。
+
+      最有效的应对措施往往很简单：
+
+      - **清理河床**中的建筑、垃圾和杂物，让水流通过。
+      - 为山坡社区的街道**修建排水并铺装路面**，避免雨水冲出沟壑。
+      - **尽早预警。** 国家气象部门发布、由民防部门和地方电台转达的天气预警，让家庭有时间远离河道。
+      - 在上游通过梯田、拦沙坝和植树造林**蓄水**，同时补给地下水。
+sources:
+  - label: Open-Meteo历史天气API，ERA5 / ERA5-Land逐日再分析，距普拉亚最近的网格点（CC BY 4.0）。
+    url: https://open-meteo.com/en/docs/historical-weather-api
+  - label: RTP Notícias。Enxurradas ameaçam redução prevista da insegurança alimentar em Cabo Verde（葡萄牙语）。
+    url: https://www.rtp.pt/noticias/mundo/enxurradas-ameacam-reducao-prevista-da-inseguranca-alimentar-em-cabo-verde_n1685293

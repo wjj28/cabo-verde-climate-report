@@ -1,0 +1,26 @@
+number: 1
+slug: growing-capital
+title: A growing capital
+kicker: Urbanisation
+summary: In one generation Cabo Verde has gone from a mostly rural country to a mostly urban one. Praia has absorbed much of that growth.
+keyMessages:
+  - The share of the population living in urban areas rose from 44% in 1990 to 78% in 2025.
+  - Much of Praia’s growth has taken place on steep hillsides and along dry riverbeds, the places most exposed to heat and flash floods.
+  - The share of urban residents living in informal settlements fell from 71% in 2000 to 46% in 2022.
+sections:
+  - heading: From rural to urban
+    body: |
+      In 1990, fewer than half of Cabo Verdeans lived in towns and cities. By 2025 the share had reached **78%**. Drought years, the search for work and education, and the growth of services and tourism all pulled people from rural areas towards the main towns, above all Praia.
+
+      Urban growth brings better access to water, electricity, health care and schools. It also concentrates people, buildings and economic activity in a small area, which changes how climate hazards are felt.
+    figure: urban
+  - heading: Where the city grows
+    body: |
+      Praia is built on plateaus separated by steep valleys and dry riverbeds, the **ribeiras**. As the city grew, many new neighbourhoods were built informally on hillsides and in or next to these riverbeds, often without drainage or paved streets.
+
+      The share of urban residents living in informal settlements has fallen sharply, from **71% in 2000 to 46% in 2022**, as housing and infrastructure programmes reached more neighbourhoods. Close to half, however, still live in areas where hot nights and flash floods are felt most.
+sources:
+  - label: World Bank Open Data. Urban population (% of total population), Cabo Verde.
+    url: https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=CV
+  - label: World Bank Open Data. Population living in slums (% of urban population), Cabo Verde.
+    url: https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=CV

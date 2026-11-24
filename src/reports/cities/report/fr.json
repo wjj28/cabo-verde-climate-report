@@ -1,0 +1,57 @@
+{
+  "title": "Climat et villes : Praia",
+  "shortTitle": "Climat et villes",
+  "subtitle": "Comment une capitale en croissance vit avec des nuits plus chaudes et des pluies plus fortes",
+  "edition": "Édition concept · novembre 2026",
+  "intro": "Plus de trois Cap-Verdiens sur quatre vivent aujourd’hui en ville, et Praia, la capitale, sur l’île de Santiago, est de loin la plus grande. Ce court rapport examine ce que le changement climatique signifie pour la ville : des nuits chaudes plus fréquentes, des orages rares mais intenses, et une croissance rapide sur les pentes et dans les lits de rivières asséchés. Il est réalisé avec le même modèle que le rapport national.",
+  "stats": [
+    { "value": "78 %", "label": "de la population de Cabo Verde vivait en zone urbaine en 2025, contre 44 % en 1990" },
+    { "value": "4×", "label": "plus de nuits chaudes (au-dessus de 25 °C) à Praia en 2000–2019 qu’en 1950–1979" },
+    { "value": "139 mm", "label": "de pluie sont tombés sur Praia le 12 septembre 2020, presque une année normale en un jour" },
+    { "value": "46 %", "label": "des citadins vivaient dans des quartiers informels en 2022, contre 71 % en 2000" }
+  ],
+  "summaryIntro": "Ces messages clés résument la rencontre entre climat et croissance urbaine à Praia. Chacun renvoie au chapitre et à la figure qui l’étayent. Les étiquettes indiquent si une conclusion provient d’observations, de projections de modèles ou de statistiques officielles.",
+  "groups": { "A": "Une ville qui grandit dans un climat qui change", "B": "Le climat à venir", "C": "Agir en ville" },
+  "headlines": [
+    {
+      "id": "A1",
+      "statement": "Cabo Verde est devenu un pays urbain.",
+      "detail": "La part de la population vivant en zone urbaine est passée de 44 % en 1990 à 78 % en 2025. Praia est la plus grande ville, et une grande partie de sa croissance s’est faite sur des pentes raides et le long des lits de rivières asséchés (ribeiras).",
+      "evidence": "reported",
+      "figure": "urban",
+      "chapter": "growing-capital"
+    },
+    {
+      "id": "A2",
+      "statement": "Les nuits chaudes sont devenues bien plus fréquentes à Praia depuis les années 1990.",
+      "detail": "Les nuits où la température reste au-dessus de 25 °C étaient en moyenne moins de 9 par an en 1950–1979, mais 39 par an dans les années 2000 et 34 dans les années 2010. Leur nombre varie fortement d’une année à l’autre avec la température de l’océan : 12 par an en moyenne en 2020–2024.",
+      "evidence": "observed",
+      "figure": "praiaNights",
+      "chapter": "hotter-nights"
+    },
+    {
+      "id": "A3",
+      "statement": "Un seul orage peut apporter la pluie d’une année en un jour.",
+      "detail": "Le 12 septembre 2020, 139 mm de pluie sont tombés sur Praia, presque les 182 mm d’une année normale (1991–2020). La plupart des années, le jour le plus pluvieux apporte 20 à 40 mm. C’est la pluie courte et intense sur des pentes raides et bâties qui provoque les crues soudaines.",
+      "evidence": "observed",
+      "figure": "praiaRainMax",
+      "chapter": "heavy-rain"
+    },
+    {
+      "id": "B1",
+      "statement": "Les nuits chaudes vont continuer d’augmenter.",
+      "detail": "Pour l’ensemble de Cabo Verde, les modèles projettent que les nuits au-dessus de 26 °C passeront d’une douzaine par an aujourd’hui à environ 46 au milieu du siècle avec des émissions intermédiaires, et à plus de 130 à la fin du siècle avec de très fortes émissions.",
+      "evidence": "projected",
+      "figure": "tropicalNights",
+      "chapter": "hotter-nights"
+    },
+    {
+      "id": "C1",
+      "statement": "Les quartiers informels sont les plus exposés, et ceux qui ont le plus progressé.",
+      "detail": "La part des citadins vivant dans des quartiers informels est passée de 71 % en 2000 à 46 % en 2022, mais elle reste proche de la moitié. Le drainage, le dégagement des ribeiras, l’ombre et la ventilation, ainsi que l’alerte précoce protègent d’abord ces quartiers.",
+      "evidence": "reported",
+      "chapter": "growing-capital"
+    }
+  ],
+  "about": "Ce site est un concept indépendant, réalisé avec le même modèle que le microsite [Climat de Cabo Verde](../../fr/) pour montrer comment un même système de design et un même code peuvent produire plusieurs microsites de rapports, chacun avec son contenu et ses couleurs. Ce n’est pas une publication officielle de la municipalité de Praia, de l’INMG, d’ONU-Habitat, de l’OMM, du GIEC ni du Gouvernement de Cabo Verde.\n\n## Données et méthodes\n\n- **Température et pluie à Praia :** réanalyse quotidienne ERA5 / ERA5-Land au point de grille le plus proche de Praia, 1950–2024, via l’API Historical Weather d’Open-Meteo (CC BY 4.0). Une nuit chaude est un jour dont la température minimale atteint 25 °C ou plus.\n- **Projections :** nuits au-dessus de 26 °C pour l’ensemble de Cabo Verde, ensemble CMIP6 via le Climate Change Knowledge Portal de la Banque mondiale (comme dans le rapport national).\n- **Urbanisation :** données ouvertes de la Banque mondiale, population urbaine (% du total) et population vivant dans des bidonvilles (% de la population urbaine).\n\n## Limites\n\nUn point de grille de réanalyse décrit une zone de plusieurs kilomètres qui inclut la mer, et non une rue. L’effet d’îlot de chaleur urbain n’est donc pas pris en compte, et les nuits dans les quartiers denses sont probablement plus chaudes. Les observations des stations de l’INMG donneraient une image plus fine."
+}

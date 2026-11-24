@@ -66,6 +66,7 @@ const en = {
   },
   conceptShort: 'Not an official publication of INMG, INIDA, WMO or the IPCC. Data from the public sources cited.',
   learnMore: 'About this site',
+  alsoTemplate: 'Also built from this template:',
   allFigures: 'All figures',
   figuresIntro: 'Every figure in the report, with its data. Figures can be downloaded and reused with attribution to the original data sources.',
   downloadsIntro: 'The full report and each chapter as PDF, plus the data behind every figure.',
@@ -88,6 +89,30 @@ const en = {
   units: { c: '°C', mm: 'mm', pct: '%', days: 'days', index: 'index' },
   scen: { hist: 'Historical (models)', ssp126: 'Low emissions (SSP1-2.6)', ssp245: 'Intermediate (SSP2-4.5)', ssp585: 'Very high emissions (SSP5-8.5)' },
   fig: {
+    urban: {
+      title: 'Share of the population living in urban areas, 1990–2025',
+      caption: 'Percentage of Cabo Verde’s population living in towns and cities. Praia, the capital, is the largest.',
+      alt: 'Line chart from 1990 to 2025. The urban share rises steadily from 44% in 1990 to 78% in 2025.',
+      y: 'Urban population (%)',
+    },
+    praiaStripes: {
+      title: 'Praia night-time temperature stripes, 1950–2024',
+      caption: 'Each stripe is one year’s average minimum (night-time) temperature in Praia, from cooler (blue) to warmer (red) than the 1991–2020 average of 22.0 °C.',
+      alt: 'A row of 75 coloured stripes. Mostly blue from the 1950s to the 1980s, more red in the 2000s, and mixed colours since 2010.',
+    },
+    praiaNights: {
+      title: 'Hot nights in Praia: nights per year with a minimum above 25 °C',
+      caption: 'Number of nights each year when the temperature in Praia does not fall below 25 °C. Hot nights became much more frequent from the 1990s, with large swings from year to year.',
+      alt: 'Bar chart from 1950 to 2024. Fewer than 10 nights a year on average in the 1950s to 1970s; peaks above 50 nights in 2005, 2006, 2009, 2010, 2012 and 2015; 12 a year on average in 2020 to 2024.',
+      y: 'Nights per year',
+    },
+    praiaRainMax: {
+      title: 'Wettest day of each year in Praia, 1950–2024',
+      caption: 'Largest one-day rainfall each year. A single day can bring a large part of a year’s rain; on 12 September 2020, 139 mm fell, close to a whole normal year (182 mm).',
+      alt: 'Bar chart from 1950 to 2024. Most years’ wettest day brings 20 to 40 mm. 2020 stands out at 139 mm, followed by 118 mm in 1952.',
+      y: 'Rain on the wettest day (mm)',
+      date: 'Date',
+    },
     stripes: {
       title: 'Cabo Verde temperature stripes, 1950–2024',
       caption: 'Each stripe is one year’s average temperature over Cabo Verde, from cooler (blue) to warmer (red) than the 1991–2020 average.',
@@ -199,6 +224,7 @@ const fr: UI = {
   },
   conceptShort: 'Ce n’est pas une publication officielle de l’INMG, de l’INIDA, de l’OMM ou du GIEC. Données issues des sources publiques citées.',
   learnMore: 'À propos du site',
+  alsoTemplate: 'Également réalisé avec ce modèle :',
   allFigures: 'Toutes les figures',
   figuresIntro: 'Toutes les figures du rapport, avec leurs données. Elles peuvent être téléchargées et réutilisées en citant les sources des données.',
   downloadsIntro: 'Le rapport complet et chaque chapitre en PDF, ainsi que les données de chaque figure.',
@@ -221,6 +247,30 @@ const fr: UI = {
   units: { c: '°C', mm: 'mm', pct: '%', days: 'jours', index: 'indice' },
   scen: { hist: 'Historique (modèles)', ssp126: 'Faibles émissions (SSP1-2.6)', ssp245: 'Intermédiaire (SSP2-4.5)', ssp585: 'Très fortes émissions (SSP5-8.5)' },
   fig: {
+    urban: {
+      title: 'Part de la population vivant en zone urbaine, 1990–2025',
+      caption: 'Pourcentage de la population de Cabo Verde vivant dans les villes. Praia, la capitale, est la plus grande.',
+      alt: 'Graphique linéaire de 1990 à 2025. La part urbaine augmente régulièrement, de 44 % en 1990 à 78 % en 2025.',
+      y: 'Population urbaine (%)',
+    },
+    praiaStripes: {
+      title: 'Bandes de température nocturne à Praia, 1950–2024',
+      caption: 'Chaque bande représente la température minimale (nocturne) moyenne d’une année à Praia, de plus fraîche (bleu) à plus chaude (rouge) que la moyenne 1991–2020 de 22,0 °C.',
+      alt: 'Une rangée de 75 bandes colorées. Surtout du bleu des années 1950 aux années 1980, plus de rouge dans les années 2000, et des couleurs mêlées depuis 2010.',
+    },
+    praiaNights: {
+      title: 'Nuits chaudes à Praia : nuits par an avec un minimum supérieur à 25 °C',
+      caption: 'Nombre de nuits par an où la température à Praia ne descend pas sous 25 °C. Les nuits chaudes sont devenues bien plus fréquentes à partir des années 1990, avec de fortes variations d’une année à l’autre.',
+      alt: 'Diagramme en barres de 1950 à 2024. Moins de 10 nuits par an en moyenne des années 1950 aux années 1970 ; des pics de plus de 50 nuits en 2005, 2006, 2009, 2010, 2012 et 2015 ; 12 par an en moyenne de 2020 à 2024.',
+      y: 'Nuits par an',
+    },
+    praiaRainMax: {
+      title: 'Jour le plus pluvieux de chaque année à Praia, 1950–2024',
+      caption: 'Pluie maximale tombée en un jour chaque année. Un seul jour peut apporter une grande partie de la pluie de l’année : le 12 septembre 2020, 139 mm sont tombés, presque une année normale entière (182 mm).',
+      alt: 'Diagramme en barres de 1950 à 2024. Le jour le plus pluvieux apporte le plus souvent 20 à 40 mm. 2020 se distingue avec 139 mm, suivie de 1952 avec 118 mm.',
+      y: 'Pluie du jour le plus pluvieux (mm)',
+      date: 'Date',
+    },
     stripes: {
       title: 'Bandes de température de Cabo Verde, 1950–2024',
       caption: 'Chaque bande représente la température moyenne d’une année à Cabo Verde, de plus froide (bleu) à plus chaude (rouge) que la moyenne 1991–2020.',
@@ -330,6 +380,7 @@ const zh: UI = {
   },
   conceptShort: '并非INMG、INIDA、世界气象组织或IPCC的官方出版物。数据来自文中引用的公开来源。',
   learnMore: '关于本网站',
+  alsoTemplate: '同一模板制作的另一网站：',
   allFigures: '全部图表',
   figuresIntro: '报告中的全部图表及其数据。图表可下载并重复使用，但须注明原始数据来源。',
   downloadsIntro: '完整报告及各章节的 PDF 文件，以及每幅图表背后的数据。',
@@ -352,6 +403,30 @@ const zh: UI = {
   units: { c: '°C', mm: '毫米', pct: '%', days: '天', index: '指数' },
   scen: { hist: '历史（模式）', ssp126: '低排放（SSP1-2.6）', ssp245: '中等排放（SSP2-4.5）', ssp585: '极高排放（SSP5-8.5）' },
   fig: {
+    urban: {
+      title: '城市人口比例，1990–2025年',
+      caption: '佛得角居住在城镇的人口百分比。首都普拉亚是最大的城市。',
+      alt: '折线图，1990至2025年。城市人口比例从1990年的44%稳步上升到2025年的78%。',
+      y: '城市人口（%）',
+    },
+    praiaStripes: {
+      title: '普拉亚夜间气温条纹图，1950–2024年',
+      caption: '每一条代表普拉亚一年的平均最低（夜间）气温，颜色从低于（蓝色）到高于（红色）1991–2020年平均值22.0 °C。',
+      alt: '一排75条彩色条纹。1950至1980年代以蓝色为主，2000年代红色较多，2010年以来颜色交错。',
+    },
+    praiaNights: {
+      title: '普拉亚的炎热夜晚：每年最低气温高于25 °C的夜数',
+      caption: '每年普拉亚气温不低于25 °C的夜晚数。自1990年代起，炎热夜晚明显增多，且年际波动很大。',
+      alt: '柱状图，1950至2024年。1950至1970年代平均每年不到10晚；2005、2006、2009、2010、2012和2015年超过50晚；2020至2024年平均每年12晚。',
+      y: '每年夜数',
+    },
+    praiaRainMax: {
+      title: '普拉亚每年降水最多的一天，1950–2024年',
+      caption: '每年单日最大降水量。一天的降雨就可能占全年降水的很大一部分：2020年9月12日降雨139毫米，接近正常年份的全年总量（182毫米）。',
+      alt: '柱状图，1950至2024年。大多数年份降水最多的一天为20至40毫米。2020年以139毫米最为突出，其次是1952年的118毫米。',
+      y: '最大单日降水（毫米）',
+      date: '日期',
+    },
     stripes: {
       title: '佛得角气温条纹图，1950–2024年',
       caption: '每一条代表佛得角一年的平均气温，颜色从低于（蓝色）到高于（红色）1991–2020年平均值。',

@@ -1,5 +1,6 @@
 node_modules/
 dist/
+dist-cities/
 .astro/
 .env
 .DS_Store

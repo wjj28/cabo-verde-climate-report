@@ -2,6 +2,9 @@
 // Editing guide for non-technical staff (training material). English only.
 import Base from '../../layouts/Base.astro';
 import { url } from '../../lib/url';
+import { REPORT } from '../../lib/report';
+// the editing dashboard lives on the main site
+const admin = url(REPORT === 'main' ? 'admin/' : '../admin/');
 
 const steps = [
   { n: 1, t: 'Edit', d: 'Change text, figures or files in the dashboard' },
@@ -40,7 +43,7 @@ const steps = [
     <div class="prose">
       <h2 id="sign-in">1. Sign in</h2>
       <ol>
-        <li>Open <a href={url('admin/')}>the editing dashboard</a> (the address of the site followed by <code>/admin/</code>).</li>
+        <li>Open <a href={admin}>the editing dashboard</a> (the address of the site followed by <code>/admin/</code>).</li>
         <li>Click <strong>Sign In with GitHub</strong> and approve the request. Your account must first be given access by the site administrator.</li>
         <li>The dashboard opens with two sections in the left-hand menu: <strong>Chapters</strong> and <strong>Report &amp; summary</strong>.</li>
       </ol>

@@ -1,0 +1,31 @@
+number: 3
+slug: heavy-rain
+title: Pluies intenses et crues soudaines
+kicker: Pluies extrêmes
+summary: Praia reçoit peu de pluie, mais elle peut tomber d’un seul coup. Sur des pentes raides et bâties, quelques heures de pluie intense deviennent des crues soudaines.
+keyMessages:
+  - Praia reçoit environ 182 mm de pluie en année normale (1991–2020), presque entièrement de juillet à octobre.
+  - La plupart des années, le jour le plus pluvieux apporte 20 à 40 mm ; le 12 septembre 2020, 139 mm sont tombés en un seul jour.
+  - Dégager les ribeiras, construire des drainages et diffuser des alertes précoces réduisent les dégâts des crues soudaines.
+sections:
+  - heading: La pluie d’une année en un jour
+    body: |
+      À Praia, la pluie est rare et concentrée sur une courte saison. En année ordinaire, le jour le plus pluvieux apporte **20 à 40 mm**. Parfois, un orage bien plus fort arrive : le **12 septembre 2020, 139 mm** sont tombés en un jour, presque les **182 mm** d’une année normale. Le deuxième jour le plus pluvieux des 75 années de données, 118 mm, date de 1952.
+
+      Ces événements sont rares, et il faut une longue série pour les voir. Leur impact dépend moins du total que de la vitesse à laquelle la pluie tombe et de l’endroit où elle s’écoule.
+    figure: praiaRainMax
+  - heading: Vivre avec les ribeiras
+    body: |
+      Quand une pluie intense tombe sur les surfaces raides et dures de Praia, l’eau se concentre dans les ribeiras en quelques minutes. Les maisons, les routes et les marchés construits dans ces lits ou à leur bord sont touchés en premier, et les débris charriés peuvent boucher les buses et les ponts.
+
+      Les réponses les plus efficaces sont souvent simples :
+
+      - **Dégager les ribeiras** des constructions, des déchets et des débris, pour laisser passer l’eau.
+      - **Drainer et paver** les rues des quartiers en pente, pour que la pluie ne creuse pas de ravines.
+      - **Alerter tôt.** Les alertes météorologiques du service national, relayées par la protection civile et les radios locales, donnent aux familles le temps de s’éloigner des lits.
+      - **Retenir l’eau** en amont grâce aux terrasses, aux barrages de correction et au reboisement, qui rechargent aussi les nappes.
+sources:
+  - label: Open-Meteo, API Historical Weather, réanalyse quotidienne ERA5 / ERA5-Land, point de grille le plus proche de Praia (CC BY 4.0).
+    url: https://open-meteo.com/en/docs/historical-weather-api
+  - label: RTP Notícias. Enxurradas ameaçam redução prevista da insegurança alimentar em Cabo Verde (en portugais).
+    url: https://www.rtp.pt/noticias/mundo/enxurradas-ameacam-reducao-prevista-da-inseguranca-alimentar-em-cabo-verde_n1685293

@@ -6,7 +6,8 @@ import Evidence from '../../components/Evidence.astro';
 import IslandMap from '../../components/IslandMap.astro';
 import { t, chapterLabel, type Lang } from '../../i18n/ui';
 import { getReport, getChapters } from '../../lib/content';
-import { figures } from '../../lib/figures';
+import { figures, figureNumber, getFigure } from '../../lib/figures';
+import { reportConfig } from '../../lib/report';
 import { url } from '../../lib/url';
 import { langPaths } from '../../lib/paths';
 
@@ -15,13 +16,15 @@ const lang = Astro.params.lang as Lang;
 const s = t(lang);
 const r = await getReport(lang);
 const chapters = await getChapters(lang);
-const stripes = figures.find((f) => f.key === 'stripes')!;
+// hero background: the report's stripes figure; hero aside: island map or a highlight figure
+const stripes = figures.find((f) => f.spec(lang).kind === 'stripes')!;
+const heroFig = reportConfig.heroAside === 'figure' ? getFigure(reportConfig.heroFigure!) : undefined;
 const icons = ['thermo', 'rain', 'crop', 'future', 'coast'];
 ---
 <Base lang={lang} description={r.intro} path="">
   <section class="hero">
     <div class="hero-stripes" aria-hidden="true">
-      <Chart stretch spec={stripes.spec(lang)} id="hero-stripes" title={s.fig.stripes.title} desc={s.fig.stripes.alt} lang={lang} />
+      <Chart stretch spec={stripes.spec(lang)} id="hero-stripes" title={s.fig[stripes.key].title} desc={s.fig[stripes.key].alt} lang={lang} />
     </div>
     <div class="wrap hero-inner">
       <div class="hero-text">
@@ -35,9 +38,16 @@ const icons = ['thermo', 'rain', 'crop', 'future', 'coast'];
           <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
           {s.downloadReport} <span class="muted">(PDF)</span></a>
       </div>
-      <p class="hero-credit"><a href={url(`${lang}/chapters/observed-climate/#fig-temperature-stripes`)}>{s.figure} 1</a> · {s.fig.stripes.title}</p>
+      <p class="hero-credit"><a href={url(`${lang}/chapters/${stripes.chapter}/#fig-${stripes.slug}`)}>{s.figure} {figureNumber(stripes.key)}</a> · {s.fig[stripes.key].title}</p>
       </div>
-      <IslandMap lang={lang} />
+      {reportConfig.heroAside === 'islands' && <IslandMap lang={lang} />}
+      {heroFig && (
+        <figure class="hero-figure">
+          <p class="hf-title">{s.fig[heroFig.key].title}</p>
+          <Chart spec={heroFig.spec(lang)} id="hero-fig" title={s.fig[heroFig.key].title} desc={s.fig[heroFig.key].alt} lang={lang} />
+          <figcaption><a href={url(`${lang}/chapters/${heroFig.chapter}/#fig-${heroFig.slug}`)}>{s.figure} {figureNumber(heroFig.key)}</a> · {heroFig.source}</figcaption>
+        </figure>
+      )}
     </div>
   </section>
 

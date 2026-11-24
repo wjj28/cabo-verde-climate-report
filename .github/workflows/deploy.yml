@@ -1,4 +1,5 @@
 # Build, test and deploy on every push to main (including content saved from the CMS).
+# One template, two microsites: dist/ (Climate of Cabo Verde) and dist/cities/ (Climate and Cities: Praia).
 # 1. GitHub Pages: live demo.
 # 2. Optional: the same static files to an Apache/LAMP host over SFTP (set the LAMP_* secrets).
 name: Build and deploy
@@ -29,12 +30,8 @@ jobs:
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
       - run: npm ci
-      - name: Build site and search index
-        run: npm run build
-      - name: Generate PDFs from the print pages
-        run: npm run pdf && npm run build
-      - name: Accessibility check (axe-core, WCAG 2.2 AA)
-        run: npm run test:a11y
+      - name: Build both microsites (pages, search, PDFs, accessibility check)
+        run: bash scripts/build-all.sh
       - uses: actions/upload-pages-artifact@v3
         with: { path: dist }
 
@@ -59,7 +56,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 22, cache: npm }
-      - run: npm ci && npm run build && npm run pdf && npm run build
+      - run: npm ci && SKIP_A11Y=1 bash scripts/build-all.sh
       - name: Upload to Apache host
         run: |
           sudo apt-get install -y lftp

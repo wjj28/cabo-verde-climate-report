@@ -1,11 +1,15 @@
 // Content model. These files are what editors change through the CMS at /admin/.
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { reportConfig } from './lib/report';
+
+// Each microsite reads its own content folder (see src/lib/report.ts).
+const DIR = reportConfig.contentDir;
 
 const evidence = z.enum(['observed', 'projected', 'reported']);
 
 const report = defineCollection({
-  loader: glob({ pattern: '*.json', base: './src/content/report' }),
+  loader: glob({ pattern: '*.json', base: `${DIR}/report` }),
   schema: z.object({
     title: z.string(),
     shortTitle: z.string(),
@@ -26,12 +30,14 @@ const report = defineCollection({
     ),
     video: z.object({ youtubeId: z.string(), title: z.string(), description: z.string() }).optional(),
     about: z.string(),
+    /** optional headings for the A/B/C groups of headline statements */
+    groups: z.object({ A: z.string(), B: z.string(), C: z.string() }).optional(),
   }),
 });
 
 const chapters = defineCollection({
   // id = "<lang>/<file>" (the default would use the `slug` field, which repeats across languages)
-  loader: glob({ pattern: '*/*.{yaml,yml}', base: './src/content/chapters', generateId: ({ entry }) => entry.replace(/\.ya?ml$/, '') }),
+  loader: glob({ pattern: '*/*.{yaml,yml}', base: `${DIR}/chapters`, generateId: ({ entry }) => entry.replace(/\.ya?ml$/, '') }),
   schema: z.object({
     number: z.number(),
     slug: z.string(),

@@ -5,7 +5,8 @@ import { W, H, M, scale, ticks, extent, linePath, bandPath, stripeColor, type Ch
 
 interface Props { spec: ChartSpec; id: string; title: string; desc: string; lang: string; /** stretch to fill its box (decorative backgrounds) */ stretch?: boolean }
 const { spec, id, title, desc, lang, stretch = false } = Astro.props;
-const nf = (v: number) => new Intl.NumberFormat(lang === 'ar' ? 'ar-u-nu-latn' : lang, { maximumFractionDigits: 1 }).format(v);
+// round first so tiny negatives never print as "-0"
+const nf = (v: number) => new Intl.NumberFormat(lang === 'ar' ? 'ar-u-nu-latn' : lang, { maximumFractionDigits: 1 }).format(Math.round(v * 10) / 10 || 0);
 const iw = W - M.l - M.r;
 const ih = H - M.t - M.b;
 
@@ -17,7 +18,7 @@ if (spec.kind === 'stripes') {
   const max = Math.max(...spec.points.map((p) => Math.abs(p.y)));
   const w = W / n;
   body = spec.points
-    .map((p, i) => `<rect x="${(i * w).toFixed(2)}" y="0" width="${(w + 0.6).toFixed(2)}" height="${H - 24}" fill="${stripeColor(p.y, max)}"><title>${p.x}: ${p.y > 0 ? '+' : ''}${nf(p.y)} °C</title></rect>`)
+    .map((p, i) => `<rect x="${(i * w).toFixed(2)}" y="0" width="${(w + 0.6).toFixed(2)}" height="${H - 24}" fill="${stripeColor(p.y, max)}"><title>${p.x}: ${Math.round(p.y * 10) > 0 ? '+' : ''}${nf(p.y)} °C</title></rect>`)
     .join('');
   const first = spec.points[0].x, last = spec.points[n - 1].x;
   body += `<text class="tick" x="2" y="${H - 6}">${first}</text><text class="tick" x="${W - 2}" y="${H - 6}" text-anchor="end">${last}</text>`;

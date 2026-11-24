@@ -3,8 +3,11 @@
 import data from '../data/climate.json';
 import { t, type Lang } from '../i18n/ui';
 import type { ChartSpec } from './chart';
+import { REPORT } from './report';
+import { citiesFigures } from './figures-cities';
 
-export type FigKey = 'stripes' | 'tasAnomaly' | 'monthlyRain' | 'rainAnomaly' | 'crop' | 'projTas' | 'tropicalNights' | 'projRain';
+export type FigKey = 'stripes' | 'tasAnomaly' | 'monthlyRain' | 'rainAnomaly' | 'crop' | 'projTas' | 'tropicalNights' | 'projRain'
+  | 'urban' | 'praiaStripes' | 'praiaNights' | 'praiaRainMax';
 
 type Table = { head: string[]; rows: (string | number)[][] };
 export interface Figure {
@@ -24,7 +27,7 @@ const ERA5 = 'ERA5 reanalysis (ECMWF/Copernicus), national average, via World Ba
 const CMIP6 = 'CMIP6 multi-model ensemble, via World Bank Climate Change Knowledge Portal';
 const scenKeys = ['ssp126', 'ssp245', 'ssp585'] as const;
 
-export const figures: Figure[] = [
+const mainFigures: Figure[] = [
   {
     key: 'stripes', slug: 'temperature-stripes', chapter: 'observed-climate', source: ERA5, sourceUrl: CCKP,
     spec: () => ({ kind: 'stripes', points: o.tas.map((d) => ({ x: d.y, y: d.a })) }),
@@ -99,6 +102,9 @@ export const figures: Figure[] = [
     }),
   },
 ];
+
+/** Figures of the report being built (see src/lib/report.ts). */
+export const figures: Figure[] = REPORT === 'cities' ? citiesFigures(mainFigures.find((f) => f.key === 'tropicalNights')!) : mainFigures;
 
 export const figureNumber = (key: FigKey) => figures.findIndex((f) => f.key === key) + 1;
 export const getFigure = (key: string) => figures.find((f) => f.key === key);

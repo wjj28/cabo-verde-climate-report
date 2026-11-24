@@ -1,0 +1,26 @@
+number: 1
+slug: growing-capital
+title: Une capitale qui grandit
+kicker: Urbanisation
+summary: En une génération, Cabo Verde est passé d’un pays surtout rural à un pays surtout urbain. Praia a absorbé une grande partie de cette croissance.
+keyMessages:
+  - La part de la population vivant en zone urbaine est passée de 44 % en 1990 à 78 % en 2025.
+  - Une grande partie de la croissance de Praia s’est faite sur des pentes raides et le long des lits de rivières asséchés, les lieux les plus exposés à la chaleur et aux crues soudaines.
+  - La part des citadins vivant dans des quartiers informels est passée de 71 % en 2000 à 46 % en 2022.
+sections:
+  - heading: Du rural à l’urbain
+    body: |
+      En 1990, moins de la moitié des Cap-Verdiens vivaient en ville. En 2025, cette part atteignait **78 %**. Les années de sécheresse, la recherche d’un emploi et d’une formation, et l’essor des services et du tourisme ont attiré la population des zones rurales vers les principales villes, surtout Praia.
+
+      La croissance urbaine améliore l’accès à l’eau, à l’électricité, aux soins et à l’école. Elle concentre aussi les personnes, les bâtiments et l’activité économique sur un petit territoire, ce qui change la manière dont les aléas climatiques sont ressentis.
+    figure: urban
+  - heading: Là où la ville s’étend
+    body: |
+      Praia est bâtie sur des plateaux séparés par des vallées escarpées et des lits de rivières asséchés, les **ribeiras**. Avec la croissance de la ville, de nombreux quartiers se sont construits de manière informelle sur les pentes et dans ou au bord de ces lits, souvent sans drainage ni rues pavées.
+
+      La part des citadins vivant dans des quartiers informels a fortement diminué, de **71 % en 2000 à 46 % en 2022**, grâce aux programmes de logement et d’infrastructures. Près de la moitié vit cependant encore là où les nuits chaudes et les crues soudaines se font le plus sentir.
+sources:
+  - label: Banque mondiale, données ouvertes. Population urbaine (% de la population totale), Cabo Verde.
+    url: https://data.worldbank.org/indicator/SP.URB.TOTL.IN.ZS?locations=CV
+  - label: Banque mondiale, données ouvertes. Population vivant dans des bidonvilles (% de la population urbaine), Cabo Verde.
+    url: https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=CV

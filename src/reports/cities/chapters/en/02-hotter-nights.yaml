@@ -1,0 +1,31 @@
+number: 2
+slug: hotter-nights
+title: Hotter nights
+kicker: Night-time temperature
+summary: Praia’s nights have warmed since the 1950s, and nights that stay above 25 °C have become much more common. Models project many more.
+keyMessages:
+  - Nights above 25 °C averaged fewer than 9 a year in 1950–1979, but 39 a year in the 2000s and 34 in the 2010s.
+  - The number varies strongly from year to year with the temperature of the surrounding ocean; 2020–2024 averaged 12.
+  - Across Cabo Verde, nights above 26 °C are projected to rise to about 46 a year by mid-century under intermediate emissions.
+sections:
+  - heading: Nights that do not cool down
+    body: |
+      For health, warm nights matter as much as hot days. When the temperature stays high after sunset, the body cannot recover from the heat of the day, and people in small, poorly ventilated homes are affected most.
+
+      Praia’s average night-time (minimum) temperature over 1991–2020 was about **22.0 °C**. The stripes show how each year compared with that average: cooler than average in most years before the 1980s, warmer in the 2000s, and mixed since 2010.
+    figure: praiaStripes
+  - heading: Counting hot nights
+    body: |
+      A simple measure is the number of nights each year when the temperature does not fall below **25 °C**. In Praia this happened fewer than 9 times a year on average in 1950–1979. It rose to **39 a year in the 2000s** and **34 in the 2010s**, with more than 50 such nights in 2005, 2006, 2009, 2010, 2012 and 2015.
+
+      The years since 2020 have been calmer, with 12 hot nights a year on average. Swings like this follow the temperature of the surrounding Atlantic, which is why a single decade can look very different from the next. The long-term picture is the shift from the 1950s–1970s to the 2000s.
+    figure: praiaNights
+  - heading: What comes next
+    body: |
+      Climate models for Cabo Verde as a whole project a steady rise in hot nights. Using a slightly higher threshold of 26 °C, nights per year rise from about a dozen today to **about 46 by mid-century** under intermediate emissions, and to more than 130 by the end of the century under very high emissions. Inside the city, where buildings and paved surfaces store heat, nights will be warmer still.
+    figure: tropicalNights
+sources:
+  - label: Open-Meteo Historical Weather API, ERA5 / ERA5-Land daily reanalysis, grid point nearest Praia (CC BY 4.0).
+    url: https://open-meteo.com/en/docs/historical-weather-api
+  - label: World Bank Climate Change Knowledge Portal, Cabo Verde – CMIP6 projections.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
