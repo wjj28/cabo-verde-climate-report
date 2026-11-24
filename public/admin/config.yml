@@ -16,6 +16,12 @@ backend:
     update: 'content: update {{collection}} “{{slug}}”'
     delete: 'content: delete {{collection}} “{{slug}}”'
 
+# Look and feel of the dashboard
+app_title: Climate reports · Editor
+logo:
+  src: ../favicon.svg
+site_url: https://wjj28.github.io/cabo-verde-climate-report/
+
 media_folder: public/uploads
 public_folder: /uploads
 
@@ -27,6 +33,8 @@ i18n:
 collections:
   # ---------- Climate of Cabo Verde (main site) ----------
   - name: chapters
+    icon: menu_book
+    editor: { preview: false }
     label: 'Climate of Cabo Verde: chapters'
     label_singular: Chapter
     description: The report chapters. Each language is a separate version of the same chapter.
@@ -84,6 +92,8 @@ collections:
           - { name: url, label: Link, widget: string, required: false }
 
   - name: report
+    icon: home
+    editor: { preview: false }
     label: 'Climate of Cabo Verde: report & summary'
     description: Home page, headline statements, video and the About page.
     files:
@@ -135,7 +145,10 @@ collections:
         file: src/content/report/zh.json
 
   # ---------- Climate and Cities (cities site, same template) ----------
+  - divider: true
   - name: cities_chapters
+    icon: location_city
+    editor: { preview: false }
     label: 'Climate and Cities: chapters'
     label_singular: Chapter
     description: Chapters of the Climate and Cities site (Praia and the ECOWAS capitals).
@@ -179,6 +192,8 @@ collections:
       - *sourcesField
 
   - name: cities_report
+    icon: apartment
+    editor: { preview: false }
     label: 'Climate and Cities: report & summary'
     description: Home page, headline statements and the About page of the Climate and Cities site.
     files:
