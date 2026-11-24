@@ -444,6 +444,7 @@ main:focus { outline: none; }
 .plot svg { display: block; width: 100%; height: auto; overflow: visible; font-family: var(--font-sans); }
 .plot svg text { fill: var(--muted); font-size: 15px; }
 .plot .axis-label { fill: var(--ink); font-weight: 600; font-size: 14px; }
+.plot text.strong { fill: var(--ink); font-weight: 700; }
 @media (max-width: 600px) {
   .plot svg text { font-size: 23px; }
   .plot .axis-label { font-size: 21px; }
@@ -454,6 +455,7 @@ main:focus { outline: none; }
 .grid.zero { stroke: var(--c-zero); stroke-width: 1.3; }
 .bar { fill: var(--c-bar); }
 .bar.hl { fill: var(--c-hl); }
+.bar.cat { fill: var(--muted); opacity: 0.45; }
 .bar.pos { fill: var(--c-pos); }
 .bar.neg { fill: var(--c-neg); }
 .bar:hover { opacity: 0.8; }
@@ -498,9 +500,14 @@ main:focus { outline: none; }
 
 /* figures gallery & downloads */
 .figure-gallery { padding-block: 0.5rem 3rem; }
-.gallery-h { margin-top: 2.5rem; font-size: 1.3rem; }
-.gallery-h a { color: var(--ink); }
-.gallery-grid { display: grid; gap: 0 1.5rem; }
+.gallery-grid { display: grid; gap: 2rem 1.5rem; margin-top: 1rem; }
+.gallery-item { display: flex; flex-direction: column; min-width: 0; }
+.gallery-ch { margin: 0 0 0.5rem; font-family: var(--font-sans); font-size: 0.9rem; font-weight: 600; line-height: 1.4; }
+.gallery-ch a { color: var(--muted); text-decoration: none; }
+.gallery-ch a:hover { color: var(--link); text-decoration: underline; }
+/* equal-height cards in a row; captions and buttons line up at the bottom */
+.gallery-item .figure { margin: 0; flex: 1; display: flex; flex-direction: column; }
+.gallery-item .figure figcaption { margin-top: auto; }
 @media (min-width: 1100px) { .gallery-grid { grid-template-columns: 1fr 1fr; } }
 .downloads { display: grid; gap: 0.6rem; }
 .dl-group { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }

@@ -3,15 +3,31 @@
   "shortTitle": "Climat et villes",
   "subtitle": "Comment une capitale en croissance vit avec des nuits plus chaudes et des pluies plus fortes",
   "edition": "Édition concept · novembre 2026",
-  "intro": "Plus de trois Cap-Verdiens sur quatre vivent aujourd’hui en ville, et Praia, la capitale, sur l’île de Santiago, est de loin la plus grande. Ce court rapport examine ce que le changement climatique signifie pour la ville : des nuits chaudes plus fréquentes, des orages rares mais intenses, et une croissance rapide sur les pentes et dans les lits de rivières asséchés. Il est réalisé avec le même modèle que le rapport national.",
+  "intro": "Plus de trois Cap-Verdiens sur quatre vivent aujourd’hui en ville, et Praia, la capitale, sur l’île de Santiago, est de loin la plus grande. Ce court rapport examine ce que le changement climatique signifie pour la ville : des nuits chaudes plus fréquentes, des orages rares mais intenses, et une croissance rapide sur les pentes et dans les lits de rivières asséchés. Il est réalisé avec le même modèle que le rapport national. Un dernier chapitre compare Praia aux autres capitales de la CEDEAO.",
   "stats": [
-    { "value": "78 %", "label": "de la population de Cabo Verde vivait en zone urbaine en 2025, contre 44 % en 1990" },
-    { "value": "4×", "label": "plus de nuits chaudes (au-dessus de 25 °C) à Praia en 2000–2019 qu’en 1950–1979" },
-    { "value": "139 mm", "label": "de pluie sont tombés sur Praia le 12 septembre 2020, presque une année normale en un jour" },
-    { "value": "46 %", "label": "des citadins vivaient dans des quartiers informels en 2022, contre 71 % en 2000" }
+    {
+      "value": "78 %",
+      "label": "de la population de Cabo Verde vivait en zone urbaine en 2025, contre 44 % en 1990"
+    },
+    {
+      "value": "4×",
+      "label": "plus de nuits chaudes (au-dessus de 25 °C) à Praia en 2000–2019 qu’en 1950–1979"
+    },
+    {
+      "value": "139 mm",
+      "label": "de pluie sont tombés sur Praia le 12 septembre 2020, presque une année normale en un jour"
+    },
+    {
+      "value": "46 %",
+      "label": "des citadins vivaient dans des quartiers informels en 2022, contre 71 % en 2000"
+    }
   ],
   "summaryIntro": "Ces messages clés résument la rencontre entre climat et croissance urbaine à Praia. Chacun renvoie au chapitre et à la figure qui l’étayent. Les étiquettes indiquent si une conclusion provient d’observations, de projections de modèles ou de statistiques officielles.",
-  "groups": { "A": "Une ville qui grandit dans un climat qui change", "B": "Le climat à venir", "C": "Agir en ville" },
+  "groups": {
+    "A": "Une ville qui grandit dans un climat qui change",
+    "B": "Le climat à venir",
+    "C": "Agir en ville"
+  },
   "headlines": [
     {
       "id": "A1",
@@ -38,6 +54,14 @@
       "chapter": "heavy-rain"
     },
     {
+      "id": "A4",
+      "statement": "Les nuits se réchauffent dans toutes les capitales de la CEDEAO.",
+      "detail": "Entre 1961–1990 et 1995–2024, la température nocturne moyenne a augmenté dans les 12 capitales des États membres de la CEDEAO, de 0,3 °C à 0,6 °C, et toutes comptent plus de nuits chaudes. La hausse observée à Praia s’inscrit dans une tendance régionale.",
+      "evidence": "observed",
+      "figure": "capitalsWarming",
+      "chapter": "ecowas-capitals"
+    },
+    {
       "id": "B1",
       "statement": "Les nuits chaudes vont continuer d’augmenter.",
       "detail": "Pour l’ensemble de Cabo Verde, les modèles projettent que les nuits au-dessus de 26 °C passeront d’une douzaine par an aujourd’hui à environ 46 au milieu du siècle avec des émissions intermédiaires, et à plus de 130 à la fin du siècle avec de très fortes émissions.",
@@ -53,5 +77,5 @@
       "chapter": "growing-capital"
     }
   ],
-  "about": "Ce site est un concept indépendant, réalisé avec le même modèle que le microsite [Climat de Cabo Verde](../../fr/) pour montrer comment un même système de design et un même code peuvent produire plusieurs microsites de rapports, chacun avec son contenu et ses couleurs. Ce n’est pas une publication officielle de la municipalité de Praia, de l’INMG, d’ONU-Habitat, de l’OMM, du GIEC ni du Gouvernement de Cabo Verde.\n\n## Données et méthodes\n\n- **Température et pluie à Praia :** réanalyse quotidienne ERA5 / ERA5-Land au point de grille le plus proche de Praia, 1950–2024, via l’API Historical Weather d’Open-Meteo (CC BY 4.0). Une nuit chaude est un jour dont la température minimale atteint 25 °C ou plus.\n- **Projections :** nuits au-dessus de 26 °C pour l’ensemble de Cabo Verde, ensemble CMIP6 via le Climate Change Knowledge Portal de la Banque mondiale (comme dans le rapport national).\n- **Urbanisation :** données ouvertes de la Banque mondiale, population urbaine (% du total) et population vivant dans des bidonvilles (% de la population urbaine).\n\n## Limites\n\nUn point de grille de réanalyse décrit une zone de plusieurs kilomètres qui inclut la mer, et non une rue. L’effet d’îlot de chaleur urbain n’est donc pas pris en compte, et les nuits dans les quartiers denses sont probablement plus chaudes. Les observations des stations de l’INMG donneraient une image plus fine."
+  "about": "Ce site est un concept indépendant, réalisé avec le même modèle que le microsite [Climat de Cabo Verde](../../fr/) pour montrer comment un même système de design et un même code peuvent produire plusieurs microsites de rapports, chacun avec son contenu et ses couleurs. Ce n’est pas une publication officielle de la municipalité de Praia, de l’INMG, d’ONU-Habitat, de l’OMM, du GIEC ni du Gouvernement de Cabo Verde.\n\n## Données et méthodes\n\n- **Température et pluie à Praia :** réanalyse quotidienne ERA5 / ERA5-Land au point de grille le plus proche de Praia, 1950–2024, via l’API Historical Weather d’Open-Meteo (CC BY 4.0). Une nuit chaude est un jour dont la température minimale atteint 25 °C ou plus.\n- **Projections :** nuits au-dessus de 26 °C pour l’ensemble de Cabo Verde, ensemble CMIP6 via le Climate Change Knowledge Portal de la Banque mondiale (comme dans le rapport national).\n- **Urbanisation :** données ouvertes de la Banque mondiale, population urbaine (% du total) et population vivant dans des bidonvilles (% de la population urbaine).\n- **Capitales de la CEDEAO :** les mêmes données quotidiennes ERA5 au point de grille le plus proche de chaque capitale des 12 États membres de la CEDEAO, en comparant 1995–2024 à 1961–1990. Le Mali, le Burkina Faso et le Niger ont quitté la CEDEAO en janvier 2025 et ne sont pas inclus.\n\n## Limites\n\nUn point de grille de réanalyse décrit une zone de plusieurs kilomètres qui inclut la mer, et non une rue. L’effet d’îlot de chaleur urbain n’est donc pas pris en compte, et les nuits dans les quartiers denses sont probablement plus chaudes. Les observations des stations de l’INMG donneraient une image plus fine."
 }

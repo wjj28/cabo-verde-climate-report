@@ -2,6 +2,7 @@
 // Sources: Open-Meteo Historical Weather API (ERA5/ERA5-Land, daily, grid point nearest Praia)
 //          World Bank Open Data (urban population share; urban population living in slums)
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { CAPITALS } from './fetch-capitals.mjs';
 
 const raw = (f) => JSON.parse(readFileSync(new URL(`../data/raw/${f}`, import.meta.url), 'utf8'));
 const mean = (a) => a.reduce((s, x) => s + x, 0) / a.length;
@@ -32,6 +33,31 @@ const wb = (id) => raw(`wb_${id}.json`)[1].filter((x) => x.value != null).map((x
 const urban = wb('SP.URB.TOTL.IN.ZS').filter((p) => p.y >= 1990);
 const slums = wb('EN.POP.SLUM.UR.ZS');
 
+// Capitals of the 12 ECOWAS member states (data/raw/capitals, from scripts/fetch-capitals.mjs):
+// change between 1961–1990 and 1995–2024 (the latest 30 years) in night-time temperature, hot nights and the wettest day.
+const capitals = CAPITALS.map((c) => {
+  const d = JSON.parse(readFileSync(new URL(`../data/raw/capitals/${c.id}.json`, import.meta.url), 'utf8')).daily;
+  const yr = {};
+  d.time.forEach((t, i) => {
+    const y = +t.slice(0, 4);
+    (yr[y] ??= { tmin: [], pr: [] });
+    if (d.temperature_2m_min[i] != null) yr[y].tmin.push(d.temperature_2m_min[i]);
+    if (d.precipitation_sum[i] != null) yr[y].pr.push(d.precipitation_sum[i]);
+  });
+  const per = (a, b, fn) => mean(Object.keys(yr).map(Number).filter((y) => y >= a && y <= b).map((y) => fn(yr[y])));
+  const tmin = (o) => mean(o.tmin), hot = (o) => o.tmin.filter((x) => x >= HOT).length, wet = (o) => Math.max(...o.pr);
+  const rain = (o) => o.pr.reduce((a, b) => a + b, 0);
+  return {
+    id: c.id, city: c.city, country: c.country,
+    tminThen: r(per(1961, 1990, tmin), 2), tminNow: r(per(1995, 2024, tmin), 2),
+    warming: r(per(1995, 2024, tmin) - per(1961, 1990, tmin), 2),
+    hotThen: r(per(1961, 1990, hot), 1), hotNow: r(per(1995, 2024, hot), 1),
+    hotChange: r(per(1995, 2024, hot) - per(1961, 1990, hot), 1),
+    wetThen: r(per(1961, 1990, wet), 1), wetNow: r(per(1995, 2024, wet), 1),
+    rainNow: Math.round(per(1995, 2024, rain)),
+  };
+});
+
 const top = [...wettest].sort((a, b) => b.v - a.v)[0];
 const out = {
   generated: new Date().toISOString().slice(0, 10),
@@ -48,7 +74,9 @@ const out = {
   urbanLatest: urban.at(-1),
   slums,
   slumsLatest: slums.at(-1),
+  capitals,
 };
 mkdirSync(new URL('../src/reports/cities/', import.meta.url), { recursive: true });
 writeFileSync(new URL('../src/reports/cities/data.json', import.meta.url), JSON.stringify(out, null, 1));
+console.table(capitals);
 console.log({ nightsByDecade: out.nightsByDecade.map((x) => `${x.d}s:${x.v}`).join(' '), record: top, rainBase: out.annualRainBase, urban: [urban[0], out.urbanLatest], slums: [slums[0], out.slumsLatest], tminBase: out.tminBase });

@@ -1,0 +1,32 @@
+number: 4
+slug: ecowas-capitals
+title: The ECOWAS capitals
+kicker: Regional view
+summary: Cabo Verde is one of the 12 member states of ECOWAS, the Economic Community of West African States. Comparing Praia with the other 11 capitals shows that warmer nights are a shared, regional trend.
+keyMessages:
+  - Between 1961–1990 and 1995–2024, average night-time temperatures rose in all 12 ECOWAS capitals, by 0.3 °C to 0.6 °C. Dakar warmed the most.
+  - Every capital now has more hot nights (25 °C or more). Accra gained about 49 a year; Praia went from about 12 to 31 a year.
+  - In all 12 capitals, the wettest day of the year was on average heavier in 1995–2024 than in 1961–1990.
+sections:
+  - heading: Twelve capitals, one trend
+    body: |
+      Using the same method and the same data as for Praia, we compared the latest 30 years (**1995–2024**) with **1961–1990** at the grid point nearest each capital. Nights have become warmer in **every** capital, from **+0.3 °C** in Porto-Novo, Praia and Freetown to **+0.6 °C** in Dakar.
+
+      The Atlantic capitals on the western edge of the Sahel, Dakar, Banjul and Bissau, warmed the most. On the Gulf of Guinea, where nights were already warm and humid, the rise was smaller but still clear.
+    figure: capitalsWarming
+  - heading: More hot nights everywhere
+    body: |
+      Small changes in average temperature make a large difference to the number of hot nights. **Accra** now has about **115** nights a year at or above 25 °C, compared with 66 in 1961–1990. **Lomé** has the most, about **171** a year. In **Praia**, hot nights rose from about **12** to **31** a year. Only inland **Yamoussoukro**, cooler at night, still has few.
+
+      For millions of people in fast-growing, densely built neighbourhoods, hot nights mean poor sleep and more heat stress, especially for older people, young children and outdoor workers.
+    figure: capitalsNights
+  - heading: Heavier downpours, shared lessons
+    body: |
+      The wettest day of the year was, on average, heavier in 1995–2024 than in 1961–1990 in all 12 capitals: for example from 120 to 153 mm in Monrovia and from 37 to 57 mm in Lomé. Reanalysis data describe rainfall extremes only roughly, so these figures show a direction, not exact values.
+
+      The capitals face the same pressures: rapid growth, informal housing in flood-prone areas, and hotter nights. Sharing early warnings, heat-health plans and drainage practices through ECOWAS, WMO and the national meteorological services helps every city prepare.
+sources:
+  - label: Open-Meteo Historical Weather API, ERA5 daily reanalysis, grid point nearest each capital, 1961–2024 (CC BY 4.0).
+    url: https://open-meteo.com/en/docs/historical-weather-api
+  - label: ECOWAS. Member States.
+    url: https://www.ecowas.int/member-states/

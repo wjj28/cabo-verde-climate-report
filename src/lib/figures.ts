@@ -7,7 +7,7 @@ import { REPORT } from './report';
 import { citiesFigures } from './figures-cities';
 
 export type FigKey = 'stripes' | 'tasAnomaly' | 'monthlyRain' | 'rainAnomaly' | 'crop' | 'projTas' | 'tropicalNights' | 'projRain'
-  | 'urban' | 'praiaStripes' | 'praiaNights' | 'praiaRainMax';
+  | 'urban' | 'praiaStripes' | 'praiaNights' | 'praiaRainMax' | 'capitalsWarming' | 'capitalsNights';
 
 type Table = { head: string[]; rows: (string | number)[][] };
 export interface Figure {

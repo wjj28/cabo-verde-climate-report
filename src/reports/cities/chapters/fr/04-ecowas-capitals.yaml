@@ -1,0 +1,32 @@
+number: 4
+slug: ecowas-capitals
+title: Les capitales de la CEDEAO
+kicker: Vue régionale
+summary: Cabo Verde est l’un des 12 États membres de la CEDEAO, la Communauté économique des États de l’Afrique de l’Ouest. La comparaison de Praia avec les 11 autres capitales montre que le réchauffement des nuits est une tendance régionale commune.
+keyMessages:
+  - Entre 1961–1990 et 1995–2024, la température nocturne moyenne a augmenté dans les 12 capitales de la CEDEAO, de 0,3 °C à 0,6 °C. Dakar s’est le plus réchauffée.
+  - Toutes les capitales comptent désormais plus de nuits chaudes (25 °C ou plus). Accra en a gagné environ 49 par an ; Praia est passée d’environ 12 à 31 par an.
+  - Dans les 12 capitales, le jour le plus pluvieux de l’année a été en moyenne plus intense en 1995–2024 qu’en 1961–1990.
+sections:
+  - heading: Douze capitales, une même tendance
+    body: |
+      Avec la même méthode et les mêmes données que pour Praia, nous avons comparé les 30 dernières années (**1995–2024**) à la période **1961–1990**, au point de grille le plus proche de chaque capitale. Les nuits se sont réchauffées dans **toutes** les capitales, de **+0,3 °C** à Porto-Novo, Praia et Freetown jusqu’à **+0,6 °C** à Dakar.
+
+      Les capitales atlantiques de la bordure ouest du Sahel, Dakar, Banjul et Bissau, se sont le plus réchauffées. Sur le golfe de Guinée, où les nuits étaient déjà chaudes et humides, la hausse est plus faible mais nette.
+    figure: capitalsWarming
+  - heading: Plus de nuits chaudes partout
+    body: |
+      De faibles variations de la température moyenne changent fortement le nombre de nuits chaudes. **Accra** compte aujourd’hui environ **115** nuits par an à 25 °C ou plus, contre 66 en 1961–1990. **Lomé** en compte le plus, environ **171** par an. À **Praia**, les nuits chaudes sont passées d’environ **12** à **31** par an. Seule **Yamoussoukro**, à l’intérieur des terres et plus fraîche la nuit, en compte encore peu.
+
+      Pour des millions d’habitants de quartiers denses et en forte croissance, les nuits chaudes signifient un sommeil de mauvaise qualité et un stress thermique accru, surtout pour les personnes âgées, les jeunes enfants et les travailleurs en plein air.
+    figure: capitalsNights
+  - heading: Des averses plus fortes, des leçons communes
+    body: |
+      Le jour le plus pluvieux de l’année a été en moyenne plus intense en 1995–2024 qu’en 1961–1990 dans les 12 capitales : par exemple de 120 à 153 mm à Monrovia et de 37 à 57 mm à Lomé. Les réanalyses ne décrivent les extrêmes de pluie que de façon approximative ; ces chiffres indiquent une tendance, pas des valeurs exactes.
+
+      Les capitales font face aux mêmes pressions : croissance rapide, habitat informel en zone inondable et nuits plus chaudes. Partager les alertes précoces, les plans chaleur-santé et les pratiques de drainage au sein de la CEDEAO, de l’OMM et des services météorologiques nationaux aide chaque ville à se préparer.
+sources:
+  - label: Open-Meteo Historical Weather API, réanalyse quotidienne ERA5, point de grille le plus proche de chaque capitale, 1961–2024 (CC BY 4.0).
+    url: https://open-meteo.com/en/docs/historical-weather-api
+  - label: CEDEAO. États membres.
+    url: https://www.ecowas.int/member-states/

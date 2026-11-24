@@ -9,7 +9,9 @@ export type Series = { key: string; label: string; points: Pt[]; band?: boolean;
 export type ChartSpec =
   | { kind: 'bars'; points: Pt[]; signed?: boolean; highlight?: number[]; xLabels?: string[]; yLabel: string; unit: string; domain?: [number, number] }
   | { kind: 'lines'; series: Series[]; yLabel: string; unit: string; shade?: { x0: number; x1: number; label: string }; domain?: [number, number]; xDomain?: [number, number]; toggle?: boolean }
-  | { kind: 'stripes'; points: Pt[] };
+  | { kind: 'stripes'; points: Pt[] }
+  /** one labelled row per category (e.g. cities), sorted by the caller */
+  | { kind: 'hbars'; rows: { label: string; value: number; hl?: boolean }[]; signed?: boolean; yLabel: string; unit: string };
 
 export const scale = (d0: number, d1: number, r0: number, r1: number) => (v: number) => r0 + ((v - d0) / (d1 - d0)) * (r1 - r0);
 
