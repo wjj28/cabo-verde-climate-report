@@ -1,0 +1,56 @@
+---
+// A numbered report figure: chart, caption, source, accessible data table, enlarge (lightbox) and downloads.
+import Chart from './Chart.astro';
+import { getFigure, figureNumber, type FigKey } from '../lib/figures';
+import { t, type Lang } from '../i18n/ui';
+import { url } from '../lib/url';
+
+interface Props { fig: FigKey | string; lang: Lang; headingLevel?: 'h3' | 'h4' }
+const { fig: key, lang } = Astro.props;
+const f = getFigure(key);
+if (!f) throw new Error(`Unknown figure "${key}"`);
+const s = t(lang);
+const txt = s.fig[f.key];
+const n = figureNumber(f.key);
+const id = `fig-${f.slug}`;
+const tbl = f.table(lang);
+const nf = new Intl.NumberFormat(lang === 'ar' ? 'ar-u-nu-latn' : lang, { maximumFractionDigits: 2 });
+---
+<figure class="figure" id={id} data-figure={f.slug} data-title={`${s.figure} ${n}. ${txt.title}`}>
+  <div class="figure-head">
+    <p class="figure-num">{s.figure} {n}</p>
+    <h3 class="figure-title">{txt.title}</h3>
+  </div>
+  <Chart spec={f.spec(lang)} id={`${id}-c`} title={txt.title} desc={txt.alt} lang={lang} />
+  <figcaption>
+    <p>{txt.caption}</p>
+    <p class="figure-source"><span>{s.source}{lang === 'zh' ? '：' : lang === 'fr' ? ' :' : ':'}</span> <a href={f.sourceUrl} rel="noopener">{f.source}</a></p>
+  </figcaption>
+  <div class="figure-actions">
+    <button type="button" class="btn btn-ghost" data-enlarge aria-haspopup="dialog">
+      <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      {s.expand}
+    </button>
+    <details class="dl-menu">
+      <summary class="btn btn-ghost">
+        <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18"><path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+        {s.download}
+      </summary>
+      <ul>
+        <li><button type="button" data-download="png">{s.downloadPng}</button></li>
+        <li><button type="button" data-download="svg">{s.downloadSvg}</button></li>
+        <li><a href={url(`data/${f.slug}.csv`)} download>{s.downloadCsv}</a></li>
+      </ul>
+    </details>
+  </div>
+  <details class="data-table">
+    <summary>{s.viewTable}</summary>
+    <div class="table-wrap" tabindex="0" role="region" aria-label={`${s.figure} ${n}: ${s.viewTable}`}>
+      <table>
+        <caption class="visually-hidden">{txt.title}</caption>
+        <thead><tr>{tbl.head.map((h) => <th scope="col">{h}</th>)}</tr></thead>
+        <tbody>{tbl.rows.map((r) => <tr>{r.map((c, i) => (i === 0 ? <th scope="row">{c}</th> : <td>{typeof c === 'number' ? nf.format(c) : c}</td>))}</tr>)}</tbody>
+      </table>
+    </div>
+  </details>
+</figure>

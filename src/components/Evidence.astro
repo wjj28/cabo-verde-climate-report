@@ -1,0 +1,15 @@
+---
+import { t, type Lang } from '../i18n/ui';
+interface Props { kind: 'observed' | 'projected' | 'reported'; lang: Lang }
+const { kind, lang } = Astro.props;
+const s = t(lang);
+---
+<span class={`evidence ev-${kind}`} title={s.evidenceHelp[kind]}>
+  <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true">
+    {kind === 'observed' && <path d="M1 8s2.5-5 7-5 7 5 7 5-2.5 5-7 5-7-5-7-5Zm7 2.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z" fill="currentColor" fill-rule="evenodd"/>}
+    {kind === 'projected' && <path d="M2 13 6 8l3 3 5-7M10 4h4v4" fill="none" stroke="currentColor" stroke-width="1.8"/>}
+    {kind === 'reported' && <path d="M3 1h7l3 3v11H3V1Zm2 6h6M5 10h6M5 13h4" fill="none" stroke="currentColor" stroke-width="1.5"/>}
+  </svg>
+  {s.evidence[kind]}
+  <span class="visually-hidden">: {s.evidenceHelp[kind]}</span>
+</span>
