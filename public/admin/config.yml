@@ -9,6 +9,8 @@ backend:
   name: github
   repo: wjj28/cabo-verde-climate-report
   branch: main
+  # Login service for "Sign In with GitHub" (Sveltia CMS Authenticator on Cloudflare Workers)
+  base_url: https://sveltia-cms-auth.wjjsl28.workers.dev
   commit_messages:
     create: 'content: create {{collection}} “{{slug}}”'
     update: 'content: update {{collection}} “{{slug}}”'
