@@ -1,0 +1,68 @@
+---
+import Base from '../../../layouts/Base.astro';
+import Figure from '../../../components/Figure.astro';
+import { langs, t, chapterLabel, chapterTitle, type Lang } from '../../../i18n/ui';
+import { getChapters, md, mdInline, anchor } from '../../../lib/content';
+import { url } from '../../../lib/url';
+
+export async function getStaticPaths() {
+  const out = [];
+  for (const lang of langs) {
+    for (const c of await getChapters(lang)) out.push({ params: { lang, slug: c.slug } });
+  }
+  return out;
+}
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const chapters = await getChapters(lang);
+const i = chapters.findIndex((c) => c.slug === Astro.params.slug);
+const c = chapters[i];
+const prev = chapters[i - 1];
+const next = chapters[i + 1];
+const text = c.sections.map((x) => x.body).join(' ');
+// reading speed: Chinese by characters, other languages by words
+const size = lang === 'zh' ? text.length * 0.5 : text.split(' ').length;
+const minutes = Math.max(2, Math.round(size * 0.005));
+const toc = c.sections.map((sec, j) => ({ id: anchor(sec.heading, j), heading: sec.heading }));
+---
+<Base lang={lang} title={chapterTitle(lang, c.number, c.title)} description={c.summary} path={`chapters/${c.slug}/`} type="article">
+  <div class="page-head chapter-head">
+    <div class="wrap">
+      <p class="eyebrow">{chapterLabel(lang, c.number)} · {c.kicker}</p>
+      <h1>{c.title}</h1>
+      <p class="lede">{c.summary}</p>
+      <p class="meta">{minutes} {s.minutes} · <a href={url(`pdf/${lang}/chapter-${c.number}.pdf`)} download>{s.download} PDF</a></p>
+    </div>
+  </div>
+  <div class="wrap chapter-layout">
+    <aside class="toc" aria-labelledby="toc-h">
+      <h2 id="toc-h">{s.onThisPage}</h2>
+      <ol>
+        <li><a href="#key-messages">{s.keyMessages}</a></li>
+        {toc.map((x) => <li><a href={`#${x.id}`}>{x.heading}</a></li>)}
+        <li><a href="#sources">{s.sources}</a></li>
+      </ol>
+    </aside>
+    <article class="chapter-body">
+      <section class="key-messages" id="key-messages" aria-labelledby="km-h">
+        <h2 id="km-h">{s.keyMessages}</h2>
+        <ul>{c.keyMessages.map((k) => <li set:html={mdInline(k)} />)}</ul>
+      </section>
+      {c.sections.map((sec, j) => (
+        <section class="chapter-section" aria-labelledby={toc[j].id}>
+          <h2 id={toc[j].id}>{sec.heading}</h2>
+          <div class="prose" set:html={md(sec.body)} />
+          {sec.figure && <Figure fig={sec.figure} lang={lang} />}
+        </section>
+      ))}
+      <section class="sources" id="sources" aria-labelledby="src-h">
+        <h2 id="src-h">{s.sources}</h2>
+        <ol>{c.sources.map((x) => <li>{x.url ? <a href={x.url} rel="noopener" dir="auto">{x.label}</a> : <span dir="auto">{x.label}</span>}</li>)}</ol>
+      </section>
+      <nav class="pager" aria-label={s.nav.chapters}>
+        {prev ? <a class="pager-prev" href={url(`${lang}/chapters/${prev.slug}/`)}><span>{s.previous}</span>{chapterTitle(lang, prev.number, prev.title)}</a> : <span />}
+        {next && <a class="pager-next" href={url(`${lang}/chapters/${next.slug}/`)}><span>{s.next}</span>{chapterTitle(lang, next.number, next.title)}</a>}
+      </nav>
+    </article>
+  </div>
+</Base>

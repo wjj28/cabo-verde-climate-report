@@ -1,0 +1,29 @@
+---
+import Base from '../../../layouts/Base.astro';
+import { t, chapterLabel, type Lang } from '../../../i18n/ui';
+import { getChapters, getReport } from '../../../lib/content';
+import { url } from '../../../lib/url';
+import { langPaths } from '../../../lib/paths';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const r = await getReport(lang);
+const chapters = await getChapters(lang);
+---
+<Base lang={lang} title={s.nav.chapters} description={r.intro} path="chapters/">
+  <div class="page-head"><div class="wrap"><p class="eyebrow">{r.title}</p><h1>{s.contents}</h1></div></div>
+  <div class="wrap section">
+    <ol class="toc-list">
+      {chapters.map((c) => (
+        <li>
+          <span class="chapter-num">{chapterLabel(lang, c.number)}</span>
+          <h2><a href={url(`${lang}/chapters/${c.slug}/`)}>{c.title}</a></h2>
+          <p class="kicker">{c.kicker}</p>
+          <p>{c.summary}</p>
+          <ul class="sub">{c.sections.map((x) => <li>{x.heading}</li>)}</ul>
+        </li>
+      ))}
+    </ol>
+  </div>
+</Base>

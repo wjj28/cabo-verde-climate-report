@@ -1,0 +1,26 @@
+---
+// Root: send visitors to their language. Apache can do this server-side (see public/.htaccess);
+// this page covers static hosts without rewrite rules.
+import { langs } from '../i18n/ui';
+import { url } from '../lib/url';
+const fallback = url('en/');
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Climate of Cabo Verde</title>
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href={new URL(fallback, Astro.site).href} />
+    <meta http-equiv="refresh" content={`2; url=${fallback}`} />
+    <script is:inline define:vars={{ langs, base: url('') }}>
+      const pref = (navigator.languages || [navigator.language]).map((l) => l.slice(0, 2));
+      const lang = pref.find((l) => langs.includes(l)) || 'en';
+      location.replace(base + lang + '/');
+    </script>
+  </head>
+  <body>
+    <ul>{langs.map((l) => <li><a href={url(`${l}/`)} hreflang={l}>{l.toUpperCase()}</a></li>)}</ul>
+  </body>
+</html>

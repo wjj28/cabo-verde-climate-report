@@ -1,0 +1,29 @@
+---
+import Base from '../../layouts/Base.astro';
+import Figure from '../../components/Figure.astro';
+import { t, chapterLabel, chapterTitle, type Lang } from '../../i18n/ui';
+import { getChapters, getReport } from '../../lib/content';
+import { figures } from '../../lib/figures';
+import { url } from '../../lib/url';
+import { langPaths } from '../../lib/paths';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const r = await getReport(lang);
+const chapters = await getChapters(lang);
+---
+<Base lang={lang} title={s.nav.figures} description={s.figuresIntro} path="figures/">
+  <div class="page-head"><div class="wrap"><p class="eyebrow">{r.title}</p><h1>{s.allFigures}</h1><p class="lede">{s.figuresIntro}</p></div></div>
+  <div class="wrap figure-gallery">
+    {chapters.map((c) => {
+      const figs = figures.filter((f) => f.chapter === c.slug);
+      return figs.length ? (
+        <section aria-labelledby={`fg-${c.slug}`}>
+          <h2 id={`fg-${c.slug}`} class="gallery-h"><a href={url(`${lang}/chapters/${c.slug}/`)}>{chapterTitle(lang, c.number, c.title)}</a></h2>
+          <div class="gallery-grid">{figs.map((f) => <Figure fig={f.key} lang={lang} />)}</div>
+        </section>
+      ) : null;
+    })}
+  </div>
+</Base>

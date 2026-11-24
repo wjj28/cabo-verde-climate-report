@@ -1,0 +1,10 @@
+---
+import Base from '../layouts/Base.astro';
+import { t } from '../i18n/ui';
+import { url } from '../lib/url';
+const s = t('en');
+---
+<Base lang="en" title={s.notFound} description={s.notFoundText} path="" index={false}>
+  <div class="page-head"><div class="wrap narrow"><h1>{s.notFound}</h1><p class="lede">{s.notFoundText}</p>
+    <p><a class="btn btn-primary" href={url('en/')}>{s.goHome}</a></p></div></div>
+</Base>

@@ -1,0 +1,19 @@
+---
+import Base from '../../layouts/Base.astro';
+import { t, type Lang } from '../../i18n/ui';
+import { getReport, md } from '../../lib/content';
+import { langPaths } from '../../lib/paths';
+import data from '../../data/climate.json';
+
+export const getStaticPaths = langPaths;
+const lang = Astro.params.lang as Lang;
+const s = t(lang);
+const r = await getReport(lang);
+---
+<Base lang={lang} title={s.nav.about} description={s.conceptLong} path="about/">
+  <div class="page-head"><div class="wrap narrow"><p class="eyebrow">{r.title}</p><h1>{s.nav.about}</h1></div></div>
+  <div class="wrap narrow section">
+    <div class="prose" set:html={md(r.about)} />
+    <p class="meta">{s.lastUpdated}: <time datetime={data.generated}>{data.generated}</time></p>
+  </div>
+</Base>

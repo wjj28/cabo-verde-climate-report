@@ -1,0 +1,16 @@
+---
+// Privacy-friendly, fast YouTube embed: shows a local poster and only loads the
+// youtube-nocookie.com player after the visitor presses play. Works as a plain link without JS.
+import { t, type Lang } from '../i18n/ui';
+interface Props { id: string; title: string; description?: string; lang: Lang }
+const { id, title, description, lang } = Astro.props;
+const s = t(lang);
+---
+<div class="video" data-video={id} data-title={title}>
+  <a class="video-poster" href={`https://www.youtube.com/watch?v=${id}`} data-play>
+    <img src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`} alt="" loading="lazy" decoding="async" width="480" height="360" />
+    <span class="video-play"><svg viewBox="0 0 68 48" width="68" height="48" aria-hidden="true"><path d="M66.5 7.7A8.5 8.5 0 0 0 60.5 1.6C55.2.2 34 .2 34 .2s-21.2 0-26.5 1.4A8.5 8.5 0 0 0 1.5 7.7C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6.1C12.8 47.8 34 47.8 34 47.8s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6.1C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3Z" fill="#c4302b"/><path d="m27 34 18-10-18-10z" fill="#fff"/></svg>
+      <span class="visually-hidden">{s.playVideo}: {title}</span></span>
+  </a>
+</div>
+<p class="video-meta"><strong>{title}</strong>{description && <> — {description}</>}<br /><small>{s.videoNote}</small></p>
