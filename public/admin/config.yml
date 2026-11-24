@@ -1,0 +1,130 @@
+# Editorial dashboard configuration (Sveltia CMS / Decap CMS format).
+# Editors open /admin/, sign in, and edit the report in forms: no code, no Markdown files.
+# Every save commits to the repository; CI rebuilds and deploys the static site.
+#
+# Local editing without GitHub: open /admin/ in Chrome or Edge and choose
+# "Work with Local Repository", then pick this project folder.
+
+backend:
+  name: github
+  repo: wjj28/cabo-verde-climate-report
+  branch: main
+  commit_messages:
+    create: 'content: create {{collection}} “{{slug}}”'
+    update: 'content: update {{collection}} “{{slug}}”'
+    delete: 'content: delete {{collection}} “{{slug}}”'
+
+media_folder: public/uploads
+public_folder: /uploads
+
+i18n:
+  structure: multiple_folders
+  locales: [en, fr, zh]
+  default_locale: en
+
+collections:
+  - name: chapters
+    label: Chapters
+    label_singular: Chapter
+    description: The report chapters. Each language is a separate version of the same chapter.
+    folder: src/content/chapters
+    extension: yaml
+    format: yaml
+    create: true
+    slug: '{{fields.number}}-{{fields.slug}}'
+    identifier_field: title
+    summary: '{{number}}. {{title}}'
+    sortable_fields: [number, title]
+    i18n: true
+    fields:
+      - { name: number, label: Chapter number, widget: number, value_type: int, i18n: duplicate }
+      - { name: slug, label: Address (URL slug), widget: string, hint: 'Lowercase words joined by hyphens, e.g. future-climate. Same in every language.', pattern: ['^[a-z0-9-]+$', 'Lowercase letters, numbers and hyphens only'], i18n: duplicate }
+      - { name: title, label: Title, widget: string, i18n: true }
+      - { name: kicker, label: Topic line, widget: string, hint: Short line shown above the title, i18n: true }
+      - { name: summary, label: Summary, widget: text, hint: 'One or two sentences. Also used as the page description for search engines and social media.', i18n: true }
+      - name: keyMessages
+        label: Key messages
+        widget: list
+        i18n: true
+        field: { name: message, label: Message, widget: text }
+      - name: sections
+        label: Sections
+        widget: list
+        i18n: true
+        summary: '{{fields.heading}}'
+        fields:
+          - { name: heading, label: Heading, widget: string }
+          - { name: body, label: Text, widget: markdown, buttons: [bold, italic, link, bulleted-list, numbered-list], editor_components: [] }
+          - name: figure
+            label: Figure (optional)
+            widget: select
+            required: false
+            hint: The chart shown after this section's text
+            options:
+              - { label: 'Temperature stripes', value: stripes }
+              - { label: 'Annual temperature difference', value: tasAnomaly }
+              - { label: 'Average rainfall by month', value: monthlyRain }
+              - { label: 'Annual rainfall difference', value: rainAnomaly }
+              - { label: 'Crop and food production', value: crop }
+              - { label: 'Projected warming', value: projTas }
+              - { label: 'Hot nights above 26 °C', value: tropicalNights }
+              - { label: 'Projected rainfall change', value: projRain }
+      - name: sources
+        label: Sources
+        widget: list
+        i18n: true
+        summary: '{{fields.label}}'
+        fields:
+          - { name: label, label: Reference, widget: string }
+          - { name: url, label: Link, widget: string, required: false }
+
+  - name: report
+    label: Report & summary
+    description: Home page, headline statements, video and the About page.
+    files:
+      - &reportFile
+        name: report_en
+        label: English
+        file: src/content/report/en.json
+        fields: &reportFields
+          - { name: title, label: Report title, widget: string }
+          - { name: shortTitle, label: Short title (header), widget: string }
+          - { name: subtitle, label: Subtitle, widget: string }
+          - { name: edition, label: Edition line, widget: string }
+          - { name: intro, label: Introduction (home page), widget: text }
+          - name: stats
+            label: Key figures (home page)
+            widget: list
+            summary: '{{fields.value}} {{fields.label}}'
+            fields:
+              - { name: value, label: Number, widget: string }
+              - { name: label, label: Explanation, widget: string }
+          - { name: summaryIntro, label: Summary introduction, widget: text }
+          - name: headlines
+            label: Headline statements
+            widget: list
+            summary: '{{fields.id}} {{fields.statement}}'
+            fields:
+              - { name: id, label: 'ID (A1, B2…)', widget: string, hint: 'Letter = group (A changing climate, B future, C response)' }
+              - { name: statement, label: Statement, widget: text }
+              - { name: detail, label: Detail, widget: text }
+              - { name: evidence, label: Evidence type, widget: select, options: [{ label: Observed, value: observed }, { label: Projected, value: projected }, { label: Reported, value: reported }] }
+              - { name: figure, label: Supporting figure, widget: select, required: false, options: [stripes, tasAnomaly, monthlyRain, rainAnomaly, crop, projTas, tropicalNights, projRain] }
+              - { name: chapter, label: Chapter (URL slug), widget: string, required: false }
+          - name: video
+            label: Video
+            widget: object
+            required: false
+            fields:
+              - { name: youtubeId, label: YouTube video ID, widget: string, hint: 'The 11 characters after watch?v= in the YouTube address' }
+              - { name: title, label: Title, widget: string }
+              - { name: description, label: Description, widget: text }
+          - { name: about, label: About page, widget: markdown }
+      - <<: *reportFile
+        name: report_fr
+        label: Français
+        file: src/content/report/fr.json
+      - <<: *reportFile
+        name: report_zh
+        label: 中文
+        file: src/content/report/zh.json
