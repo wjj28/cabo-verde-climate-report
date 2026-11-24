@@ -1,0 +1,31 @@
+number: 3
+slug: agriculture-food
+title: Farming on the edge of the Sahel
+kicker: Agriculture and food security
+summary: Most farming in Cabo Verde is rain-fed maize and beans, grown in one short season. When the rain fails, harvests fail with it.
+keyMessages:
+  - Rain-fed maize and beans, sown with the first rains, are the main crops of small farms on Santiago, Fogo, Santo Antão and São Nicolau.
+  - The FAO crop production index fell from 110 in 2013 to 60 in 2024, and has not recovered since the 2017–2019 drought.
+  - Cabo Verde imports most of its food, so poor harvests hit rural incomes and household food security more than national supply.
+sections:
+  - heading: One season, one chance
+    body: |
+      Only a small share of Cabo Verde’s land is suitable for farming, mostly on the steep, higher islands. Most of it is rain-fed: farmers sow maize and beans together after the first good rain, usually in July or August, and harvest in October or November. If the rains start late, stop early or come in a single storm, the crop can fail entirely.
+
+      Irrigated farming in valleys produces vegetables, fruit, sugar cane and roots, but it depends on groundwater and springs that are themselves recharged by the rainy season.
+  - heading: The drought’s lasting mark
+    body: |
+      The 2017–2019 drought cut harvests sharply. The FAO crop production index, which measures the volume of crops grown relative to 2014–2016, fell from **110 in 2013 to 60 in 2024**. National statistics reported agricultural production falling from about **71 000 tonnes in 2016 to 42 000 tonnes in 2020**.
+
+      Maize production recovered in 2022 when the rains returned, but the index shows that overall crop output has stayed far below its earlier level. Livestock also suffered as pasture and fodder ran out, and the government ran emergency programmes to protect animals and rural incomes.
+    figure: crop
+  - heading: Research for drier conditions
+    body: |
+      The national agricultural research institute (INIDA) works on crop varieties, soil and water conservation, and growing methods that use less water. Its leadership has argued that, with little irrigable land, Cabo Verde must expand **hydroponics, soil-free cultivation and drip irrigation**. These approaches, combined with seasonal forecasts, are central to the adaptation options in Chapter 5.
+sources:
+  - label: World Bank Open Data. Crop production index (2014–2016 = 100), Cabo Verde.
+    url: https://data.worldbank.org/indicator/AG.PRD.CROP.XD?locations=CV
+  - label: Lusa / Agroportal. Seca reduziu em 40% produção agrícola em Cabo Verde em quatro anos (INE data).
+    url: https://bo.agroportal.pt/seca-reduziu-em-40-producao-agricola-em-cabo-verde-em-quatro-anos
+  - label: FAO GIEWS Country Brief, Cabo Verde.
+    url: https://www.fao.org/giews/countrybrief/country.jsp?code=CPV

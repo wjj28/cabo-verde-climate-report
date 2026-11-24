@@ -1,0 +1,32 @@
+number: 1
+slug: observed-climate
+title: A warming archipelago
+kicker: Observed temperature, 1950–2024
+summary: Cabo Verde’s temperature has risen steadily since the 1970s. Recent years are the warmest in the 75-year record.
+keyMessages:
+  - Average temperature over Cabo Verde has risen by about 0.1 °C per decade since 1950, and by about 0.14 °C per decade since 1980.
+  - 2015–2024 was about 0.6 °C warmer than 1950–1979.
+  - 2023 was the warmest year on record at 1.0 °C above the 1991–2020 average; 2024 was the third warmest.
+sections:
+  - heading: A mild climate that is getting warmer
+    body: |
+      Cabo Verde has a mild, dry tropical climate. The surrounding Atlantic keeps temperatures steady through the year: the national average is about 20 °C in February and 25 °C in September, and the yearly average over the islands and nearby sea is about 23 °C.
+
+      That stability makes the long-term change easy to see. Before 1980, 25 of 30 years were cooler than the 1991–2020 average. Since 2020, every year has been warmer. The temperature stripes show this shift at a glance: blue on the left, red on the right.
+    figure: stripes
+  - heading: Year by year
+    body: |
+      The national average rose by about **0.1 °C per decade** between 1950 and 2024. The rate since 1980 is faster, about **0.14 °C per decade**, in line with the warming of the tropical Atlantic.
+
+      **2023 was the warmest year in the record**, 1.0 °C above the 1991–2020 average, followed by 2010 and 2024. Warm years in Cabo Verde often coincide with unusually warm sea surface temperatures in the North Atlantic, which in 2023 reached record levels across much of the basin.
+    figure: tasAnomaly
+  - heading: Why national averages are only the start
+    body: |
+      The values in this chapter come from ERA5, a global reanalysis that blends observations with a weather model. At this scale, small islands share grid cells with the ocean, so the series describes the climate of the archipelago as a whole. Mountain areas on Santiago, Fogo and Santo Antão are cooler and wetter than this average; the low, flat eastern islands (Sal, Boa Vista, Maio) are hotter and drier. Station records held by the national meteorological service would show these differences island by island.
+sources:
+  - label: Hersbach, H. et al. (2020). The ERA5 global reanalysis. Quarterly Journal of the Royal Meteorological Society, 146, 1999–2049.
+    url: https://doi.org/10.1002/qj.3803
+  - label: World Bank Climate Change Knowledge Portal, Cabo Verde – historical climate data.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
+  - label: WMO (2024). State of the Global Climate 2023.
+    url: https://wmo.int/publication-series/state-of-global-climate-2023

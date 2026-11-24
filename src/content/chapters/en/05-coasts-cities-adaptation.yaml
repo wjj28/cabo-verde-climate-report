@@ -1,0 +1,36 @@
+number: 5
+slug: coasts-cities-adaptation
+title: Coasts, cities and adaptation
+kicker: Living with a changing climate
+summary: Most Cabo Verdeans live in coastal towns, and the economy depends on the sea and on tourism. Adaptation focuses on water, soil, coasts and early warning.
+keyMessages:
+  - Global mean sea level rose by about 0.20 m between 1901 and 2018 and is projected to rise a further 0.32–0.62 m (low emissions) to 0.63–1.01 m (very high emissions) by 2100.
+  - Praia, Mindelo and the tourist islands face more heat, flash floods during intense rain, and coastal erosion.
+  - Desalination, drip irrigation, hydroponics, water harvesting and seasonal forecasts already form the core of Cabo Verde’s response.
+sections:
+  - heading: Rising seas
+    body: |
+      According to the IPCC, global mean sea level rose by **about 0.20 m between 1901 and 2018**, and the rate is increasing. By 2100, it is projected to rise by a further **0.32–0.62 m under low emissions and 0.63–1.01 m under very high emissions**, compared with 1995–2014.
+
+      For Cabo Verde, this matters most where people, ports, roads and hotels sit just above the shoreline: the capital Praia, the port city of Mindelo, and the beach resorts of Sal and Boa Vista. Higher seas make storm surges reach further inland, speed up beach erosion and push salt water into coastal aquifers.
+  - heading: Towns under heat and flash floods
+    body: |
+      Praia and Mindelo have grown quickly, often with informal housing on hillsides and in dry riverbeds (ribeiras). These neighbourhoods are the most exposed to two climate hazards: hotter nights (Chapter 4), and flash floods when an intense storm drops weeks of rain in a few hours. Recent heavy-rain events have damaged homes, roads and farmland and threatened gains in food security.
+  - heading: What Cabo Verde is already doing
+    body: |
+      Adaptation in Cabo Verde builds on decades of experience with drought:
+
+      - **Water from the sea.** Desalination already supplies much of the drinking water on several islands, and the government plans to use desalinated water for agriculture so that farming depends less on rain.
+      - **Every drop on the farm.** Drip irrigation, hydroponics and soil-free cultivation, promoted by INIDA, grow more food with less water.
+      - **Keeping soil and water in place.** Terraces, check dams and reforestation slow runoff, reduce erosion and recharge aquifers.
+      - **Knowing what is coming.** Seasonal rainfall outlooks and weather warnings from INMG give farmers and civil protection time to prepare.
+
+      Climate change will make each of these more important. Better observation networks, island-level data and open climate information are the foundation for all of them.
+sources:
+  - label: IPCC (2021). Summary for Policymakers, sections A.1.7 and B.5.3. In Climate Change 2021 – The Physical Science Basis.
+    url: https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/
+  - label: Lusa / Diário de Notícias. Cabo Verde quer usar água dessalinizada para não depender sempre das chuvas para agricultura.
+    url: https://www.dn.pt/lusa/interior/cabo-verde-quer-usar-agua-dessalinizada-para-nao-depender-sempre-das-chuvas-para-agricultura-9068254.html
+  - label: RTP Notícias. Enxurradas ameaçam redução prevista da insegurança alimentar em Cabo Verde.
+    url: https://www.rtp.pt/noticias/mundo/enxurradas-ameacam-reducao-prevista-da-inseguranca-alimentar-em-cabo-verde_n1685293
+  - label: World Bank (2025). Cabo Verde Country Climate and Development Report.

@@ -1,0 +1,32 @@
+number: 2
+slug: rainfall-drought
+title: Rain that comes and goes
+kicker: Rainfall and drought
+summary: Nearly all of Cabo Verde’s rain falls in four months, and the amount changes greatly from year to year. Multi-year droughts are part of the islands’ history.
+keyMessages:
+  - About 84% of annual rainfall falls from July to October, when the West African monsoon reaches its northern limit.
+  - The standard deviation of annual rainfall is more than 40% of the average, which means very large swings between years.
+  - Rainfall in 2017–2019 averaged 44% below normal, three dry years in a row.
+sections:
+  - heading: A four-month rainy season
+    body: |
+      Cabo Verde sits at the northern edge of the West African monsoon. For most of the year, dry north-east trade winds blow across the islands. Between July and October, the band of tropical rain moves north far enough to reach the archipelago, and **about 84% of the year’s rain** falls in those four months. September is usually the wettest month.
+
+      Much of the rain comes in a few heavy events. A single storm can bring a large share of a season’s total, causing flash floods on steep slopes while the soil stays dry before and after.
+    figure: monthlyRain
+  - heading: Wet years, dry years
+    body: |
+      No two rainy seasons are alike. Since 1950, annual rainfall over the islands has ranged from about a quarter of the 1991–2020 average (1977) to more than double it (1956). The standard deviation is more than 40% of the average.
+
+      **2017, 2018 and 2019 were three dry years in a row**, with rainfall averaging 44% below normal. 2017 was among the three driest years since 1950. Dry spells of this length are especially damaging because reservoirs, aquifers and pastures have no time to recover between seasons.
+    figure: rainAnomaly
+  - heading: Seasonal forecasts
+    body: |
+      Before each rainy season, the national meteorological service (INMG) issues a seasonal outlook as part of the regional PRESASS forecasting process for the Sahel. For one recent season, INMG forecast “normal rains with a tendency towards above normal” for July to September, about 244 mm. Outlooks like this help farmers and water managers decide when and what to plant and how much water to store.
+sources:
+  - label: World Bank Climate Change Knowledge Portal, Cabo Verde – ERA5 precipitation, 1950–2024.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
+  - label: Lusa / Agroportal. INMG seasonal rainfall outlook for Cabo Verde.
+    url: https://www.agroportal.pt/cabo-verde-com-chuva-acima-da-media-este-ano/
+  - label: FAO GIEWS Country Brief, Cabo Verde.
+    url: https://www.fao.org/giews/countrybrief/country.jsp?code=CPV

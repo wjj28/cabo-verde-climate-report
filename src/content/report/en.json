@@ -1,0 +1,77 @@
+{
+  "title": "Climate of Cabo Verde 2026",
+  "shortTitle": "Climate of Cabo Verde",
+  "subtitle": "Observed changes, future risks and adaptation in a Sahelian island state",
+  "edition": "Concept edition · November 2026",
+  "intro": "Cabo Verde’s ten islands sit 570 km off the coast of West Africa, at the western end of the Sahel. Rain falls in a few weeks each year, farming depends on it, and most people live near the sea. This report brings together public climate data to show how the islands’ climate has changed since 1950 and how it may change by 2100.",
+  "stats": [
+    { "value": "+1.0 °C", "label": "2023, the warmest year since 1950, compared with 1991–2020" },
+    { "value": "84%", "label": "of the year’s rain falls between July and October" },
+    { "value": "−44%", "label": "rainfall during the 2017–2019 drought, compared with normal" },
+    { "value": "−46%", "label": "fall in the crop production index between 2013 and 2024" }
+  ],
+  "summaryIntro": "The headline statements below summarise the main findings of the report. Each one links to the chapter and figure that support it. Labels show whether a finding is based on observations, on model projections or on figures reported by national institutions.",
+  "headlines": [
+    {
+      "id": "A1",
+      "statement": "Cabo Verde is warmer than at any time since records in this dataset began in 1950.",
+      "detail": "Average temperature over the islands has risen by about 0.1 °C per decade since 1950, and faster since 1980. The years 2015–2024 were about 0.6 °C warmer than 1950–1979. 2023 was the warmest year in the record, 1.0 °C above the 1991–2020 average, and 2024 the third warmest.",
+      "evidence": "observed",
+      "figure": "stripes",
+      "chapter": "observed-climate"
+    },
+    {
+      "id": "A2",
+      "statement": "Rain is short, concentrated and highly variable from one year to the next.",
+      "detail": "Around 84% of annual rainfall arrives from July to October. Year-to-year variation is large: the standard deviation of annual rainfall is more than 40% of the average, and the driest years since 1950 received less than half the normal amount.",
+      "evidence": "observed",
+      "figure": "monthlyRain",
+      "chapter": "rainfall-drought"
+    },
+    {
+      "id": "A3",
+      "statement": "The 2017–2019 drought was one of the most severe multi-year dry spells on record, and farming has not recovered.",
+      "detail": "Rainfall over the three years averaged 44% below normal. The FAO crop production index fell from 110 in 2013 to 60 in 2024. National statistics reported agricultural output falling from about 71 000 tonnes in 2016 to 42 000 tonnes in 2020.",
+      "evidence": "reported",
+      "figure": "crop",
+      "chapter": "agriculture-food"
+    },
+    {
+      "id": "B1",
+      "statement": "Further warming is certain; how much depends on global emissions.",
+      "detail": "By 2081–2100, models project annual temperatures about 0.9 °C higher than in 1995–2014 under low emissions (SSP1-2.6), 1.5 °C under intermediate emissions (SSP2-4.5) and 2.9 °C under very high emissions (SSP5-8.5).",
+      "evidence": "projected",
+      "figure": "projTas",
+      "chapter": "future-climate"
+    },
+    {
+      "id": "B2",
+      "statement": "Hot nights will become common, especially in towns.",
+      "detail": "Models simulate around a dozen nights a year above 26 °C today. Under intermediate emissions this rises to about 46 by mid-century and 73 by the end of the century; under very high emissions to more than 130.",
+      "evidence": "projected",
+      "figure": "tropicalNights",
+      "chapter": "future-climate"
+    },
+    {
+      "id": "B3",
+      "statement": "Future rainfall is uncertain, so planning must work for both wet and dry futures.",
+      "detail": "Model medians range from about 4% more to 12% less annual rain by the end of the century, depending on the scenario. Natural year-to-year swings will remain larger than any trend, so droughts like 2017–2019 will recur.",
+      "evidence": "projected",
+      "figure": "projRain",
+      "chapter": "future-climate"
+    },
+    {
+      "id": "C1",
+      "statement": "Water security, soil conservation and early warning are the core of adaptation.",
+      "detail": "Cabo Verde already relies on desalination for much of its drinking water and is extending it to agriculture. Drip irrigation, hydroponics, water harvesting and seasonal rainfall forecasts from the national meteorological service help farmers plan around an unreliable rainy season.",
+      "evidence": "reported",
+      "chapter": "coasts-cities-adaptation"
+    }
+  ],
+  "video": {
+    "youtubeId": "hrIe1XjZwhI",
+    "title": "State of the Climate in Africa 2023 (WMO)",
+    "description": "Regional context: an animated summary by the World Meteorological Organization of how climate change is affecting Africa."
+  },
+  "about": "This site is an independent concept built to show how a national climate report can be published as an accessible, multilingual, static microsite. It is not an official publication of the Instituto Nacional de Meteorologia e Geofísica (INMG), the Instituto Nacional de Investigação e Desenvolvimento Agrário (INIDA), the World Meteorological Organization, the IPCC or the Government of Cabo Verde.\n\n## Data and methods\n\n- **Observed temperature and rainfall:** ERA5 reanalysis, averaged over Cabo Verde, 1950–2024, from the World Bank Climate Change Knowledge Portal. Anomalies are relative to 1991–2020, the current WMO standard reference period.\n- **Monthly temperature:** CRU TS 4.08, 1991–2020.\n- **Projections:** CMIP6 multi-model ensemble (median, 10th and 90th percentiles), smoothed, relative to the 1995–2014 model baseline used by the IPCC Sixth Assessment Report.\n- **Agriculture:** FAO crop and food production indices via World Bank Open Data, and figures from the National Statistics Institute (INE) as reported by the Lusa news agency.\n\n## Limitations\n\nCabo Verde’s islands are small compared with global grids, so national averages include the surrounding ocean and smooth out differences between islands, coasts and mountains. Station observations held by INMG would give a sharper, island-by-island picture; a real edition of this report would be built on them.\n\n## How this site is built\n\nPlain HTML, CSS and a little JavaScript, generated by Astro and deployable to any static or LAMP host. Charts are rendered as SVG at build time, each with a text description and a data table. Content is edited by non-technical staff through a web-based CMS that commits to the repository; every change rebuilds the site automatically."
+}

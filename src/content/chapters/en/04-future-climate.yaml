@@ -1,0 +1,31 @@
+number: 4
+slug: future-climate
+title: The climate ahead
+kicker: Projections to 2100
+summary: Climate models agree that Cabo Verde will keep warming and that hot nights will become far more frequent. They disagree on rainfall.
+keyMessages:
+  - By 2081–2100, annual temperature is projected to rise by about 0.9 °C (low emissions), 1.5 °C (intermediate) or 2.9 °C (very high), compared with 1995–2014.
+  - Nights above 26 °C rise from about a dozen a year today to about 73 under intermediate emissions and more than 130 under very high emissions by the end of the century.
+  - Models disagree on whether annual rainfall will increase or decrease; drought years will continue to occur.
+sections:
+  - heading: How much warmer?
+    body: |
+      The projections in this chapter come from the CMIP6 ensemble, the set of global climate models assessed in the IPCC Sixth Assessment Report. Three scenarios describe different futures for global greenhouse gas emissions, from strong cuts (SSP1-2.6) to continued growth (SSP5-8.5).
+
+      The scenarios barely differ until about 2040: warming over the next two decades is already largely determined. After that, the paths separate. By 2081–2100, the median warming over Cabo Verde is **about 0.9 °C under low emissions, 1.5 °C under intermediate emissions and 2.9 °C under very high emissions**, with a model range of 2.0–3.9 °C in the highest scenario. Use the checkboxes above the chart to compare scenarios.
+    figure: projTas
+  - heading: Hotter nights
+    body: |
+      Warm nights matter more for health than hot days in a maritime climate like Cabo Verde’s. When night temperatures stay high, the body cannot recover from daytime heat, and the effects are strongest in crowded urban neighbourhoods with little ventilation.
+
+      Models simulate around a dozen nights a year with a minimum temperature above 26 °C at present. Under intermediate emissions, this rises to **about 46 by mid-century and 73 by the end of the century**. Under very high emissions, more than a third of all nights would exceed this threshold.
+    figure: tropicalNights
+  - heading: Uncertain rain
+    body: |
+      Rainfall projections for the Sahel’s western edge are much less certain than temperature. The model medians range from **about 4% more to 12% less** annual rainfall by the end of the century, and individual models disagree on the sign of the change. What is certain is that natural variability will remain large: dry years like 2017–2019 and very wet years will continue to occur, and warmer temperatures will make dry years more damaging by increasing evaporation.
+    figure: projRain
+sources:
+  - label: IPCC (2021). Summary for Policymakers. In Climate Change 2021 – The Physical Science Basis. Contribution of Working Group I to the Sixth Assessment Report.
+    url: https://www.ipcc.ch/report/ar6/wg1/chapter/summary-for-policymakers/
+  - label: World Bank Climate Change Knowledge Portal, Cabo Verde – CMIP6 projections.
+    url: https://climateknowledgeportal.worldbank.org/country/cabo-verde
